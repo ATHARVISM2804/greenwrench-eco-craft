@@ -30,13 +30,19 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-card">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            How It <span className="text-primary">Works</span>
+    <section className="py-32 bg-gradient-card relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-premium-green/5 via-transparent to-premium-green-light/5"></div>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-20">
+          <div className="inline-block mb-6">
+            <span className="px-6 py-3 bg-premium-green/10 border border-primary-glow/30 rounded-full text-primary text-lg font-semibold">
+              ⚡ Simple Process
+            </span>
+          </div>
+          <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-8">
+            How It <span className="bg-gradient-premium bg-clip-text text-transparent">Works</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Simple 4-step process to get the best value for your scrap car with complete peace of mind
           </p>
         </div>

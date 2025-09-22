@@ -110,12 +110,18 @@ const Videos = () => {
     <div className="min-h-screen bg-background">
       
       {/* Hero Section */}
-      <section className="bg-gradient-primary text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6 animate-fade-in">
-            Video Gallery
+      <section className="relative bg-gradient-hero text-white py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-premium-green-dark/50 via-transparent to-premium-green/30"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="inline-block mb-6">
+            <span className="px-6 py-3 bg-premium-green/20 border border-primary-glow/30 rounded-full text-primary-glow text-lg font-semibold backdrop-blur-sm">
+              🎥 Video Library
+            </span>
+          </div>
+          <h1 className="text-6xl lg:text-7xl font-bold mb-8 animate-fade-in">
+            Video <span className="bg-gradient-premium bg-clip-text text-transparent">Gallery</span>
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto animate-slide-up">
+          <p className="text-xl text-white/90 max-w-3xl mx-auto animate-slide-up leading-relaxed">
             Watch our educational videos, customer testimonials, and behind-the-scenes content about eco-friendly car recycling
           </p>
         </div>

@@ -44,14 +44,20 @@ const Advantages = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="py-32 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-premium-green/5 via-transparent to-premium-green-light/5"></div>
+      <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Why Choose <span className="text-primary">GreenWrench</span>?
+        <div className="text-center mb-20">
+          <div className="inline-block mb-6">
+            <span className="px-6 py-3 bg-premium-green/10 border border-primary-glow/30 rounded-full text-primary text-lg font-semibold">
+              🏆 Our Advantages
+            </span>
+          </div>
+          <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-8">
+            Why Choose <span className="bg-gradient-premium bg-clip-text text-transparent">GreenWrench?</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Experience the most professional and rewarding car scrapping service with guaranteed best rates and complete transparency
           </p>
         </div>

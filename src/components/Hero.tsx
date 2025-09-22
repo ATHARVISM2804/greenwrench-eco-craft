@@ -102,19 +102,19 @@ const Hero = () => {
 
           {/* Right Content - Quote Form */}
           <div className="animate-slide-up">
-            <Card className="backdrop-blur-xl bg-white/95 shadow-premium border border-primary-glow/20 rounded-2xl overflow-hidden">
-              <div className="h-2 bg-gradient-primary"></div>
-              <CardContent className="p-8">
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <MessageCircle className="h-8 w-8 text-white" />
+            <Card className="backdrop-blur-xl bg-white/97 shadow-premium border border-primary-glow/30 rounded-3xl overflow-hidden transform hover:scale-105 transition-all duration-500">
+              <div className="h-3 bg-gradient-premium"></div>
+              <CardContent className="p-10">
+                <div className="text-center mb-8">
+                  <div className="w-20 h-20 bg-gradient-premium rounded-full flex items-center justify-center mx-auto mb-6 shadow-glow">
+                    <MessageCircle className="h-10 w-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Get Your</h3>
-                  <h2 className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">FREE INSTANT</h2>
-                  <p className="text-lg text-muted-foreground">ONLINE CAR VALUATION IN 60 SEC</p>
+                  <h3 className="text-2xl font-bold text-foreground mb-3">Get Your</h3>
+                  <h2 className="text-4xl font-bold bg-gradient-premium bg-clip-text text-transparent mb-3">FREE INSTANT</h2>
+                  <p className="text-lg text-muted-foreground font-medium">ONLINE CAR VALUATION IN 60 SEC</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-2 gap-4">
                     <Input
                       type="text"
@@ -123,7 +123,7 @@ const Hero = () => {
                       value={formData.firstName}
                       onChange={handleInputChange}
                       required
-                      className="h-12"
+                      className="h-14 bg-white/50 border-primary-glow/20 focus:border-primary focus:bg-white transition-all duration-300 rounded-xl"
                     />
                     <Input
                       type="text"
@@ -132,7 +132,7 @@ const Hero = () => {
                       value={formData.lastName}
                       onChange={handleInputChange}
                       required
-                      className="h-12"
+                      className="h-14 bg-white/50 border-primary-glow/20 focus:border-primary focus:bg-white transition-all duration-300 rounded-xl"
                     />
                   </div>
                   
@@ -143,7 +143,7 @@ const Hero = () => {
                     value={formData.vehicleNumber}
                     onChange={handleInputChange}
                     required
-                    className="h-12"
+                    className="h-14 bg-white/50 border-primary-glow/20 focus:border-primary focus:bg-white transition-all duration-300 rounded-xl"
                   />
                   
                   <Input
@@ -153,13 +153,13 @@ const Hero = () => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
-                    className="h-12"
+                    className="h-14 bg-white/50 border-primary-glow/20 focus:border-primary focus:bg-white transition-all duration-300 rounded-xl"
                   />
 
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full h-12 bg-gradient-primary hover:bg-gradient-premium hover:shadow-glow transition-all duration-500 text-lg font-semibold transform hover:-translate-y-0.5"
+                    className="w-full h-14 bg-gradient-premium hover:bg-gradient-primary hover:shadow-glow transition-all duration-500 text-lg font-bold transform hover:-translate-y-1 rounded-xl"
                   >
                     Get Instant Quote
                   </Button>
