@@ -23,6 +23,8 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
           glow: "hsl(var(--primary-glow))",
+          light: "hsl(var(--primary-light))",
+          dark: "hsl(var(--primary-dark))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -57,8 +59,10 @@ export default {
           green: "hsl(var(--premium-green))",
           "green-light": "hsl(var(--premium-green-light))",
           "green-lighter": "hsl(var(--premium-green-lighter))",
+          "green-dark": "hsl(var(--premium-green-dark))",
           silver: "hsl(var(--premium-silver))",
           dark: "hsl(var(--premium-dark))",
+          tech: "hsl(var(--premium-tech))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -75,11 +79,14 @@ export default {
         "gradient-primary": "var(--gradient-primary)",
         "gradient-hero": "var(--gradient-hero)",
         "gradient-card": "var(--gradient-card)",
+        "gradient-premium": "var(--gradient-premium)",
+        "gradient-tech": "var(--gradient-tech)",
       },
       boxShadow: {
         premium: "var(--shadow-premium)",
         card: "var(--shadow-card)",
         button: "var(--shadow-button)",
+        glow: "var(--shadow-glow)",
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
