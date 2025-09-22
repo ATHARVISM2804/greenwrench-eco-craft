@@ -20,50 +20,49 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-background/98 backdrop-blur-xl border-b border-border/50 sticky top-0 z-50 shadow-premium">
+    <header className="bg-white backdrop-blur-xl border-b-4 border-emerald-700/20 sticky top-0 z-50 shadow-lg h-24">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-4 group">
             <div className="relative">
-              <img src={logo} alt="GreenWrench Solutions" className="h-12 w-auto group-hover:scale-105 transition-transform duration-300" />
-              <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-300"></div>
+              <img src={logo} alt="GreenWrench Solutions" className="h-14 w-auto group-hover:scale-105 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-800/20 to-emerald-600/20 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-300"></div>
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl font-bold bg-gradient-premium bg-clip-text text-transparent">GreenWrench</span>
-              <span className="text-sm text-muted-foreground font-medium">Solutions</span>
+              <span className="text-2xl font-bold bg-gradient-to-r from-emerald-800 to-emerald-600 bg-clip-text text-transparent">GreenWrench</span>
+              <span className="text-sm text-emerald-700 font-medium">Solutions</span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-10">
+          <nav className="hidden md:flex items-center space-x-5 py-2 px-4 rounded-full bg-emerald-50 border border-emerald-200">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`relative text-sm font-semibold transition-all duration-300 hover:text-primary group ${
+                className={`relative px-4 py-2 text-sm font-semibold transition-all duration-300 group rounded-lg ${
                   isActive(item.href)
-                    ? "text-primary"
-                    : "text-muted-foreground"
+                    ? "bg-gradient-to-r from-emerald-700 to-emerald-600 text-white shadow-md"
+                    : "bg-white text-emerald-800 border border-emerald-200 hover:bg-emerald-100"
                 }`}
               >
                 <span className="relative z-10">{item.name}</span>
-                <div className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-primary transition-transform duration-300 ${
-                  isActive(item.href) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                } origin-left`}></div>
               </Link>
             ))}
           </nav>
 
           {/* Contact & CTA */}
           <div className="hidden md:flex items-center space-x-6">
-            <div className="flex items-center space-x-3 px-4 py-2 bg-gradient-card rounded-full border border-border/30">
-              <Phone className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium text-foreground">+91 99999 99999</span>
+            <div className="flex items-center space-x-3 px-4 py-3 bg-emerald-50 rounded-lg border-2 border-emerald-200">
+              <div className="p-2 rounded-full bg-gradient-to-r from-emerald-800 to-emerald-600">
+                <Phone className="h-4 w-4 text-white" />
+              </div>
+              <span className="text-sm font-medium text-emerald-800">+91 99999 99999</span>
             </div>
             <Button 
               variant="default" 
-              className="bg-gradient-primary hover:bg-gradient-premium hover:shadow-glow transition-all duration-500 px-6 py-3 font-semibold transform hover:-translate-y-0.5"
+              className="bg-gradient-to-r from-emerald-800 to-emerald-600 hover:from-emerald-700 hover:to-emerald-500 hover:shadow-lg hover:shadow-emerald-300/40 transition-all duration-500 px-6 py-6 font-semibold transform hover:-translate-y-0.5"
               asChild
             >
               <a href="https://wa.me/919999999999?text=Get Best Rate Now" target="_blank" rel="noopener noreferrer">
@@ -76,7 +75,7 @@ const Header = () => {
           <Button
             variant="ghost"
             size="sm"
-            className="md:hidden"
+            className="md:hidden p-2 bg-emerald-100 text-emerald-800 hover:bg-emerald-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -85,30 +84,32 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-border/30 mt-4 pt-6 pb-6 animate-fade-in bg-gradient-card/30 backdrop-blur-lg rounded-b-2xl">
-            <nav className="flex flex-col space-y-4">
+          <div className="md:hidden border-t-4 border-emerald-700/20 mt-2 pt-6 pb-6 animate-fade-in bg-white/95 backdrop-blur-lg rounded-b-2xl shadow-lg">
+            <nav className="flex flex-col space-y-4 px-4">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
                   className={`text-base font-semibold py-3 px-4 rounded-lg transition-all duration-300 ${
                     isActive(item.href) 
-                      ? "text-primary bg-primary/10 border border-primary/20" 
-                      : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                      ? "bg-gradient-to-r from-emerald-700 to-emerald-600 text-white shadow-md" 
+                      : "bg-emerald-50 text-emerald-800 hover:bg-emerald-100"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="border-t border-border/30 pt-6 mt-4">
-                <div className="flex items-center space-x-3 text-sm text-muted-foreground mb-4 px-4 py-2 bg-white/50 rounded-lg">
-                  <Phone className="h-4 w-4 text-primary" />
+              <div className="border-t-2 border-emerald-200 pt-6 mt-4">
+                <div className="flex items-center space-x-3 text-sm text-emerald-800 mb-4 px-4 py-3 bg-emerald-50 rounded-lg border border-emerald-200">
+                  <div className="p-2 rounded-full bg-gradient-to-r from-emerald-800 to-emerald-600">
+                    <Phone className="h-4 w-4 text-white" />
+                  </div>
                   <span className="font-medium">+91 99999 99999</span>
                 </div>
                 <Button 
                   variant="default" 
-                  className="w-full bg-gradient-primary hover:bg-gradient-premium py-3 font-semibold"
+                  className="w-full bg-gradient-to-r from-emerald-800 to-emerald-600 hover:from-emerald-700 hover:to-emerald-500 py-5 font-semibold"
                   asChild
                 >
                   <a href="https://wa.me/919999999999?text=Get Best Rate Now" target="_blank" rel="noopener noreferrer">
