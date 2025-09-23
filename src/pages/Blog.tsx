@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, User, ArrowRight } from "lucide-react";
+import { Calendar, User, ArrowRight, X } from "lucide-react";
+import React, { useState } from "react";
 
 const Blog = () => {
   const blogPosts = [
@@ -12,6 +13,7 @@ const Blog = () => {
       date: "March 15, 2024",
       category: "Environment",
       readTime: "5 min read",
+      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: 2,
@@ -21,6 +23,7 @@ const Blog = () => {
       date: "March 12, 2024",
       category: "Policy",
       readTime: "7 min read",
+      image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: 3,
@@ -30,6 +33,7 @@ const Blog = () => {
       date: "March 10, 2024",
       category: "Tips & Guides",
       readTime: "6 min read",
+      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
     },
     {
       id: 4,
@@ -39,6 +43,7 @@ const Blog = () => {
       date: "March 8, 2024",
       category: "Process",
       readTime: "8 min read",
+      image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: 5,
@@ -48,6 +53,7 @@ const Blog = () => {
       date: "March 5, 2024",
       category: "Legal",
       readTime: "4 min read",
+      image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
     },
     {
       id: 6,
@@ -57,18 +63,33 @@ const Blog = () => {
       date: "March 3, 2024",
       category: "Future Trends",
       readTime: "9 min read",
+      image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80",
     },
   ];
 
   const categories = ["All", "Environment", "Policy", "Tips & Guides", "Process", "Legal", "Future Trends"];
+
+  // Modal state
+  const [openModal, setOpenModal] = useState<null | typeof blogPosts[0]>(null);
 
   return (
     <div className="min-h-screen bg-background">
       
       {/* Hero Section */}
       <section className="relative bg-gradient-hero text-white py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-premium-green-dark/50 via-transparent to-premium-green/30"></div>
-        <div className="container mx-auto px-4 text-center relative z-10">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.25,
+          }}
+        ></div>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-premium-green-dark/50 via-transparent to-premium-green/30 z-10"></div>
+        <div className="container mx-auto px-4 text-center relative z-20">
           <div className="inline-block mb-6">
             <span className="px-6 py-3 bg-premium-green/20 border border-primary-glow/30 rounded-full text-primary-glow text-lg font-semibold backdrop-blur-sm">
               📚 Knowledge Hub
@@ -84,8 +105,11 @@ const Blog = () => {
       </section>
 
       {/* Blog Content */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 overflow-hidden">
+        {/* Optional: Decorative gradients for extra effect, similar to HowItWorks */}
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-l from-green-200/10 to-emerald-300/10 rounded-full blur-2xl"></div>
+        <div className="container mx-auto px-4 relative z-10">
           
           {/* Categories Filter */}
           <div className="flex flex-wrap gap-4 justify-center mb-12">
@@ -103,22 +127,29 @@ const Blog = () => {
           {/* Blog Posts Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => (
-              <Card key={post.id} className="h-full shadow-card hover:shadow-premium transition-all duration-300 transform hover:-translate-y-2 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                <CardContent className="p-6 h-full flex flex-col">
+              <Card key={post.id} className="h-full shadow-card hover:shadow-premium transition-all duration-300 transform hover:-translate-y-2 animate-slide-up flex flex-col" style={{ animationDelay: `${index * 0.1}s` }}>
+                {/* Blog Image */}
+                <div className="w-full h-48 rounded-t-lg overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-6 h-full flex flex-col flex-1">
                   <div className="mb-4">
                     <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">
                       {post.category}
                     </span>
                   </div>
-                  
                   <h3 className="text-xl font-bold text-foreground mb-3 line-clamp-2">
                     {post.title}
                   </h3>
-                  
+                  {/* Description below image */}
                   <p className="text-muted-foreground mb-6 flex-grow line-clamp-3">
                     {post.excerpt}
                   </p>
-                  
                   <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
                     <div className="flex items-center space-x-4">
                       <div className="flex items-center space-x-1">
@@ -132,8 +163,11 @@ const Blog = () => {
                     </div>
                     <span className="text-primary font-medium">{post.readTime}</span>
                   </div>
-                  
-                  <Button variant="outline" className="w-full group">
+                  <Button
+                    variant="outline"
+                    className="w-full group mt-auto"
+                    onClick={() => setOpenModal(post)}
+                  >
                     Read More
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -148,6 +182,49 @@ const Blog = () => {
               Load More Articles
             </Button>
           </div>
+
+          {/* Modal Popup */}
+          {openModal && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+              <div className="bg-white rounded-lg shadow-xl max-w-lg w-full relative animate-fade-in">
+                <button
+                  className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+                  onClick={() => setOpenModal(null)}
+                  aria-label="Close"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+                <div className="w-full h-56 rounded-t-lg overflow-hidden">
+                  <img
+                    src={openModal.image}
+                    alt={openModal.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-2">
+                    {openModal.category}
+                  </span>
+                  <h2 className="text-2xl font-bold mb-2">{openModal.title}</h2>
+                  <div className="flex items-center text-sm text-muted-foreground mb-4 gap-4">
+                    <span className="flex items-center gap-1">
+                      <User className="h-4 w-4" /> {openModal.author}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Calendar className="h-4 w-4" /> {openModal.date}
+                    </span>
+                    <span className="text-primary font-medium">{openModal.readTime}</span>
+                  </div>
+                  <p className="text-foreground mb-4">{openModal.excerpt}</p>
+                  {/* Placeholder for full content */}
+                  <p className="text-muted-foreground">
+                    {/* Replace this with real content if available */}
+                    This is a demo modal. Replace this with the full blog content as needed.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </div>

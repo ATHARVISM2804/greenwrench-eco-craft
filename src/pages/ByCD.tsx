@@ -11,7 +11,8 @@ import {
   Phone, 
   MessageCircle,
   CheckCircle,
-  Star
+  Star,
+  Eye
 } from "lucide-react";
 
 const ByCD = () => {
@@ -108,28 +109,88 @@ const ByCD = () => {
   return (
     <div className="min-h-screen bg-background">
       
-      {/* Hero Section */}
-      <section className="relative bg-gradient-hero text-white py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-premium-green-dark/50 via-transparent to-premium-green/30"></div>
-        <div className="container mx-auto px-4 text-center relative z-10">
+      {/* Hero Section - Updated to match Video Gallery style */}
+      <section className="relative bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-700 text-white py-32 overflow-hidden">
+        {/* Background overlay with financial icons */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url('https://plus.unsplash.com/premium_photo-1664303370099-cd2fee3b3c79?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')", // You'll need to add this image
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.5
+          }}
+        ></div>
+        
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/70 via-emerald-800/60 to-emerald-700/50 z-10"></div>
+        
+        {/* Decorative circles */}
+        <div className="absolute -left-24 top-1/4 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl z-10"></div>
+        <div className="absolute -right-32 bottom-0 w-80 h-80 bg-emerald-300/20 rounded-full blur-3xl z-10"></div>
+        <div className="absolute right-1/4 top-1/3 w-40 h-40 bg-emerald-400/30 rounded-full blur-2xl z-10"></div>
+        
+        <div className="container mx-auto px-4 text-center relative z-20">
           <div className="inline-block mb-6">
-            <span className="px-6 py-3 bg-premium-green/20 border border-primary-glow/30 rounded-full text-primary-glow text-lg font-semibold backdrop-blur-sm">
+            <span className="px-6 py-3 bg-white/10 border border-white/20 rounded-full text-white text-lg font-semibold backdrop-blur-sm">
               💎 Investment Solutions
             </span>
           </div>
-          <h1 className="text-6xl lg:text-7xl font-bold mb-8 animate-fade-in">
-            Certificate of <span className="bg-gradient-premium bg-clip-text text-transparent">Deposit</span>
+          
+          <h1 className="text-6xl lg:text-7xl font-extrabold mb-4">
+            <span className="text-white">Certificate of </span>
+            <span className="text-emerald-300">Deposit</span>
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto animate-slide-up leading-relaxed">
+          
+          {/* Animated underline similar to Video Gallery */}
+          <div className="w-40 h-1 bg-emerald-400 mx-auto mb-8"></div>
+          
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
             Secure your financial future with our high-yield Certificate of Deposit options. 
             Guaranteed returns with flexible terms and competitive interest rates.
           </p>
+          
+          {/* Stats display like in Video Gallery */}
+          <div className="flex flex-wrap justify-center gap-8 mt-12">
+            <div className="flex items-center">
+              <div className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 bg-white/10 mr-4">
+                <TrendingUp className="w-5 h-5 text-white" />
+              </div>
+              <div className="text-left">
+                <div className="text-2xl font-bold text-white">8.8%</div>
+                <div className="text-white/70">Max Interest</div>
+              </div>
+            </div>
+            
+            <div className="flex items-center">
+              <div className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 bg-white/10 mr-4">
+                <Calendar className="w-5 h-5 text-white" />
+              </div>
+              <div className="text-left">
+                <div className="text-2xl font-bold text-white">1-5 Years</div>
+                <div className="text-white/70">Flexible Terms</div>
+              </div>
+            </div>
+            
+            <div className="flex items-center">
+              <div className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 bg-white/10 mr-4">
+                <Eye className="w-5 h-5 text-white" />
+              </div>
+              <div className="text-left">
+                <div className="text-2xl font-bold text-white">100% Safe</div>
+                <div className="text-white/70">Protected Investment</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* CD Options */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      {/* CD Options - Already updated with gradient */}
+      <section className="py-20 bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-premium-green/15 via-transparent to-transparent"></div>
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-l from-green-200/10 to-emerald-300/10 rounded-full blur-2xl"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-6">
               Choose Your Investment Plan
@@ -195,8 +256,11 @@ const ByCD = () => {
       </section>
 
       {/* Benefits */}
-      <section className="py-20 bg-gradient-card">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-premium-green/15 via-transparent to-transparent"></div>
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-l from-green-200/10 to-emerald-300/10 rounded-full blur-2xl"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-6">
               Why Choose Our Certificate of Deposit?
@@ -229,8 +293,11 @@ const ByCD = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-premium-green/15 via-transparent to-transparent"></div>
+        <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-72 h-72 bg-gradient-to-l from-green-200/10 to-emerald-300/10 rounded-full blur-2xl"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-6">
               How to Get Started
@@ -271,8 +338,11 @@ const ByCD = () => {
       </section>
 
       {/* Buy/Sell Tabs */}
-      <section className="py-20 bg-gradient-card">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-premium-green/15 via-transparent to-transparent"></div>
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-l from-green-200/10 to-emerald-300/10 rounded-full blur-2xl"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <Tabs defaultValue="buy" className="max-w-4xl mx-auto">
             <TabsList className="grid w-full grid-cols-2 mb-12">
               <TabsTrigger value="buy" className="text-lg py-3">Buy Certificate of Deposit</TabsTrigger>
@@ -424,8 +494,11 @@ const ByCD = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-premium-green/15 via-transparent to-transparent"></div>
+        <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-gradient-to-l from-green-200/10 to-emerald-300/10 rounded-full blur-2xl"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="bg-gradient-primary rounded-3xl p-12 text-center text-white">
             <h2 className="text-4xl font-bold mb-6">
               Have Questions About Our CD Options?

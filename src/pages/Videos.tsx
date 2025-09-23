@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Play, Clock, Eye, Calendar } from "lucide-react";
+import { Play, Clock, Eye, Calendar, PlayCircle } from "lucide-react";
 
 const Videos = () => {
   const videoCategories = [
@@ -109,26 +109,104 @@ const Videos = () => {
   return (
     <div className="min-h-screen bg-background">
       
-      {/* Hero Section */}
-      <section className="relative bg-gradient-hero text-white py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-premium-green-dark/50 via-transparent to-premium-green/30"></div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="inline-block mb-6">
-            <span className="px-6 py-3 bg-premium-green/20 border border-primary-glow/30 rounded-full text-primary-glow text-lg font-semibold backdrop-blur-sm">
-              🎥 Video Library
-            </span>
+      {/* Enhanced Hero Section - reduced height */}
+      <section className="relative bg-gradient-hero text-white py-20 overflow-hidden">
+        {/* Background Image with better overlay and more visible effect */}
+        <div
+          className="absolute inset-0 z-0 bg-center bg-cover"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1200&q=80')",
+            backgroundBlendMode: "multiply",
+          }}
+        ></div>
+        
+        {/* Enhanced gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-900/80 via-green-800/60 to-black/70 z-5"></div>
+        
+        {/* Video play icon decorative elements - adjusted positions for reduced height */}
+        <div className="absolute top-1/5 left-[10%] w-16 h-16 bg-green-500/20 rounded-full animate-pulse backdrop-blur-sm z-5"></div>
+        <div className="absolute bottom-1/4 right-[15%] w-24 h-24 bg-emerald-400/10 rounded-full animate-bounce backdrop-blur-sm z-5" style={{ animationDuration: '8s' }}></div>
+        
+        <div className="container mx-auto px-4 text-center relative z-20">
+          {/* Premium Video Content badge above */}
+          <div className="mb-6">
+            <div className="inline-flex items-center px-5 py-2 bg-green-600/30 border border-green-400/30 rounded-full backdrop-blur-md">
+              <PlayCircle className="mr-2 h-4 w-4 text-white" />
+              <span className="text-white text-base font-medium">Premium Video Content</span>
+            </div>
           </div>
-          <h1 className="text-6xl lg:text-7xl font-bold mb-8 animate-fade-in">
-            Video <span className="bg-gradient-premium bg-clip-text text-transparent">Gallery</span>
+          
+          {/* Video Gallery heading with emphasized styling - reduced size */}
+          <h1 className="text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
+            <span className="text-white">Video</span> <span className="text-green-300">Gallery</span>
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto animate-slide-up leading-relaxed">
-            Watch our educational videos, customer testimonials, and behind-the-scenes content about eco-friendly car recycling
+          <div className="w-32 h-1 bg-green-400 mx-auto mb-6"></div>
+          
+          {/* Description - reduced bottom margin */}
+          <p className="text-lg text-white/90 max-w-3xl mx-auto animate-slide-up leading-relaxed mb-8">
+            Watch our collection of educational videos, customer testimonials, and behind-the-scenes 
+            content about eco-friendly car recycling and sustainable practices
           </p>
+          
+          {/* Featured video stats - reduced top margin */}
+          <div className="flex items-center justify-center space-x-8 mt-8">
+            <div className="flex items-center space-x-2">
+              <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center backdrop-blur-sm">
+                <PlayCircle className="h-5 w-5 text-green-300" />
+              </div>
+              <div className="text-left">
+                <p className="text-green-200 font-medium">{videos.length}+ Videos</p>
+                <p className="text-white/60 text-sm">To explore</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-2">
+              <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center backdrop-blur-sm">
+                <Clock className="h-5 w-5 text-green-300" />
+              </div>
+              <div className="text-left">
+                <p className="text-green-200 font-medium">45+ Minutes</p>
+                <p className="text-white/60 text-sm">Of content</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-2">
+              <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center backdrop-blur-sm">
+                <Eye className="h-5 w-5 text-green-300" />
+              </div>
+              <div className="text-left">
+                <p className="text-green-200 font-medium">100K+ Views</p>
+                <p className="text-white/60 text-sm">And growing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Hero bottom wave effect */}
+        <div className="absolute bottom-0 left-0 w-full">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160">
+            <path 
+              fill="#ffffff" 
+              fillOpacity="0.1"
+              d="M0,128L60,112C120,96,240,64,360,64C480,64,600,96,720,112C840,128,960,128,1080,112C1200,96,1320,64,1380,48L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+            ></path>
+            <path 
+              fill="#ffffff" 
+              fillOpacity="0.2"
+              d="M0,96L60,106.7C120,117,240,139,360,133.3C480,128,600,96,720,85.3C840,75,960,85,1080,96C1200,107,1320,117,1380,122.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+            ></path>
+          </svg>
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      {/* Videos Content with Green Gradient Background */}
+      <section className="py-20 bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 relative overflow-hidden">
+        {/* Decorative elements similar to HowItWorks */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-premium-green/15 via-transparent to-transparent"></div>
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-l from-green-200/10 to-emerald-300/10 rounded-full blur-2xl"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           
           {/* Categories Filter */}
           <div className="flex flex-wrap gap-4 justify-center mb-12">
