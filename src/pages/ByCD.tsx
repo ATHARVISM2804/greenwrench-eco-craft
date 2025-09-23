@@ -118,12 +118,12 @@ const ByCD = () => {
             backgroundImage: "url('https://plus.unsplash.com/premium_photo-1664303370099-cd2fee3b3c79?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')", // You'll need to add this image
             backgroundSize: "cover",
             backgroundPosition: "center",
-            opacity: 0.5
+            opacity: 0.3
           }}
         ></div>
         
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/70 via-emerald-800/60 to-emerald-700/50 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#004d25]/80 via-[#00592a]/70 to-[#005628]/60 z-10"></div>
         
         {/* Decorative circles */}
         <div className="absolute -left-24 top-1/4 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl z-10"></div>
@@ -187,7 +187,7 @@ const ByCD = () => {
 
       {/* CD Options - Already updated with gradient */}
 
-      
+
       <section className="py-20 bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-premium-green/15 via-transparent to-transparent"></div>
         <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl"></div>

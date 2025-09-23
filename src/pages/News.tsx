@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, TrendingUp, X, ExternalLink, ArrowRight } from "lucide-react";
+import { Calendar, Clock, TrendingUp, X, ExternalLink, ArrowRight, FileText } from "lucide-react";
 import React, { useState } from "react";
 
 const News = () => {
@@ -195,7 +195,7 @@ const News = () => {
     <div className="min-h-screen bg-background">
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-hero text-white py-32 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#004d25] via-[#00592a] to-[#005628] text-white py-32 overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 z-0"
@@ -203,22 +203,58 @@ const News = () => {
             backgroundImage: "url('https://images.unsplash.com/photo-1529307474719-3d0a417aaf8a?auto=format&fit=crop&w=1200&q=80')",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            opacity: 0.3,
+            opacity: 0.5, // Reduced opacity to show the deep green better
           }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-premium-green-dark/50 via-transparent to-premium-green/30 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#004d25]/80 via-[#00592a]/70 to-[#005628]/60 z-10"></div>
+        
+        {/* Decorative circles */}
+        <div className="absolute -left-24 top-1/4 w-64 h-64 bg-[#007c3e]/20 rounded-full blur-3xl z-10"></div>
+        <div className="absolute -right-32 bottom-0 w-80 h-80 bg-[#007c3e]/20 rounded-full blur-3xl z-10"></div>
+        <div className="absolute right-1/4 top-1/3 w-40 h-40 bg-[#008f47]/20 rounded-full blur-2xl z-10"></div>
+        
         <div className="container mx-auto px-4 text-center relative z-20">
           <div className="inline-block mb-6">
-            <span className="px-6 py-3 bg-premium-green/20 border border-primary-glow/30 rounded-full text-primary-glow text-lg font-semibold backdrop-blur-sm animate-pulse">
-              📰 Breaking Updates
+            <span className="px-6 py-3 bg-white/10 border border-white/20 rounded-full text-white text-lg font-semibold backdrop-blur-sm">
+              📰 Latest Updates
             </span>
           </div>
-          <h1 className="text-6xl lg:text-7xl font-bold mb-8 animate-fade-in">
-            Latest <span className="bg-gradient-premium bg-clip-text text-transparent">News</span>
+          
+          <h1 className="text-6xl lg:text-7xl font-extrabold mb-4">
+            <span className="text-white">Latest </span>
+            <span className="text-[#40c67d]">News</span>
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto animate-slide-up leading-relaxed">
-            Stay updated with the latest government policies, regulations, and industry developments in automotive recycling
+          
+          {/* Animated underline similar to the image */}
+          <div className="w-40 h-1 bg-[#40c67d] mx-auto mb-8"></div>
+          
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
+            Stay updated with the latest government policies, regulations, and industry developments 
+            in automotive recycling and sustainable practices
           </p>
+          
+          {/* Stats display similar to the image */}
+          <div className="flex flex-wrap justify-center gap-8 mt-12">
+            <div className="flex items-center">
+              <div className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 bg-white/10 mr-4">
+                <Calendar className="w-5 h-5 text-white" />
+              </div>
+              <div className="text-left">
+                <div className="text-2xl font-bold text-white">{new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</div>
+                <div className="text-white/70">Latest Updates</div>
+              </div>
+            </div>
+            
+            <div className="flex items-center">
+              <div className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 bg-white/10 mr-4">
+                <FileText className="w-5 h-5 text-white" />
+              </div>
+              <div className="text-left">
+                <div className="text-2xl font-bold text-white">{newsItems.length}+ Articles</div>
+                <div className="text-white/70">Updated Weekly</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

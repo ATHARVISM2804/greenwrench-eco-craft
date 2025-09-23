@@ -58,7 +58,7 @@ const About = () => {
     <div className="min-h-screen bg-background">
       
       {/* Hero Section - Updated to match Video Gallery style */}
-      <section className="relative bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-700 text-white py-32 overflow-hidden">
+      <section className="relative bg-[#15803d] text-white py-32 overflow-hidden">
         {/* Background overlay with app icons - increased opacity for better visibility */}
         <div
           className="absolute inset-0 z-0"
@@ -66,17 +66,15 @@ const About = () => {
             backgroundImage: "url('https://images.unsplash.com/photo-1645216755684-c946ce202427?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            opacity: 0.3, // Increased from 0.15 to 0.3 for better visibility
+            opacity: 0.4, // Lower opacity for more solid green effect
           }}
         ></div>
-        
-        {/* Gradient overlay - reduced opacity for better image visibility */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/70 via-emerald-800/60 to-emerald-700/50 z-10"></div>
-        
+        {/* Solid green overlay for the hero section */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#004d25]/80 via-[#00592a]/70 to-[#005628]/60 z-10"></div>
         {/* Decorative circles */}
-        <div className="absolute -left-24 top-1/4 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl z-10"></div>
-        <div className="absolute -right-32 bottom-0 w-80 h-80 bg-emerald-300/20 rounded-full blur-3xl z-10"></div>
-        <div className="absolute right-1/4 top-1/3 w-40 h-40 bg-emerald-400/30 rounded-full blur-2xl z-10"></div>
+        <div className="absolute -left-24 top-1/4 w-64 h-64 bg-[#15803d]/30 rounded-full blur-3xl z-10"></div>
+        <div className="absolute -right-32 bottom-0 w-80 h-80 bg-[#15803d]/20 rounded-full blur-3xl z-10"></div>
+        <div className="absolute right-1/4 top-1/3 w-40 h-40 bg-[#15803d]/20 rounded-full blur-2xl z-10"></div>
         
         <div className="container mx-auto px-4 text-center relative z-20">
           <div className="inline-block mb-6">
