@@ -38,8 +38,9 @@ const ContactUs = () => {
   }
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-background to-secondary/5">
-      <div className="container px-4 mx-auto">
+    <section id="contact" className="py-20 bg-gradient-to-b from-premium-green/30 via-premium-green/10 to-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-premium-green/10 via-transparent to-transparent"></div>
+      <div className="container px-4 mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Get in <span className="text-primary">Touch</span>
@@ -53,8 +54,8 @@ const ContactUs = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Contact Information */}
           <div className="space-y-8">
-            <Card className="overflow-hidden border-none shadow-lg">
-              <div className="h-[400px] w-full rounded-t-xl">
+            <Card className="overflow-hidden border-none shadow-xl bg-gradient-to-br from-white to-premium-green/5">
+              <div className="h-[400px] w-full rounded-t-xl overflow-hidden shadow-inner">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.9729344346366!2d-73.9478760842308!3d40.7750389793243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2589a018531e3%3A0xb9df1f7387a94119!2sCentral%20Park!5e0!3m2!1sen!2sus!4v1632301926307!5m2!1sen!2sus"
                   width="100%"
@@ -65,12 +66,12 @@ const ContactUs = () => {
                   title="GreenWrench Location"
                 ></iframe>
               </div>
-              <CardContent className="p-8 bg-card">
-                <h3 className="text-2xl font-bold mb-6 text-foreground">Contact Information</h3>
+              <CardContent className="p-8 bg-white/80 backdrop-blur-sm">
+                <h3 className="text-2xl font-bold mb-6 bg-gradient-premium bg-clip-text text-transparent">Contact Information</h3>
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-primary/10 p-3 rounded-full">
-                      <MapPin className="h-6 w-6 text-primary" />
+                    <div className="bg-gradient-to-br from-primary to-premium-green p-3 rounded-full shadow-md">
+                      <MapPin className="h-6 w-6 text-white" />
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground">Our Location</h4>
@@ -79,8 +80,8 @@ const ContactUs = () => {
                   </div>
                   
                   <div className="flex items-start space-x-4">
-                    <div className="bg-primary/10 p-3 rounded-full">
-                      <Phone className="h-6 w-6 text-primary" />
+                    <div className="bg-gradient-to-br from-primary to-premium-green p-3 rounded-full shadow-md">
+                      <Phone className="h-6 w-6 text-white" />
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground">Phone Number</h4>
@@ -89,8 +90,8 @@ const ContactUs = () => {
                   </div>
                   
                   <div className="flex items-start space-x-4">
-                    <div className="bg-primary/10 p-3 rounded-full">
-                      <Mail className="h-6 w-6 text-primary" />
+                    <div className="bg-gradient-to-br from-primary to-premium-green p-3 rounded-full shadow-md">
+                      <Mail className="h-6 w-6 text-white" />
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground">Email Address</h4>
@@ -99,8 +100,8 @@ const ContactUs = () => {
                   </div>
                   
                   <div className="flex items-start space-x-4">
-                    <div className="bg-primary/10 p-3 rounded-full">
-                      <Clock className="h-6 w-6 text-primary" />
+                    <div className="bg-gradient-to-br from-primary to-premium-green p-3 rounded-full shadow-md">
+                      <Clock className="h-6 w-6 text-white" />
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground">Working Hours</h4>
@@ -113,9 +114,9 @@ const ContactUs = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="shadow-lg border-none">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-6 text-foreground">Send us a Message</h3>
+          <Card className="shadow-xl border-none bg-gradient-to-br from-white to-premium-green/5">
+            <CardContent className="p-8 bg-white/80 backdrop-blur-sm">
+              <h3 className="text-2xl font-bold mb-6 bg-gradient-premium bg-clip-text text-transparent">Send us a Message</h3>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -179,7 +180,11 @@ const ContactUs = () => {
                     )}
                   />
                   
-                  <Button type="submit" className="w-full" size="lg">
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-gradient-to-r from-primary to-premium-green hover:from-primary/90 hover:to-premium-green/90 text-white shadow-lg" 
+                    size="lg"
+                  >
                     <Send className="mr-2 h-4 w-4" />
                     Send Message
                   </Button>

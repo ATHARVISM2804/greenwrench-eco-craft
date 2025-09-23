@@ -30,8 +30,10 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="py-32 bg-gradient-card relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-premium-green/5 via-transparent to-premium-green-light/5"></div>
+    <section className="py-32 bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-premium-green/15 via-transparent to-transparent"></div>
+      <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl"></div>
+      <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-l from-green-200/10 to-emerald-300/10 rounded-full blur-2xl"></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-20">
           <div className="inline-block mb-6">
@@ -40,7 +42,7 @@ const HowItWorks = () => {
             </span>
           </div>
           <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-8">
-            How It <span className="bg-gradient-premium bg-clip-text text-transparent">Works</span>
+            How It <span className="text-transparent bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text">Works</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Simple 4-step process to get the best value for your scrap car with complete peace of mind
@@ -51,19 +53,19 @@ const HowItWorks = () => {
           {steps.map((step, index) => (
             <div key={index} className="relative">
               {/* Step Number */}
-              <div className="absolute -top-4 -left-4 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm z-10">
+              <div className="absolute -top-4 -left-4 w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 text-white rounded-full flex items-center justify-center font-bold text-md z-10 shadow-md">
                 {index + 1}
               </div>
               
               {/* Connection Line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary to-primary-glow transform -translate-y-1/2 z-0"></div>
+                <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-green-500 to-emerald-400 transform -translate-y-1/2 z-0"></div>
               )}
 
-              <Card className="h-full bg-white shadow-card hover:shadow-premium transition-all duration-300 transform hover:-translate-y-2 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card className="h-full bg-white/90 shadow-card border border-green-100 hover:shadow-premium hover:border-green-200 transition-all duration-300 transform hover:-translate-y-2 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardContent className="p-8 text-center">
-                  <div className={`w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-card flex items-center justify-center ${step.color}`}>
-                    <step.icon className="h-8 w-8" />
+                  <div className={`w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center ${step.color}`}>
+                    <step.icon className="h-8 w-8 text-green-600" />
                   </div>
                   
                   <h3 className="text-xl font-bold text-foreground mb-4">
@@ -81,22 +83,25 @@ const HowItWorks = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <div className="bg-white rounded-2xl p-8 shadow-premium inline-block">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              Ready to Get Started?
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              Get your instant quote now and experience our hassle-free service
-            </p>
-            <a
-              href="https://wa.me/919999999999?text=I want to start the car scrapping process"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 bg-gradient-primary text-white rounded-lg font-semibold hover:shadow-button transition-all duration-300"
-            >
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Start WhatsApp Chat
-            </a>
+          <div className="bg-gradient-to-br from-white to-green-50 rounded-2xl p-8 shadow-premium border border-green-100 inline-block relative overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-green-100/40 via-transparent to-transparent"></div>
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                Ready to Get Started?
+              </h3>
+              <p className="text-muted-foreground mb-6">
+                Get your instant quote now and experience our hassle-free service
+              </p>
+              <a
+                href="https://wa.me/919999999999?text=I want to start the car scrapping process"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-green-200 transition-all duration-300"
+              >
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Start WhatsApp Chat
+              </a>
+            </div>
           </div>
         </div>
       </div>
