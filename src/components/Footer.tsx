@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { MessageCircle, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/GreenLogo.png";
 
 const Footer = () => {
   const quickLinks = [
@@ -30,7 +30,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <img src={logo} alt="GreenWrench Solutions" className="h-12 w-auto filter brightness-0 invert" />
+              <img src={logo} alt="GreenWrench Solutions" className="h-12 w-auto" />
               <div className="flex flex-col">
                 <span className="text-2xl font-bold">GreenWrench</span>
                 <span className="text-sm text-white/70">Solutions</span>

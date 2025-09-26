@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/GreenLogo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,7 +14,7 @@ const Header = () => {
     { name: "News", href: "/news" },
     { name: "Videos", href: "/videos" },
     { name: "About Us", href: "/about" },
-    { name: "By CD", href: "/by-cd" },
+    { name: "Buy CD", href: "/by-cd" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -26,7 +26,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-4 group">
             <div className="relative">
-              <img src={logo} alt="GreenWrench Solutions" className="h-14 w-auto group-hover:scale-105 transition-transform duration-300" />
+              <img src={logo} alt="GreenWrench Solutions" className="h-16 w-auto group-hover:scale-105 transition-transform duration-300" />
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-800/20 to-emerald-600/20 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-300"></div>
             </div>
             <div className="flex flex-col">
