@@ -62,40 +62,125 @@ const Advantages = () => {
           </p>
         </div>
 
-        {/* Advantages Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {advantages.map((advantage, index) => (
-            <Card key={index} className="bg-white shadow-card hover:shadow-premium transition-all duration-300 transform hover:-translate-y-2 animate-slide-up group" style={{ animationDelay: `${index * 0.1}s` }}>
-              <CardContent className="p-6 text-center h-full flex flex-col">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-primary flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
-                  <advantage.icon className="h-8 w-8" />
+        {/* Two-Card Comparison */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {/* The Old Way */}
+          <Card className="bg-red-50 border border-red-100 shadow-none rounded-3xl">
+            <CardContent className="p-10 md:p-12">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-2xl font-bold text-gray-800">The Old Way</h3>
+                <span className="px-3 py-1 rounded-full bg-red-100 text-red-600 text-xs font-semibold">✗ Not Recommended</span>
+              </div>
+              <div className="mb-6">
+                <div className="font-semibold text-gray-700 mb-2">Indirect Route (via third-party agents)</div>
+                <div className="flex items-center justify-between mb-4">
+                  {/* Car icon */}
+                  <span className="flex flex-col items-center">
+                    <span className="text-3xl">🚗</span>
+                  </span>
+                  {/* SVG Diagram */}
+                  <div className="flex-1 flex items-center justify-center">
+                    <svg width="320" height="80" viewBox="0 0 320 80" fill="none">
+                      {/* Wavy red path */}
+                      <path d="M20 40 Q80 10 140 40 Q200 70 260 40 Q290 25 300 40" stroke="#f87171" strokeWidth="5" fill="none"/>
+                      {/* Dealer/Third-party websites */}
+                      <rect x="60" y="5" width="60" height="36" rx="8" fill="#fff" stroke="#fca5a5" strokeWidth="2"/>
+                      <text x="90" y="22" fontSize="11" fill="#b91c1c" textAnchor="middle" fontWeight="bold">Dealer/</text>
+                      <text x="90" y="34" fontSize="11" fill="#b91c1c" textAnchor="middle">Third-party</text>
+                      <text x="90" y="46" fontSize="11" fill="#b91c1c" textAnchor="middle">websites</text>
+                      {/* Agents */}
+                      <rect x="140" y="40" width="60" height="36" rx="8" fill="#fff" stroke="#fca5a5" strokeWidth="2"/>
+                      <text x="170" y="62" fontSize="13" fill="#b91c1c" textAnchor="middle" fontWeight="bold">Agents</text>
+                      {/* Unknown Yard */}
+                      <rect x="260" y="20" width="60" height="36" rx="8" fill="#fff" stroke="#fca5a5" strokeWidth="2"/>
+                      <text x="290" y="42" fontSize="13" fill="#b91c1c" textAnchor="middle" fontWeight="bold">Unknown</text>
+                      <text x="290" y="56" fontSize="13" fill="#b91c1c" textAnchor="middle" fontWeight="bold">Yard</text>
+                      {/* Red circles with exclamation marks */}
+                      <circle cx="120" cy="22" r="13" fill="#fee2e2" stroke="#f87171" strokeWidth="3"/>
+                      <text x="120" y="28" fontSize="18" fill="#f87171" textAnchor="middle" fontWeight="bold">!</text>
+                      <circle cx="200" cy="58" r="13" fill="#fee2e2" stroke="#f87171" strokeWidth="3"/>
+                      <text x="200" y="64" fontSize="18" fill="#f87171" textAnchor="middle" fontWeight="bold">!</text>
+                    </svg>
+                  </div>
+                  {/* Exclamation icon */}
+                  <span className="flex flex-col items-center">
+                    <span className="text-2xl text-red-500">❗</span>
+                  </span>
                 </div>
-                
-                <h3 className="text-xl font-bold text-foreground mb-4">
-                  {advantage.title}
-                </h3>
-                
-                <p className="text-muted-foreground leading-relaxed mb-6 flex-grow">
-                  {advantage.description}
-                </p>
-
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="mt-auto border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
-                  asChild
-                >
-                  <a
-                    href={`https://wa.me/919999999999?text=${encodeURIComponent(advantage.whatsappText)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {advantage.action}
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+              </div>
+              <ul className="space-y-2 text-red-700 text-sm mb-2">
+                <li>✗ Your vehicle passes through multiple hands (dealer/third party website → agent → unknown yard)</li>
+                <li>✗ Not all platforms that collect old vehicles are government-licensed to issue CoD or CVS</li>
+                <li>✗ Reduced value due to multiple middlemen taking their cut</li>
+                <li>✗ Risk of improper disposal and environmental damage</li>
+                <li>✗ Delays in processing and documentation</li>
+              </ul>
+              <div className="text-xs text-red-500 mt-2">
+                *Unlicensed aggregators and dealer-based bidding routes may not provide
+                legal safety or proper documentation.
+              </div>
+            </CardContent>
+          </Card>
+          {/* The Smart Way */}
+          <Card className="bg-green-50 border border-green-100 shadow-none rounded-3xl">
+            <CardContent className="p-10 md:p-12">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-2xl font-bold text-gray-800">The Smart Way</h3>
+                <span className="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-semibold">✓ Recommended</span>
+              </div>
+              <div className="mb-6">
+                <div className="font-semibold text-gray-700 mb-2">Direct Legal Scrapping (with GreenWrench)</div>
+                <div className="flex items-center justify-between mb-4">
+                  {/* Car icon */}
+                  <span className="flex flex-col items-center">
+                    <span className="text-3xl">🚗</span>
+                  </span>
+                  {/* SVG Diagram */}
+                  <div className="flex-1 flex items-center justify-center">
+                    <svg width="320" height="80" viewBox="0 0 320 80" fill="none">
+                      {/* Green straight path */}
+                      <rect x="40" y="36" width="240" height="8" rx="4" fill="#bbf7d0"/>
+                      <rect x="40" y="36" width="240" height="8" rx="4" fill="#34d399" fillOpacity="0.2"/>
+                      {/* Car to GreenWrench */}
+                      <rect x="90" y="20" width="70" height="40" rx="10" fill="#fff" stroke="#34d399" strokeWidth="2"/>
+                      <text x="125" y="40" fontSize="14" fill="#059669" textAnchor="middle" fontWeight="bold">GreenWrench</text>
+                      <text x="125" y="56" fontSize="10" fill="#059669" textAnchor="middle">Authorized RVSF</text>
+                      {/* Certificate */}
+                      <rect x="220" y="20" width="60" height="40" rx="10" fill="#fff" stroke="#34d399" strokeWidth="2"/>
+                      <text x="250" y="40" fontSize="14" fill="#059669" textAnchor="middle" fontWeight="bold">Certificate</text>
+                      {/* Green checkmarks */}
+                      <g>
+                        <circle cx="80" cy="40" r="14" fill="#bbf7d0" stroke="#34d399" strokeWidth="2"/>
+                        <text x="80" y="46" fontSize="18" fill="#22c55e" textAnchor="middle" fontWeight="bold">✓</text>
+                      </g>
+                      <g>
+                        <circle cx="210" cy="40" r="14" fill="#bbf7d0" stroke="#34d399" strokeWidth="2"/>
+                        <text x="210" y="46" fontSize="18" fill="#22c55e" textAnchor="middle" fontWeight="bold">✓</text>
+                      </g>
+                      <g>
+                        <circle cx="280" cy="40" r="14" fill="#bbf7d0" stroke="#34d399" strokeWidth="2"/>
+                        <text x="280" y="46" fontSize="18" fill="#22c55e" textAnchor="middle" fontWeight="bold">✓</text>
+                      </g>
+                    </svg>
+                  </div>
+                  {/* Checkmark icon */}
+                  <span className="flex flex-col items-center">
+                    <span className="text-2xl text-green-600">✅</span>
+                  </span>
+                </div>
+              </div>
+              <ul className="space-y-2 text-green-800 text-sm mb-2">
+                <li>✓ Direct path from customer to authorized RVSF (GreenWrench)</li>
+                <li>✓ Legally valid Certificate of Deposit (CoD) and Certificate of Vehicle Scrapping (CVS)</li>
+                <li>✓ Maximum value with no middlemen taking cuts</li>
+                <li>✓ Environmentally responsible disposal with 90% recycling rate</li>
+                <li>✓ Quick processing and immediate certificate issuance</li>
+              </ul>
+              <div className="text-xs text-green-700 mt-2">
+                *Avoid unnecessary middlemen. Go direct for maximum value and legal safety with GreenWrench, a government-authorized RVSF.
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Features Section */}

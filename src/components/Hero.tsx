@@ -2,29 +2,33 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { MessageCircle, Star, Shield, Clock } from "lucide-react";
+import { MessageCircle, Star, Shield, Clock, Car, Bike, Truck, Bus, User, Phone, CreditCard } from "lucide-react";
 import heroImage from "@/assets/hero-recycling-premium.jpg";
 
+const VEHICLE_TYPES = [
+  { label: "Car", icon: Car },
+  { label: "Bike", icon: Bike },
+  { label: "Truck", icon: Truck },
+  { label: "Other", icon: Bus },
+];
+
+const MAKES = ["Maruti", "Hyundai", "Honda", "Tata", "Toyota"];
+const MODELS = ["Model 1", "Model 2", "Model 3"];
+
 const Hero = () => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    vehicleNumber: "",
-    phone: "",
-  });
+  const [vehicleType, setVehicleType] = useState("Car");
+  const [make, setMake] = useState("");
+  const [model, setModel] = useState("");
+  const [vehicleNo, setVehicleNo] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [agree, setAgree] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const whatsappMessage = `Hi! I want to get a quote for my vehicle: ${formData.vehicleNumber}. Name: ${formData.firstName} ${formData.lastName}, Phone: ${formData.phone}`;
+    const whatsappMessage = `Hi! I want to get a quote for my vehicle: ${vehicleNo}. Name: ${name}, Phone: ${phone}`;
     const whatsappUrl = `https://wa.me/919999999999?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
   };
 
   return (
@@ -103,112 +107,133 @@ const Hero = () => {
           {/* Right Content - Quote Form */}
           <div className="animate-slide-up">
             <Card className="backdrop-blur-xl bg-white shadow-[0_20px_50px_rgba(8,112,84,0.18)] border border-gray-100 rounded-3xl overflow-hidden transform hover:scale-102 transition-all duration-500">
-              <div className="h-1 bg-gradient-to-r from-emerald-600 to-green-500"></div>
               <CardContent className="p-6 md:p-8 lg:p-10 relative">
-                {/* Sophisticated decorative elements */}
-                <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-emerald-50 to-transparent rounded-full opacity-60 -mr-10 -mt-10"></div>
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-emerald-50 to-transparent rounded-full opacity-60 -ml-10 -mb-10"></div>
-                
-                <div className="text-center mb-6 md:mb-8 relative z-10">
-                  <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-emerald-600 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 shadow-[0_8px_20px_rgba(8,112,84,0.25)] border border-white">
-                    <MessageCircle className="h-8 w-8 md:h-9 md:w-9 text-white" />
+                {/* Feature Row */}
+                <div className="flex justify-between items-center mb-6">
+                  <div className="flex items-center space-x-2 text-green-600 text-base font-medium">
+                    <Shield className="h-5 w-5 text-green-600" />
+                    <span>Maximum value</span>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-1">Get Your</h3>
-                  <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-emerald-700 to-emerald-500 bg-clip-text text-transparent mb-2">FREE INSTANT</h2>
-                  <div className="h-0.5 w-16 bg-emerald-100 mx-auto mb-2"></div>
-                  <p className="text-base md:text-lg text-gray-600 font-medium tracking-wide">ONLINE CAR VALUATION IN 60 SEC</p>
+                  <div className="flex items-center space-x-2 text-green-600 text-base font-medium">
+                    <Truck className="h-5 w-5 text-green-600" />
+                    <span>Free Pickup</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-green-600 text-base font-medium">
+                    <CreditCard className="h-5 w-5 text-green-600" />
+                    <span>Road tax rebate</span>
+                  </div>
                 </div>
-
-                <form onSubmit={handleSubmit} className="space-y-4 relative z-10">
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="space-y-1">
-                      <label htmlFor="firstName" className="text-xs font-medium text-gray-500 ml-1">First Name</label>
-                      <Input
-                        id="firstName"
-                        type="text"
-                        name="firstName"
-                        placeholder="Enter first name"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        required
-                        className="h-10 md:h-12 bg-gray-50 border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-200 focus:bg-white transition-all duration-300 rounded-lg text-gray-800 shadow-sm"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <label htmlFor="lastName" className="text-xs font-medium text-gray-500 ml-1">Last Name</label>
-                      <Input
-                        id="lastName"
-                        type="text"
-                        name="lastName"
-                        placeholder="Enter last name"
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                        required
-                        className="h-10 md:h-12 bg-gray-50 border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-200 focus:bg-white transition-all duration-300 rounded-lg text-gray-800 shadow-sm"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-1">
-                    <label htmlFor="vehicleNumber" className="text-xs font-medium text-gray-500 ml-1">Vehicle Registration Number</label>
-                    <Input
-                      id="vehicleNumber"
-                      type="text"
-                      name="vehicleNumber"
-                      placeholder="e.g., DL-01-AB-1234"
-                      value={formData.vehicleNumber}
-                      onChange={handleInputChange}
-                      required
-                      className="h-10 md:h-12 bg-gray-50 border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-200 focus:bg-white transition-all duration-300 rounded-lg text-gray-800 shadow-sm"
-                    />
-                  </div>
-                  
-                  <div className="space-y-1">
-                    <label htmlFor="phone" className="text-xs font-medium text-gray-500 ml-1">Contact Number</label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      name="phone"
-                      placeholder="Enter your phone number"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      required
-                      className="h-10 md:h-12 bg-gray-50 border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-200 focus:bg-white transition-all duration-300 rounded-lg text-gray-800 shadow-sm"
-                    />
-                  </div>
-
-                  <div className="pt-1 md:pt-2">
-                    <Button
-                      type="submit"
-                      size="lg"
-                      className="w-full h-10 md:h-12 bg-gradient-to-r from-emerald-700 to-emerald-500 hover:from-emerald-600 hover:to-emerald-400 text-white shadow-md hover:shadow-lg hover:shadow-emerald-200/40 transition-all duration-300 text-sm md:text-base font-semibold transform hover:-translate-y-0.5 rounded-lg"
+                {/* Heading */}
+                <h2 className="text-2xl md:text-3xl font-bold text-center mb-2 text-gray-900">Get an instant valuation</h2>
+                {/* Vehicle Type Tabs */}
+                <div className="flex justify-center gap-3 mb-6">
+                  {VEHICLE_TYPES.map((type) => (
+                    <button
+                      key={type.label}
+                      type="button"
+                      className={`flex flex-col items-center px-6 py-3 rounded-xl border transition-all duration-200 font-semibold text-base
+                        ${vehicleType === type.label
+                          ? "bg-green-50 border-green-400 text-green-700 shadow"
+                          : "bg-white border-gray-200 text-green-600 hover:bg-green-50"}
+                      `}
+                      onClick={() => setVehicleType(type.label)}
                     >
-                      Get Instant Quote
-                    </Button>
-                  </div>
-                </form>
-
-                <div className="mt-6 pt-3 border-t border-gray-100 relative z-10">
-                  <p className="text-xs text-gray-500 text-center">
-                    By submitting, you agree to our <span className="text-emerald-700 hover:underline cursor-pointer font-medium">terms</span> and <span className="text-emerald-700 hover:underline cursor-pointer font-medium">privacy policy</span>.
-                  </p>
-                  <div className="flex items-center justify-center mt-3 space-x-3 md:space-x-4">
-                    <div className="flex items-center">
-                      <Shield className="h-3 w-3 md:h-3.5 md:w-3.5 text-emerald-600 mr-1" />
-                      <span className="text-xs text-gray-600">Secure</span>
-                    </div>
-                    <div className="w-1 h-1 bg-gray-300 rounded-full"></div>
-                    <div className="flex items-center">
-                      <Clock className="h-3 w-3 md:h-3.5 md:w-3.5 text-emerald-600 mr-1" />
-                      <span className="text-xs text-gray-600">Quick Process</span>
-                    </div>
-                    <div className="w-1 h-1 bg-gray-300 rounded-full"></div>
-                    <div className="flex items-center">
-                      <Star className="h-3 w-3 md:h-3.5 md:w-3.5 text-emerald-600 mr-1" />
-                      <span className="text-xs text-gray-600">Best Value</span>
-                    </div>
-                  </div>
+                      <type.icon className="h-6 w-6 mb-1" />
+                      {type.label}
+                    </button>
+                  ))}
                 </div>
+                {/* Form */}
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <select
+                        className="w-full h-12 px-3 rounded-lg border border-gray-200 bg-white text-gray-700 focus:border-green-500 focus:ring-1 focus:ring-green-200"
+                        value={make}
+                        onChange={e => setMake(e.target.value)}
+                        required
+                      >
+                        <option value="">Select Make</option>
+                        {MAKES.map(m => <option key={m} value={m}>{m}</option>)}
+                      </select>
+                    </div>
+                    <div>
+                      <select
+                        className="w-full h-12 px-3 rounded-lg border border-gray-200 bg-white text-gray-700 focus:border-green-500 focus:ring-1 focus:ring-green-200"
+                        value={model}
+                        onChange={e => setModel(e.target.value)}
+                        required
+                      >
+                        <option value="">Select Model</option>
+                        {MODELS.map(m => <option key={m} value={m}>{m}</option>)}
+                      </select>
+                    </div>
+                  </div>
+                  {/* Vehicle No. */}
+                  <div className="relative">
+                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-green-600">
+                      <CreditCard className="h-5 w-5" />
+                    </span>
+                    <Input
+                      className="pl-10 h-12 bg-gray-50 border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-200 rounded-lg text-gray-800"
+                      placeholder="Vehicle No: AB12CD3456"
+                      value={vehicleNo}
+                      onChange={e => setVehicleNo(e.target.value)}
+                      required
+                    />
+                  </div>
+                  {/* Name & Phone */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="relative">
+                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-green-600">
+                        <User className="h-5 w-5" />
+                      </span>
+                      <Input
+                        className="pl-10 h-12 bg-gray-50 border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-200 rounded-lg text-gray-800"
+                        placeholder="Your Name"
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <div className="relative">
+                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-green-600">
+                        <Phone className="h-5 w-5" />
+                      </span>
+                      <Input
+                        className="pl-10 h-12 bg-gray-50 border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-200 rounded-lg text-gray-800"
+                        placeholder="Phone Number"
+                        value={phone}
+                        onChange={e => setPhone(e.target.value)}
+                        required
+                      />
+                    </div>
+                  </div>
+                  {/* Terms */}
+                  <div className="flex items-center space-x-2">
+                    <input
+                      id="agree"
+                      type="checkbox"
+                      checked={agree}
+                      onChange={e => setAgree(e.target.checked)}
+                      className="accent-green-600 w-4 h-4"
+                      required
+                    />
+                    <label htmlFor="agree" className="text-sm text-gray-700">
+                      I agree to the <a href="#" className="text-green-700 underline">Terms & Conditions</a>
+                    </label>
+                  </div>
+                  {/* Button */}
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full h-12 bg-gradient-to-r from-green-700 to-green-500 hover:from-green-600 hover:to-green-400 text-white text-lg font-semibold rounded-lg flex items-center justify-center gap-2"
+                    disabled={!agree}
+                  >
+                    <CreditCard className="h-5 w-5" />
+                    Get My Free Quote
+                  </Button>
+                </form>
               </CardContent>
             </Card>
           </div>
