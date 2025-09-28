@@ -110,8 +110,10 @@ const ByCD = () => {
     <div className="min-h-screen bg-background">
       
       {/* Hero Section - Updated to match Video Gallery style */}
+
       <section className="relative bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-700 text-white py-32 overflow-hidden">
         {/* Background overlay with financial icons */}
+        
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -185,313 +187,158 @@ const ByCD = () => {
         </div>
       </section>
 
-      {/* CD Options - Already updated with gradient */}
-
-
+      {/* What is a COD in scrap cars? */}
       <section className="py-20 bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-premium-green/15 via-transparent to-transparent"></div>
         <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl"></div>
         <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-l from-green-200/10 to-emerald-300/10 rounded-full blur-2xl"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">
-              Choose Your Investment Plan
+        <div className="container mx-auto px-4 relative z-10 flex flex-col items-center">
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-extrabold text-foreground mb-6 tracking-tight">
+              What is a COD (Certificate of Destruction) in Scrap Cars?
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Select from our range of Certificate of Deposit options designed for different investment goals
+            <p className="text-xl text-muted-foreground font-medium">
+              An official document provided by an authorized scrapyard or recycling center confirming that a vehicle has been permanently scrapped and will not be used on the road again.
             </p>
           </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {cdOptions.map((option, index) => (
-              <Card key={index} className={`h-full shadow-card hover:shadow-premium transition-all duration-300 transform hover:-translate-y-2 animate-slide-up relative ${option.popular ? 'ring-2 ring-primary' : ''}`} style={{ animationDelay: `${index * 0.1}s` }}>
-                {option.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary">
-                    Most Popular
-                  </Badge>
-                )}
-                
-                <CardContent className="p-8 h-full flex flex-col">
-                  <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-foreground mb-2">
-                      {option.type}
-                    </h3>
-                    <div className="text-4xl font-bold text-primary mb-2">
-                      {option.interestRate}
-                    </div>
-                    <div className="text-muted-foreground">
-                      per annum for {option.duration}
-                    </div>
-                    <div className="mt-4 text-lg font-semibold text-foreground">
-                      Minimum: {option.minAmount}
-                    </div>
-                  </div>
-
-                  <div className="space-y-4 mb-8 flex-grow">
-                    {option.features.map((feature, i) => (
-                      <div key={i} className="flex items-center space-x-3">
-                        <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                        <span className="text-muted-foreground">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <Button
-                    size="lg"
-                    className={`w-full ${option.popular ? 'bg-gradient-primary' : ''}`}
-                    variant={option.popular ? "default" : "outline"}
-                    asChild
-                  >
-                    <a
-                      href={`https://wa.me/919999999999?text=I want to invest in ${option.type} Certificate of Deposit`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Invest Now
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <Card className="max-w-2xl w-full shadow-xl rounded-2xl border-0 bg-white/90 backdrop-blur-lg">
+            <CardContent className="p-10 flex flex-col items-center">
+              <div className="mb-6 flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary to-emerald-400 shadow-lg">
+                <FileText className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Certificate of Destruction (COD)</h3>
+              <p className="text-muted-foreground leading-relaxed text-center text-lg">
+                A COD is issued by a Registered Vehicle Scrapping Facility (RVSF) and serves as legal proof that your vehicle has been scrapped, ensuring it cannot be used or resold illegally.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
-      {/* Benefits */}
+      {/* Main benefits of obtaining a COD */}
       <section className="py-20 bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-premium-green/15 via-transparent to-transparent"></div>
         <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl"></div>
         <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-l from-green-200/10 to-emerald-300/10 rounded-full blur-2xl"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">
-              Why Choose Our Certificate of Deposit?
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-extrabold text-foreground mb-6 tracking-tight">
+              Main Benefits of Obtaining a COD
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Discover the advantages of investing with GreenWrench Solutions
+            <p className="text-xl text-muted-foreground font-medium">
+              Why you should get a Certificate of Destruction when scrapping your car
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="text-center shadow-card hover:shadow-premium transition-all duration-300 transform hover:-translate-y-2 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-primary flex items-center justify-center text-white">
-                    <benefit.icon className="h-8 w-8" />
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-foreground mb-4">
-                    {benefit.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground leading-relaxed">
-                    {benefit.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 justify-center">
+            <Card className="text-center shadow-xl rounded-2xl border-0 bg-white/90 backdrop-blur-lg flex flex-col items-center">
+              <CardContent className="p-8 flex flex-col items-center">
+                <div className="mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-primary to-emerald-400 shadow-lg">
+                  <Shield className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Legal Proof</h3>
+                <p className="text-muted-foreground text-base">Confirms your car is scrapped and protects you from future liabilities.</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center shadow-xl rounded-2xl border-0 bg-white/90 backdrop-blur-lg flex flex-col items-center">
+              <CardContent className="p-8 flex flex-col items-center">
+                <div className="mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-primary to-emerald-400 shadow-lg">
+                  <DollarSign className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Protects Owner</h3>
+                <p className="text-muted-foreground text-base">Prevents road tax, fines, or penalties after scrapping.</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center shadow-xl rounded-2xl border-0 bg-white/90 backdrop-blur-lg flex flex-col items-center">
+              <CardContent className="p-8 flex flex-col items-center">
+                <div className="mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-primary to-emerald-400 shadow-lg">
+                  <Eye className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Prevents Illegal Resale</h3>
+                <p className="text-muted-foreground text-base">Ensures the vehicle cannot be resold or misused.</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center shadow-xl rounded-2xl border-0 bg-white/90 backdrop-blur-lg flex flex-col items-center">
+              <CardContent className="p-8 flex flex-col items-center">
+                <div className="mb-4 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-primary to-emerald-400 shadow-lg">
+                  <Star className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Eco-Friendly Disposal</h3>
+                <p className="text-muted-foreground text-base">Helps in safe and environmentally responsible vehicle disposal.</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* How can the COD be utilized for discount? */}
       <section className="py-20 bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-premium-green/15 via-transparent to-transparent"></div>
         <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 left-10 w-72 h-72 bg-gradient-to-l from-green-200/10 to-emerald-300/10 rounded-full blur-2xl"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">
-              How to Get Started
+        <div className="container mx-auto px-4 relative z-10 flex flex-col items-center">
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-extrabold text-foreground mb-6 tracking-tight">
+              How Can the COD Be Utilized for Discount?
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Simple 4-step process to start your investment journey
+            <p className="text-xl text-muted-foreground font-medium">
+              Use your COD to get rebates when buying a new vehicle
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {process.map((step, index) => (
-              <div key={index} className="relative">
-                {/* Step Number */}
-                <div className="absolute -top-4 -left-4 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm z-10">
-                  {step.step}
-                </div>
-                
-                {/* Connection Line */}
-                {index < process.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary to-primary-glow transform -translate-y-1/2 z-0"></div>
-                )}
-
-                <Card className="h-full bg-white shadow-card hover:shadow-premium transition-all duration-300 transform hover:-translate-y-2 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <CardContent className="p-8 text-center">
-                    <h3 className="text-xl font-bold text-foreground mb-4">
-                      {step.title}
-                    </h3>
-                    
-                    <p className="text-muted-foreground leading-relaxed">
-                      {step.description}
-                    </p>
-                  </CardContent>
-                </Card>
+          <Card className="max-w-2xl w-full shadow-xl rounded-2xl border-0 bg-white/90 backdrop-blur-lg">
+            <CardContent className="p-10 flex flex-col items-center">
+              <div className="mb-6 flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary to-emerald-400 shadow-lg">
+                <DollarSign className="h-8 w-8 text-white" />
               </div>
-            ))}
-          </div>
+              <h3 className="text-2xl font-bold text-foreground mb-4">COD Discount Benefits</h3>
+              <p className="text-muted-foreground leading-relaxed text-center text-lg mb-4">
+                When you scrap your vehicle at an RVSF, you receive a COD. If you buy a new vehicle, states can offer up to <span className="font-bold text-primary">25% rebate</span> on road tax for personal and commercial vehicles using this certificate.
+              </p>
+              <p className="text-muted-foreground text-center text-base">
+                <span className="font-bold">Note:</span> The certificate is valid for 3 years. If not used within this period, it expires and you cannot claim the benefits.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
-      {/* Buy/Sell Tabs */}
+      {/* Documents Required for COD Purchase */}
       <section className="py-20 bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-premium-green/15 via-transparent to-transparent"></div>
         <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl"></div>
         <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-l from-green-200/10 to-emerald-300/10 rounded-full blur-2xl"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <Tabs defaultValue="buy" className="max-w-4xl mx-auto">
-            <TabsList className="grid w-full grid-cols-2 mb-12">
-              <TabsTrigger value="buy" className="text-lg py-3">Buy Certificate of Deposit</TabsTrigger>
-              <TabsTrigger value="sell" className="text-lg py-3">Sell/Withdraw CD</TabsTrigger>
-            </TabsList>
-            
-            <TabsContent value="buy">
-              <Card className="shadow-premium">
-                <CardContent className="p-8">
-                  <div className="text-center mb-8">
-                    <h3 className="text-3xl font-bold text-foreground mb-4">
-                      Purchase Certificate of Deposit
-                    </h3>
-                    <p className="text-lg text-muted-foreground">
-                      Start your investment journey with guaranteed returns
-                    </p>
+        <div className="container mx-auto px-4 relative z-10 flex flex-col items-center">
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-extrabold text-foreground mb-6 tracking-tight">
+              Documents Required for COD Purchase
+            </h2>
+            <p className="text-xl text-muted-foreground font-medium">
+              Prepare the following documents to obtain your Certificate of Destruction
+            </p>
+          </div>
+          <Card className="max-w-2xl w-full shadow-xl rounded-2xl border-0 bg-white/90 backdrop-blur-lg">
+            <CardContent className="p-10">
+              <ul className="space-y-6">
+                <li className="flex items-center space-x-4">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-emerald-400 shadow-lg">
+                    <FileText className="h-6 w-6 text-white" />
                   </div>
-
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="space-y-6">
-                      <h4 className="text-xl font-bold text-foreground">What You Need:</h4>
-                      <ul className="space-y-3">
-                        {[
-                          "Valid government ID (Aadhaar/PAN)",
-                          "Bank account details",
-                          "Minimum investment amount",
-                          "Completed application form",
-                        ].map((item, i) => (
-                          <li key={i} className="flex items-center space-x-3">
-                            <CheckCircle className="h-5 w-5 text-primary" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="space-y-6">
-                      <h4 className="text-xl font-bold text-foreground">Investment Options:</h4>
-                      <div className="space-y-4">
-                        <div className="p-4 bg-white rounded-lg border border-border">
-                          <div className="flex justify-between items-center">
-                            <span className="font-medium">Lump Sum Investment</span>
-                            <span className="text-primary font-bold">Available</span>
-                          </div>
-                        </div>
-                        <div className="p-4 bg-white rounded-lg border border-border">
-                          <div className="flex justify-between items-center">
-                            <span className="font-medium">Monthly SIP</span>
-                            <span className="text-primary font-bold">Coming Soon</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <span className="text-lg text-foreground font-medium">Identity Proof – Aadhaar, PAN Card, Driving License, etc.</span>
+                </li>
+                <li className="flex items-center space-x-4">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-emerald-400 shadow-lg">
+                    <Phone className="h-6 w-6 text-white" />
                   </div>
-
-                  <div className="text-center mt-8">
-                    <Button
-                      size="lg"
-                      className="bg-gradient-primary px-8 py-4 text-lg"
-                      asChild
-                    >
-                      <a
-                        href="https://wa.me/919999999999?text=I want to purchase Certificate of Deposit"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <MessageCircle className="mr-2 h-5 w-5" />
-                        Start Investment Process
-                      </a>
-                    </Button>
+                  <span className="text-lg text-foreground font-medium">Mobile No</span>
+                </li>
+                <li className="flex items-center space-x-4">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-emerald-400 shadow-lg">
+                    <MessageCircle className="h-6 w-6 text-white" />
                   </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            
-            <TabsContent value="sell">
-              <Card className="shadow-premium">
-                <CardContent className="p-8">
-                  <div className="text-center mb-8">
-                    <h3 className="text-3xl font-bold text-foreground mb-4">
-                      Withdraw or Sell Your CD
-                    </h3>
-                    <p className="text-lg text-muted-foreground">
-                      Access your funds when you need them
-                    </p>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="space-y-6">
-                      <h4 className="text-xl font-bold text-foreground">Withdrawal Options:</h4>
-                      <div className="space-y-4">
-                        <div className="p-4 bg-white rounded-lg border border-border">
-                          <h5 className="font-semibold text-foreground mb-2">Maturity Withdrawal</h5>
-                          <p className="text-sm text-muted-foreground">Full principal + interest at maturity</p>
-                          <div className="mt-2">
-                            <span className="text-primary font-bold">No penalties</span>
-                          </div>
-                        </div>
-                        <div className="p-4 bg-white rounded-lg border border-border">
-                          <h5 className="font-semibold text-foreground mb-2">Premature Withdrawal</h5>
-                          <p className="text-sm text-muted-foreground">Early withdrawal before maturity</p>
-                          <div className="mt-2">
-                            <span className="text-orange-600 font-bold">Penalty applicable</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="space-y-6">
-                      <h4 className="text-xl font-bold text-foreground">Required Documents:</h4>
-                      <ul className="space-y-3">
-                        {[
-                          "Original CD certificate",
-                          "Valid photo ID",
-                          "Bank account details",
-                          "Withdrawal request form",
-                        ].map((item, i) => (
-                          <li key={i} className="flex items-center space-x-3">
-                            <FileText className="h-5 w-5 text-primary" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="text-center mt-8">
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="px-8 py-4 text-lg border-primary text-primary hover:bg-primary hover:text-white"
-                      asChild
-                    >
-                      <a
-                        href="https://wa.me/919999999999?text=I want to withdraw/sell my Certificate of Deposit"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <MessageCircle className="mr-2 h-5 w-5" />
-                        Initiate Withdrawal
-                      </a>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </Tabs>
+                  <span className="text-lg text-foreground font-medium">Email ID</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -523,7 +370,7 @@ const ByCD = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="px-8 py-4 text-lg border-white text-white hover:bg-white hover:text-primary"
+                className="px-8 py-4 text-lg border-white text-green-700 hover:bg-white hover:text-primary"
                 asChild
               >
                 <a

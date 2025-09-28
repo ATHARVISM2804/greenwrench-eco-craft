@@ -35,22 +35,16 @@ const About = () => {
 
   const team = [
     {
-      name: "Rajesh Kumar",
-      position: "Founder & CEO",
-      experience: "15+ years in automotive industry",
+      name: "Saurabh Kumar Mishra",
+      position: "CEO",
+      experience: "Founder – Greenwrench Solutions",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
     },
     {
-      name: "Dr. Priya Sharma",
-      position: "Head of Environmental Operations",
-      experience: "PhD in Environmental Science",
+      name: "Astha Goel",
+      position: "Our Partner",
+      experience: "",
       image: "https://images.unsplash.com/photo-1494790108755-2616c351e107?w=300&h=300&fit=crop&crop=face",
-    },
-    {
-      name: "Amit Patel",
-      position: "Operations Director",
-      experience: "12+ years in logistics",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
     },
   ];
 
@@ -233,28 +227,30 @@ const About = () => {
         </div>
       </section>
 
-      {/* Stats - with green gradient */}
+      {/* Who We Are Section - improved alignment and bullet points */}
       <section className="py-20 bg-gradient-to-b from-white via-premium-green/10 to-premium-green/20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-l from-green-200/10 to-transparent rounded-full blur-2xl"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Our Impact</h2>
-            <p className="text-xl text-muted-foreground">
-              Numbers that reflect our commitment to excellence and sustainability
-            </p>
+        <div className="container mx-auto px-4 relative z-10 flex flex-col items-center">
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-extrabold text-foreground mb-6 tracking-tight">
+              Who We Are
+            </h2>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-green-50">
-                  <div className="text-4xl mb-4">{stat.icon}</div>
-                  <div className="text-4xl font-bold text-primary mb-2">{stat.number}</div>
-                  <div className="text-muted-foreground font-medium">{stat.label}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Card className="max-w-3xl w-full shadow-xl rounded-2xl border-0 bg-white/90 backdrop-blur-lg">
+            <CardContent className="p-10 flex flex-col items-start">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8 text-left">
+                <span className="font-bold text-primary">GREENWRENCH SOLUTIONS</span> is India’s first online platform dedicated to the scrapping and de-registration of End-Of-Life-Vehicles (ELV). Our unique Vehicle-Specific, AI-Enabled Instant Quotation System built on WhatsApp Chat ensures the best rate for your loved car and our experienced staff assure complete and hassle-free handling of all legal documentation.
+              </p>
+              <ul className="list-disc pl-6 space-y-6 text-left text-lg text-muted-foreground">
+                <li>
+                  We understand that giving away your old vehicle which you owned and loved for many years is an emotional experience. We really understand that and thus, at least when you say Good Bye to your lovely car or bike, we want to make the experience enjoyable and hassle free.
+                </li>
+                <li>
+                  From collection to final recycling and all documentation, we ensure the car owner has a smooth experience with no hassle in dealing with Govt departments.
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -269,7 +265,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {team.map((member, index) => (
               <Card key={index} className="text-center shadow-card hover:shadow-premium transition-all duration-300 transform hover:-translate-y-2 animate-slide-up border border-green-50" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardContent className="p-8">
@@ -280,18 +276,17 @@ const About = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  
                   <h3 className="text-xl font-bold text-foreground mb-2">
                     {member.name}
                   </h3>
-                  
                   <p className="text-primary font-medium mb-3">
                     {member.position}
                   </p>
-                  
-                  <p className="text-muted-foreground text-sm">
-                    {member.experience}
-                  </p>
+                  {member.experience && (
+                    <p className="text-muted-foreground text-sm">
+                      {member.experience}
+                    </p>
+                  )}
                 </CardContent>
               </Card>
             ))}
@@ -331,7 +326,7 @@ const About = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="px-8 py-4 text-lg border-white text-white hover:bg-white hover:text-primary"
+                  className="px-8 py-4 text-lg border-white text-green-700 hover:bg-white hover:text-primary"
                   asChild
                 >
                   <a
