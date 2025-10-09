@@ -12,6 +12,8 @@ import ByCD from "./pages/ByCD";
 import NotFound from "./pages/NotFound";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
+import ScrollProvider from "@/components/providers/ScrollProvider";
 
 const queryClient = new QueryClient();
 
@@ -21,22 +23,25 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="min-h-screen bg-background">
-          <Header />
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/news" element={<News />} />
-              <Route path="/videos" element={<Videos />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/by-cd" element={<ByCD />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
+        <ScrollProvider>
+          <ScrollToTop />
+          <div className="min-h-screen bg-background">
+            <Header />
+            <main>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/news" element={<News />} />
+                <Route path="/videos" element={<Videos />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/by-cd" element={<ByCD />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </ScrollProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

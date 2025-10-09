@@ -20,7 +20,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-white backdrop-blur-xl border-b-4 border-emerald-700/20 sticky top-0 z-50 shadow-lg h-24">
+    <header className="bg-white z-30 backdrop-blur-xl border-b-4 border-emerald-700/20 sticky top-0 shadow-lg h-24">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}

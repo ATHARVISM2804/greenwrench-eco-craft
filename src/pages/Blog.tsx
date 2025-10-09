@@ -304,7 +304,7 @@ const Blog = () => {
           {/* Modal Popup */}
           {openModal && (
             <div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
               onClick={() => setOpenModal(null)}
             >
               <div
@@ -313,11 +313,11 @@ const Blog = () => {
                 onClick={e => e.stopPropagation()}
               >
                 <button
-                  className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+                  className="absolute top-2 right-2 sm:top-4 sm:right-4 text-gray-500 hover:text-gray-800 bg-white/80 hover:bg-white rounded-full p-2 shadow-md z-50"
                   onClick={() => setOpenModal(null)}
                   aria-label="Close"
                 >
-                  <X className="w-6 h-6" />
+                  <X className="w-5 h-5 sm:w-6 sm:h-6" />
                 </button>
                 <div className="w-full h-56 rounded-t-xl overflow-hidden">
                   <img
