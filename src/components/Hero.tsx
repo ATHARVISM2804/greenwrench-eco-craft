@@ -1,9 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageCircle, Star, Shield, Clock, Car, Bike, Truck, Bus, User, Phone, CreditCard } from "lucide-react";
-import heroImage from "@/assets/hero-recycling-premium.jpg";
+
+// Image slideshow array with Cloudinary links
+const HERO_IMAGES = [
+  "https://res.cloudinary.com/dmhabztbf/image/upload/v1760015353/WhatsApp_Image_2025-10-05_at_16.53.36_04fe8349_hiakow.jpg",
+  "https://res.cloudinary.com/dmhabztbf/image/upload/v1760015353/WhatsApp_Image_2025-10-05_at_16.53.36_79edcc40_pxp5bf.jpg",
+  "https://res.cloudinary.com/dmhabztbf/image/upload/v1760015353/WhatsApp_Image_2025-10-05_at_16.53.35_3382a173_zyyeab.jpg",
+  "https://res.cloudinary.com/dmhabztbf/image/upload/v1760015864/Scrapping-A-Car-Vancouver-e1684021029702_b9wlb1.jpg",
+  "https://res.cloudinary.com/dmhabztbf/image/upload/v1760015864/shutterstock_769028497-1000x600_ihbww2.jpg"
+];
 
 const VEHICLE_TYPES = [
   { label: "Car", icon: Car },
@@ -23,6 +31,16 @@ const Hero = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [agree, setAgree] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Automatically advance slides every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % HERO_IMAGES.length);
+    }, 5000);
+    
+    return () => clearInterval(timer);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,13 +51,36 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16">
-      {/* Background Image with Enhanced Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-hero opacity-80"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-premium-green-dark/20 via-transparent to-premium-green/10"></div>
+      {/* Background Image Slideshow */}
+      <div className="absolute inset-0 bg-black">
+        {HERO_IMAGES.map((image, index) => (
+          <div 
+            key={image}
+            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${
+              index === currentSlide ? 'opacity-100' : 'opacity-0'
+            }`}
+            style={{ backgroundImage: `url(${image})` }}
+          >
+            {/* Reduced opacity from 0.8 to 0.4 for better image visibility */}
+            <div className="absolute inset-0 bg-gradient-hero opacity-70"></div>
+            {/* Reduced opacity of color overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-premium-green-dark/10 via-transparent to-premium-green/5"></div>
+          </div>
+        ))}
+      </div>
+
+      {/* Image Slide Indicators */}
+      <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
+        {HERO_IMAGES.map((_, index) => (
+          <button
+            key={index}
+            className={`h-2 rounded-full transition-all ${
+              index === currentSlide ? 'w-8 bg-primary-glow' : 'w-2 bg-white/50'
+            }`}
+            onClick={() => setCurrentSlide(index)}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
       </div>
 
       {/* Content Container */}
