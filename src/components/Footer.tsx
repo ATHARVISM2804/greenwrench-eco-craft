@@ -32,41 +32,41 @@ const Footer = () => {
   return (
     <footer className="bg-premium-dark text-white">
       {/* Main Footer */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+      <div className="container mx-auto px-4 py-10 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           
           {/* Company Info */}
-          <div className="space-y-6">
-            <div className="flex items-center space-x-3">
-              <img src={logo} alt="GreenWrench Solutions" className="h-12 w-auto" />
+          <div className="space-y-4 sm:space-y-6 flex flex-col items-center sm:items-start text-center sm:text-left">
+            <div className="flex flex-col sm:flex-row items-center sm:space-x-3">
+              <img src={logo} alt="GreenWrench Solutions" className="h-12 w-auto mb-2 sm:mb-0" />
               <div className="flex flex-col">
                 <span className="text-2xl font-bold">GreenWrench</span>
                 <span className="text-sm text-white/70">Solutions</span>
               </div>
             </div>
             
-            <p className="text-white/80 leading-relaxed">
+            <p className="text-white/80 leading-relaxed max-w-sm">
               India's premier eco-friendly car recycling platform. We provide the best rates for your scrap car with complete transparency and hassle-free service.
             </p>
 
             {/* Social Links */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mt-2">
               {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
                 <a
                   key={index}
                   href="#"
-                  className="w-10 h-10 bg-white/10 hover:bg-primary rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                  className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 hover:bg-primary rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                 >
-                  <Icon className="h-5 w-5" />
+                  <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
                 </a>
               ))}
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-6">
-            <h3 className="text-xl font-bold">Quick Links</h3>
-            <ul className="space-y-3">
+          <div className="space-y-4 sm:space-y-6 flex flex-col items-center sm:items-start text-center sm:text-left">
+            <h3 className="text-lg sm:text-xl font-bold">Quick Links</h3>
+            <ul className="space-y-2 sm:space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -81,9 +81,9 @@ const Footer = () => {
           </div>
 
           {/* Services */}
-          <div className="space-y-6">
-            <h3 className="text-xl font-bold">Our Services</h3>
-            <ul className="space-y-3">
+          <div className="space-y-4 sm:space-y-6 flex flex-col items-center sm:items-start text-center sm:text-left">
+            <h3 className="text-lg sm:text-xl font-bold">Our Services</h3>
+            <ul className="space-y-2 sm:space-y-3">
               {services.map((service) => (
                 <li key={service} className="text-white/80 flex items-center space-x-2">
                   <span className="w-2 h-2 bg-primary rounded-full"></span>
@@ -94,36 +94,38 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-6">
-            <h3 className="text-xl font-bold">Contact Us</h3>
-            <div className="space-y-4">
+          <div className="space-y-4 sm:space-y-6 flex flex-col items-center sm:items-start text-center sm:text-left">
+            <h3 className="text-lg sm:text-xl font-bold">Contact Us</h3>
+            <div className="space-y-3 sm:space-y-4">
               <div className="flex items-center space-x-3 text-white/80">
-                <Phone className="h-5 w-5 text-primary" />
+                <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                 <span>+91 9311068290</span>
               </div>
               
               <div className="flex items-center space-x-3 text-white/80">
-                <Mail className="h-5 w-5 text-primary" />
+                <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                 <span>info@greenwrench.com</span>
               </div>
               
-              <div className="flex items-start space-x-3 text-white/80">
-                <MapPin className="h-5 w-5 text-primary mt-1" />
-                <span className="leading-relaxed">
+              <div className="flex items-center sm:items-start space-x-3 text-white/80">
+                <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-primary mt-0 sm:mt-1 flex-shrink-0" />
+                <span className="leading-relaxed text-center sm:text-left">
                   123 Green Street, Eco Park,<br />
                   New Delhi - 110001, India
                 </span>
               </div>
 
-              <a
-                href="https://wa.me/919311068290?text=Hello! I want to know more about your services"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 bg-primary hover:bg-primary-glow px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-button"
-              >
-                <MessageCircle className="h-5 w-5" />
-                <span>WhatsApp Chat</span>
-              </a>
+              <div className="flex justify-center sm:justify-start w-full pt-2">
+                <a
+                  href="https://wa.me/919311068290?text=Hello! I want to know more about your services"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 bg-primary hover:bg-primary-glow px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-semibold transition-all duration-300 hover:shadow-button"
+                >
+                  <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <span>WhatsApp Chat</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -131,13 +133,13 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-white/60 text-sm">
+        <div className="container mx-auto px-4 py-4 sm:py-6">
+          <div className="flex flex-col md:flex-row justify-center md:justify-between items-center space-y-3 md:space-y-0">
+            <p className="text-white/60 text-xs sm:text-sm text-center md:text-left">
               © 2024 GreenWrench Solutions. All rights reserved.
             </p>
             
-            <div className="flex space-x-6 text-sm">
+            <div className="flex flex-wrap justify-center space-x-4 sm:space-x-6 text-xs sm:text-sm">
               <button 
                 onClick={() => setActiveModal("privacy")} 
                 className="text-white/60 hover:text-primary transition-colors"
