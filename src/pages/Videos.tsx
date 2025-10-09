@@ -1,8 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Play, Clock, Eye, Calendar, PlayCircle } from "lucide-react";
+import { Play, Clock, Eye, Calendar, PlayCircle, ExternalLink } from "lucide-react";
+import { useState } from "react";
 
 const Videos = () => {
+  // Keep the categories array for potential future use, but we won't display it
   const videoCategories = [
     "All Videos",
     "Recycling Process",
@@ -12,98 +14,143 @@ const Videos = () => {
     "Behind the Scenes",
   ];
 
-  const videos = [
+  // Replace the featured videos with the provided YouTube links
+  const featuredVideos = [
     {
       id: 1,
-      title: "Complete Car Recycling Process: From Pickup to Final Disposal",
-      description: "Watch the entire journey of how we recycle cars in our state-of-the-art facility with eco-friendly processes.",
-      duration: "8:45",
+      title: "Car Scrapping Process - Quick Guide",
+      description: "Learn how we efficiently handle car scrapping with our state-of-the-art eco-friendly process.",
+      duration: "1:00",
       views: "15.2K",
-      date: "March 15, 2024",
+      date: "May 15, 2024",
       category: "Recycling Process",
-      thumbnail: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=500&h=300&fit=crop",
+      thumbnail: `https://i.ytimg.com/vi/KgTt8Cz7AHM/hqdefault.jpg`,
+      youtubeUrl: "https://youtube.com/shorts/KgTt8Cz7AHM?si=OJoz5mxmPnJLZdAa",
+      embedId: "KgTt8Cz7AHM",
+      isShort: true,
       featured: true,
     },
     {
       id: 2,
-      title: "Customer Testimonial: Mr. Sharma's Experience with GreenWrench",
-      description: "Hear from our satisfied customer about his seamless car scrapping experience and instant payment.",
-      duration: "3:20",
-      views: "8.7K",
-      date: "March 12, 2024",
-      category: "Customer Stories",
-      thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=300&fit=crop",
-      featured: false,
+      title: "Get Maximum Value for Your Old Car",
+      description: "Discover how to maximize the value of your old vehicle through our premium scrapping service.",
+      duration: "0:58",
+      views: "12.7K",
+      date: "May 10, 2024",
+      category: "Educational",
+      thumbnail: `https://i.ytimg.com/vi/Jz3jmV8RaaY/hqdefault.jpg`,
+      youtubeUrl: "https://youtube.com/shorts/Jz3jmV8RaaY?si=9QbieAV7TbT-LYF4",
+      embedId: "Jz3jmV8RaaY",
+      isShort: true,
+      featured: true,
     },
     {
       id: 3,
-      title: "Why Car Recycling Matters: Environmental Impact Explained",
-      description: "Learn about the environmental benefits of proper car recycling and how it contributes to a sustainable future.",
-      duration: "6:15",
-      views: "22.1K",
-      date: "March 10, 2024",
+      title: "How Vehicle Recycling Works",
+      description: "Step-by-step explanation of our comprehensive vehicle recycling process and environmental benefits.",
+      duration: "0:55",
+      views: "18.4K",
+      date: "May 5, 2024",
       category: "Educational",
-      thumbnail: "https://images.unsplash.com/photo-1569163139271-de64f139a5ea?w=500&h=300&fit=crop",
+      thumbnail: `https://i.ytimg.com/vi/yG7hkDNSQDM/hqdefault.jpg`,
+      youtubeUrl: "https://youtube.com/shorts/yG7hkDNSQDM?si=Odbmx7hoJ8JKXZuG",
+      embedId: "yG7hkDNSQDM",
+      isShort: true,
       featured: true,
     },
     {
       id: 4,
-      title: "How to Prepare Your Car for Scrapping: Step-by-Step Guide",
-      description: "Essential steps to prepare your vehicle before scrapping to ensure maximum value and smooth process.",
-      duration: "4:32",
-      views: "12.8K",
-      date: "March 8, 2024",
-      category: "Educational",
-      thumbnail: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=500&h=300&fit=crop",
-      featured: false,
-    },
-    {
-      id: 5,
-      title: "Behind the Scenes: Our Eco-Friendly Recycling Facility",
-      description: "Take a tour of our advanced recycling facility and see how we maintain the highest environmental standards.",
-      duration: "7:20",
-      views: "9.5K",
-      date: "March 5, 2024",
-      category: "Behind the Scenes",
-      thumbnail: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=500&h=300&fit=crop",
-      featured: false,
-    },
-    {
-      id: 6,
-      title: "Government Vehicle Scrappage Policy 2024: What You Need to Know",
-      description: "Comprehensive overview of the new government policy and how it benefits vehicle owners.",
-      duration: "5:45",
-      views: "18.3K",
-      date: "March 3, 2024",
-      category: "Educational",
-      thumbnail: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=500&h=300&fit=crop",
+      title: "Environmental Benefits of Car Scrapping",
+      description: "Learn about the positive environmental impact of proper vehicle recycling through our sustainable practices.",
+      duration: "0:52",
+      views: "14.8K",
+      date: "April 28, 2024",
+      category: "Awareness Campaigns",
+      thumbnail: `https://i.ytimg.com/vi/01CHpW_Iv0w/hqdefault.jpg`,
+      youtubeUrl: "https://youtube.com/shorts/01CHpW_Iv0w?si=MAihthA3R7TLJBwp",
+      embedId: "01CHpW_Iv0w",
+      isShort: true,
       featured: true,
     },
     {
+      id: 5,
+      title: "Documentation Required for Scrapping",
+      description: "Overview of all the necessary paperwork and documentation needed for a smooth car scrapping process.",
+      duration: "0:54",
+      views: "11.3K",
+      date: "April 22, 2024",
+      category: "Educational",
+      thumbnail: `https://i.ytimg.com/vi/bdh8ToO0pT4/hqdefault.jpg`,
+      youtubeUrl: "https://youtube.com/shorts/bdh8ToO0pT4?si=dExlr06V8U3rliDB",
+      embedId: "bdh8ToO0pT4",
+      isShort: true,
+      featured: true,
+    },
+    {
+      id: 6,
+      title: "Complete Guide to Car Scrapping Process",
+      description: "Comprehensive walkthrough of our end-to-end car scrapping process from pickup to certification.",
+      duration: "8:45",
+      views: "25.6K",
+      date: "April 15, 2024",
+      category: "Recycling Process",
+      thumbnail: `https://i.ytimg.com/vi/X2MYNt5FevI/hqdefault.jpg`,
+      youtubeUrl: "https://youtu.be/X2MYNt5FevI?si=raqVioxqz5okek",
+      embedId: "X2MYNt5FevI",
+      isShort: false,
+      featured: true,
+    }
+  ];
+
+  // Replace the videos array with the new Cloudinary videos
+  const videos = [
+    {
       id: 7,
-      title: "Green Initiative: Our Commitment to Environmental Protection",
-      description: "Learn about our sustainability initiatives and commitment to protecting the environment through responsible recycling.",
-      duration: "4:18",
-      views: "11.7K",
-      date: "February 28, 2024",
-      category: "Awareness Campaigns",
-      thumbnail: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=500&h=300&fit=crop",
+      title: "Car Scrap Process Overview",
+      description: "A comprehensive walkthrough of our eco-friendly car scrapping process from start to finish.",
+      duration: "0:59",
+      views: "12.5K",
+      date: "September 27, 2025",
+      category: "Process Overview",
+      thumbnail: "https://res.cloudinary.com/dmhabztbf/video/upload/v1760018566/WhatsApp_Video_2025-09-27_at_13.25.59_7b52d783_txwaak.jpg",
+      videoUrl: "https://res.cloudinary.com/dmhabztbf/video/upload/v1760018566/WhatsApp_Video_2025-09-27_at_13.25.59_7b52d783_txwaak.mp4",
       featured: false,
     },
     {
       id: 8,
-      title: "Customer Success Story: From Old Car to New Dreams",
-      description: "Inspiring story of how our customer used the money from car scrapping to fulfill their dreams.",
-      duration: "3:55",
-      views: "7.2K",
-      date: "February 25, 2024",
-      category: "Customer Stories",
-      thumbnail: "https://images.unsplash.com/photo-1494790108755-2616c351e107?w=500&h=300&fit=crop",
+      title: "Eco-Friendly Vehicle Disposal",
+      description: "See how we properly dispose of vehicles while maintaining strict environmental standards.",
+      duration: "0:57",
+      views: "9.8K",
+      date: "September 27, 2025",
+      category: "Recycling Process",
+      thumbnail: "https://res.cloudinary.com/dmhabztbf/video/upload/v1760018155/WhatsApp_Video_2025-09-27_at_13.26.10_bcc7cc2f_uskgxc.jpg",
+      videoUrl: "https://res.cloudinary.com/dmhabztbf/video/upload/v1760018155/WhatsApp_Video_2025-09-27_at_13.26.10_bcc7cc2f_uskgxc.mp4",
       featured: false,
     },
+    {
+      id: 9,
+      title: "Dismantling and Parts Recovery",
+      description: "Watch our specialized team efficiently dismantle vehicles and recover valuable parts for recycling.",
+      duration: "0:53",
+      views: "11.2K",
+      date: "September 27, 2025",
+      category: "Behind the Scenes",
+      thumbnail: "https://res.cloudinary.com/dmhabztbf/video/upload/v1760017940/WhatsApp_Video_2025-09-27_at_13.28.20_ab4a75c6_ebwogt.jpg",
+      videoUrl: "https://res.cloudinary.com/dmhabztbf/video/upload/v1760017940/WhatsApp_Video_2025-09-27_at_13.28.20_ab4a75c6_ebwogt.mp4",
+      featured: false,
+    }
   ];
 
-  const featuredVideos = videos.filter(video => video.featured);
+  // Add modal state for video playback
+  const [activeVideo, setActiveVideo] = useState<null | {
+    embedId?: string;
+    title: string;
+    isShort?: boolean;
+    videoUrl?: string;
+    isCloudinary?: boolean;
+  }>(null);
+  
   const regularVideos = videos.filter(video => !video.featured);
 
   return (
@@ -192,25 +239,25 @@ const Videos = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           
-          {/* Categories Filter */}
-          <div className="flex flex-wrap gap-4 justify-center mb-12">
-            {videoCategories.map((category, index) => (
-              <button
-                key={category}
-                className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
-                  index === 0
-                    ? "bg-primary text-white"
-                    : "bg-white text-muted-foreground border border-border hover:bg-primary hover:text-white"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-
-          {/* Featured Videos */}
+          {/* Featured Videos - Enhanced heading with better aesthetics */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-8">Featured Videos</h2>
+            {/* Improved section header with decoration */}
+            <div className="text-center mb-12">
+              <div className="inline-block mb-4">
+                <span className="px-5 py-2 bg-premium-green/10 border border-primary-glow/30 rounded-full text-primary text-base font-medium">
+                  <PlayCircle className="inline-block mr-2 h-4 w-4" />
+                  Featured Collection
+                </span>
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
+                Our <span className="bg-gradient-premium bg-clip-text text-transparent">Featured</span> Videos
+              </h2>
+              <div className="w-32 h-1 bg-premium-green mx-auto mt-4 mb-2"></div>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Explore our hand-picked selection of the most informative and engaging videos about car scrapping and recycling
+              </p>
+            </div>
+            
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredVideos.map((video, index) => (
                 <Card key={video.id} className="group shadow-card hover:shadow-premium transition-all duration-300 transform hover:-translate-y-2 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
@@ -221,12 +268,21 @@ const Videos = () => {
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
+                    <div 
+                      className="absolute inset-0 flex items-center justify-center cursor-pointer"
+                      onClick={() => setActiveVideo({
+                        embedId: video.embedId,
+                        title: video.title,
+                        isShort: video.isShort
+                      })}
+                    >
                       <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <Play className="h-8 w-8 text-white ml-1" />
                       </div>
                     </div>
-                    <Badge className="absolute top-4 left-4 bg-primary">Featured</Badge>
+                    <Badge className="absolute top-4 left-4 bg-primary">
+                      {video.isShort ? "YouTube Short" : "Featured"}
+                    </Badge>
                     <div className="absolute bottom-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm flex items-center">
                       <Clock className="h-3 w-3 mr-1" />
                       {video.duration}
@@ -257,6 +313,23 @@ const Videos = () => {
                           <span>{video.date}</span>
                         </div>
                       </div>
+                      <a 
+                        href={video.youtubeUrl} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline flex items-center"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setActiveVideo({
+                            embedId: video.embedId,
+                            title: video.title,
+                            isShort: video.isShort
+                          });
+                        }}
+                      >
+                        <span className="mr-1">Watch</span>
+                        <ExternalLink className="h-3 w-3" />
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
@@ -264,20 +337,33 @@ const Videos = () => {
             </div>
           </div>
 
-          {/* All Videos */}
+          {/* All Videos - Also enhancing this heading for consistency */}
           <div>
-            <h2 className="text-3xl font-bold text-foreground mb-8">All Videos</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-foreground">
+                More Videos
+                <div className="w-24 h-1 bg-muted mx-auto mt-3"></div>
+              </h2>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {regularVideos.map((video, index) => (
                 <Card key={video.id} className="group shadow-card hover:shadow-premium transition-all duration-300 transform hover:-translate-y-1 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
                   <div className="relative overflow-hidden rounded-t-lg">
                     <img
-                      src={video.thumbnail}
+                      src={video.thumbnail || `https://res.cloudinary.com/dmhabztbf/video/upload/so_0/v1760018566/${video.videoUrl?.split('/').pop()}.jpg`}
                       alt={video.title}
-                      className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
+                    <div 
+                      className="absolute inset-0 flex items-center justify-center cursor-pointer"
+                      onClick={() => setActiveVideo({
+                        title: video.title,
+                        videoUrl: video.videoUrl,
+                        isCloudinary: true
+                      })}
+                    >
                       <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <Play className="h-6 w-6 text-white ml-0.5" />
                       </div>
@@ -297,6 +383,10 @@ const Videos = () => {
                       {video.title}
                     </h3>
                     
+                    <p className="text-muted-foreground text-xs mb-2 line-clamp-2">
+                      {video.description}
+                    </p>
+                    
                     <div className="flex items-center justify-between text-xs text-muted-foreground">
                       <div className="flex items-center space-x-1">
                         <Eye className="h-3 w-3" />
@@ -313,11 +403,66 @@ const Videos = () => {
           {/* Load More */}
           <div className="text-center mt-12">
             <button className="px-8 py-3 bg-gradient-primary text-white rounded-lg font-medium hover:shadow-button transition-all duration-300">
-              Load More Videos
+              More Videos Comming Soon
             </button>
           </div>
         </div>
       </section>
+      
+      {/* Video Modal */}
+      {activeVideo && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
+          <div className="bg-background rounded-xl overflow-hidden shadow-2xl max-w-4xl w-full animate-fade-in relative">
+            {/* Close button - replaced the ExternalLink icon with X for clarity */}
+            <button
+              className="absolute top-4 right-4 z-10 bg-black/70 text-white hover:bg-black/90 hover:text-red-500 rounded-full p-2.5 transition-colors duration-300"
+              onClick={() => setActiveVideo(null)}
+              aria-label="Close video"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x">
+                <path d="M18 6 6 18"/>
+                <path d="m6 6 12 12"/>
+              </svg>
+            </button>
+
+            <div className="aspect-video w-full">
+              {activeVideo.isCloudinary ? (
+                <video
+                  className="w-full h-full"
+                  src={activeVideo.videoUrl}
+                  title={activeVideo.title}
+                  controls
+                  autoPlay
+                ></video>
+              ) : (
+                <iframe
+                  className="w-full h-full"
+                  src={`https://www.youtube.com/embed/${activeVideo.embedId}${activeVideo.isShort ? '?loop=1&playlist=' + activeVideo.embedId : ''}`}
+                  title={activeVideo.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              )}
+            </div>
+            
+            <div className="p-4 bg-background flex justify-between items-center">
+              <div>
+                <h3 className="text-xl font-bold">{activeVideo.title}</h3>
+                <p className="text-sm text-muted-foreground mt-1">
+                  {activeVideo.isCloudinary ? 'GreenWrench Original' : activeVideo.isShort ? 'YouTube Short' : 'YouTube Video'}
+                </p>
+              </div>
+              
+              <button 
+                className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors"
+                onClick={() => setActiveVideo(null)}
+              >
+                Close Video
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

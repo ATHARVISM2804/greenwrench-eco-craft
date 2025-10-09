@@ -40,12 +40,6 @@ const About = () => {
       experience: "Founder – Greenwrench Solutions",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
     },
-    {
-      name: "Astha Goel",
-      position: "Our Partner",
-      experience: "",
-      image: "https://images.unsplash.com/photo-1494790108755-2616c351e107?w=300&h=300&fit=crop&crop=face",
-    },
   ];
 
   return (
@@ -265,9 +259,14 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          {/* Modified grid to center a single card */}
+          <div className="flex justify-center">
             {team.map((member, index) => (
-              <Card key={index} className="text-center shadow-card hover:shadow-premium transition-all duration-300 transform hover:-translate-y-2 animate-slide-up border border-green-50" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card 
+                key={index} 
+                className="text-center shadow-card hover:shadow-premium transition-all duration-300 transform hover:-translate-y-2 animate-slide-up border border-green-50 max-w-md w-full" 
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <CardContent className="p-8">
                   <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden">
                     <img

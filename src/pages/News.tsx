@@ -10,7 +10,7 @@ const News = () => {
       title: "New Vehicle Scrappage Policy 2024: Government Announces Major Incentives",
       summary: "The Ministry of Road Transport announces enhanced incentives for old vehicle owners, including tax benefits and discounts on new vehicle purchases.",
       category: "Government Policy",
-      date: "March 18, 2024",
+      date: "May 15, 2024",
       urgent: true,
       source: "Ministry of Road Transport & Highways",
       image: "https://images.unsplash.com/photo-1518783211485-10fd3bfb2ce2?auto=format&fit=crop&w=800&q=80",
@@ -37,7 +37,7 @@ const News = () => {
       title: "Supreme Court Mandates Stricter End-of-Life Vehicle Regulations",
       summary: "Latest Supreme Court ruling requires all vehicles older than 15 years to undergo mandatory fitness testing and scrapping compliance.",
       category: "Legal Update",
-      date: "March 16, 2024",
+      date: "May 10, 2024",
       urgent: true,
       source: "Supreme Court of India",
       image: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80",
@@ -177,10 +177,190 @@ const News = () => {
       `,
       contactInfo: "Access the platform at vahaanend.gov.in or download the mobile app from Google Play or App Store. For assistance, call the national helpline at 1800-XXX-XXXX.",
     },
+    {
+      id: 7,
+      title: "EV Battery Recycling Initiative Launches Nationwide Collection Centers",
+      summary: "Leading EV manufacturers partner with recycling firms to establish nationwide network for responsible battery disposal and material recovery.",
+      category: "Sustainability",
+      date: "May 8, 2024",
+      urgent: false,
+      source: "Electric Vehicle Association",
+      image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=800&q=80",
+      fullContent: `
+        <p>As electric vehicles become increasingly common on Indian roads, a consortium of major EV manufacturers has partnered with specialized recycling firms to establish a nationwide network of battery collection and recycling centers.</p>
+        
+        <h4>Key Features of the Initiative:</h4>
+        <ul>
+          <li>50 collection centers to be established across major cities by end of 2024</li>
+          <li>Advanced hydrometallurgical processes to recover up to 95% of critical materials</li>
+          <li>Dedicated facilities for handling different battery chemistries (Li-ion, NMC, LFP)</li>
+          <li>Consumer incentives for returning end-of-life batteries</li>
+          <li>Digital tracking system for battery lifecycle management</li>
+        </ul>
+        
+        <p>The initiative addresses growing concerns about the environmental impact of discarded EV batteries and aims to create a circular economy for critical battery materials. Recycling facilities will extract valuable metals including lithium, cobalt, and nickel, which will be reintroduced into the battery supply chain.</p>
+        
+        <p>"With EV adoption accelerating, establishing a robust battery recycling infrastructure is crucial for sustainability," said Rajiv Kumar, Director of the Electric Vehicle Association. "This collaborative effort ensures responsible end-of-life management while reducing dependence on imported raw materials."</p>
+        
+        <p>The first phase of collection centers will be operational in Delhi-NCR, Mumbai, Bangalore, Chennai, and Hyderabad by August 2024, with remaining locations to be added by December.</p>
+      `,
+      contactInfo: "For battery drop-off locations and collection schedules, visit www.evbatteryrecycle.in or contact the EV Battery Recycling Helpline at 1800-EV-RECYCLE.",
+    },
+    {
+      id: 8,
+      title: "New GST Exemptions Announced for Authorized Vehicle Scrapping Services",
+      summary: "Finance Ministry introduces GST exemptions for authorized scrapping facilities to encourage formal recycling and boost circular economy.",
+      category: "Tax Policy",
+      date: "May 3, 2024",
+      urgent: true,
+      source: "Ministry of Finance",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
+      fullContent: `
+        <p>In a significant fiscal incentive aimed at formalizing the vehicle scrapping industry, the Finance Ministry has announced GST exemptions for services provided by authorized vehicle recycling facilities.</p>
+        
+        <h4>Details of the GST Exemptions:</h4>
+        <ul>
+          <li>Complete GST exemption on scrapping services provided by registered RVSFs</li>
+          <li>Input tax credit benefits for related operational expenses</li>
+          <li>Reduced GST rates (5%) on specific recycled material sales</li>
+          <li>Zero GST on Certificate of Deposit (CoD) issuance services</li>
+          <li>Special GST category created for vehicle recycling ecosystem</li>
+        </ul>
+        
+        <p>The move is expected to significantly reduce operational costs for authorized scrapping facilities, enabling them to offer more competitive rates to vehicle owners and establish formal business operations.</p>
+        
+        <p>"These tax incentives are designed to encourage formal recycling channels and discourage the unorganized scrapping sector that operates without environmental safeguards," stated the Finance Minister in a press briefing.</p>
+        
+        <p>Industry analysts project that these measures could increase formal sector vehicle scrapping by approximately 40% over the next fiscal year, contributing to both environmental sustainability and economic growth in the recycling sector.</p>
+        
+        <p>The exemptions will be effective starting June 1, 2024, with implementation guidelines to be issued by the GST Council within the next two weeks.</p>
+      `,
+      contactInfo: "For detailed implementation guidelines, registered RVSFs can contact the GST Council helpdesk at gst.vehiclerecycling@gov.in or call the dedicated helpline: 1800-103-7786.",
+    },
+    {
+      id: 9,
+      title: "Scrap Vehicle Market Value Hits 5-Year High: Industry Report",
+      summary: "Latest market analysis shows record-high valuations for end-of-life vehicles due to rising metal prices and parts demand.",
+      category: "Market Analysis",
+      date: "May 1, 2024",
+      urgent: false,
+      source: "Automotive Recyclers Association",
+      image: "https://images.unsplash.com/photo-1635341814747-e293e6cb39e0?auto=format&fit=crop&w=800&q=80",
+      fullContent: `
+        <p>According to the latest quarterly report from the Automotive Recyclers Association, the market value of end-of-life vehicles has reached a 5-year high, with average scrap values increasing by 32% compared to the previous year.</p>
+        
+        <h4>Key Market Trends:</h4>
+        <ul>
+          <li>Average scrap value for mid-size passenger vehicles up 32% year-over-year</li>
+          <li>Catalytic converter recycling values increased by 65% due to precious metal price surge</li>
+          <li>Commercial vehicle scrap values up 28% compared to previous quarter</li>
+          <li>Used parts market seeing unprecedented demand due to supply chain disruptions</li>
+          <li>Regional variations showing highest values in western and southern states</li>
+        </ul>
+        
+        <p>Multiple factors are driving this value increase, including global metal price inflation, semiconductor shortages affecting new vehicle production, and increasing demand for used auto parts. Additionally, stricter emissions regulations have increased the value of catalytic converters containing precious metals like platinum, palladium, and rhodium.</p>
+        
+        <p>"We're seeing a perfect storm of market conditions that has dramatically increased the value of end-of-life vehicles," explained Prakash Mehta, Chief Economist at the Automotive Recyclers Association. "Vehicle owners considering scrapping now can expect significantly better returns than in previous years."</p>
+        
+        <p>The report further indicates that this trend is expected to continue through at least Q3 2024, with potential moderation in Q4 as global supply chains stabilize.</p>
+      `,
+      contactInfo: "The complete market report is available to industry members at www.autorecyclersassociation.org/market-reports or by contacting the research department at research@ara.org.",
+    },
+    {
+      id: 10,
+      title: "National Green Tribunal Orders Accelerated Phase-Out of Pre-2005 Diesel Vehicles",
+      summary: "NGT directs immediate action against older diesel vehicles in 14 cities with critical air pollution levels, mandating scrapping within 6 months.",
+      category: "Environmental Policy",
+      date: "April 28, 2024",
+      urgent: true,
+      source: "National Green Tribunal",
+      image: "https://images.unsplash.com/photo-1573075175660-08fd45ac27a1?auto=format&fit=crop&w=800&q=80",
+      fullContent: `
+        <p>In a landmark ruling aimed at combating dangerous air pollution levels, the National Green Tribunal (NGT) has ordered an accelerated phase-out of all pre-2005 diesel vehicles in 14 cities with critically poor air quality.</p>
+        
+        <h4>Key Points of the NGT Order:</h4>
+        <ul>
+          <li>Immediate ban on pre-2005 diesel vehicles in Delhi-NCR, effective within 30 days</li>
+          <li>Phased implementation in 13 other cities with AQI consistently exceeding 300</li>
+          <li>Requirement for complete scrapping through authorized RVSFs only</li>
+          <li>Mandatory proof of scrapping to be submitted to transport departments</li>
+          <li>Special task forces to be established for enforcement in each affected city</li>
+        </ul>
+        
+        <p>The NGT cited comprehensive studies showing that older diesel vehicles contribute disproportionately to particulate matter and NOx emissions in urban areas. The order emphasizes that public health concerns must take precedence over temporary economic considerations.</p>
+        
+        <p>"The right to breathe clean air is a fundamental aspect of the right to life guaranteed under Article 21 of the Constitution," stated the NGT bench in its ruling. "Immediate and decisive action is necessary to protect public health in these severely polluted urban centers."</p>
+        
+        <p>Transport departments in affected cities have been directed to issue public notifications within 15 days and establish simplified procedures for vehicle registration cancellation and scrapping certificate issuance. The order also instructs state governments to consider compensation schemes for affected vehicle owners.</p>
+      `,
+      contactInfo: "Vehicle owners can verify if their vehicles are affected by this ruling by visiting www.parivahan.gov.in or contacting their local Regional Transport Office. For the full NGT order, visit www.ngt.gov.in/recent-orders.",
+    },
+    {
+      id: 11,
+      title: "Mobile Scrapping Units Bring Vehicle Recycling to Rural Areas",
+      summary: "Innovative mobile scrapping facilities launched to serve remote regions, bringing formal recycling services to underserved communities.",
+      category: "Innovation",
+      date: "April 22, 2024",
+      urgent: false,
+      source: "Rural Development Ministry",
+      image: "https://images.unsplash.com/photo-1551522435-a13afa10f103?auto=format&fit=crop&w=800&q=80",
+      fullContent: `
+        <p>A pioneering initiative to expand vehicle scrapping services to rural areas has been launched with the introduction of mobile scrapping units that can process vehicles in remote locations where fixed facilities are not available.</p>
+        
+        <h4>Features of the Mobile Scrapping Initiative:</h4>
+        <ul>
+          <li>20 specially designed mobile units to be deployed across rural districts</li>
+          <li>Each unit capable of processing 5-7 vehicles per day</li>
+          <li>Equipped with fluid drainage systems, dismantling tools, and material segregation equipment</li>
+          <li>Digital documentation systems for on-site certificate issuance</li>
+          <li>Pre-scheduled village routes announced 30 days in advance</li>
+        </ul>
+        
+        <p>The initiative addresses a significant gap in the vehicle scrapping ecosystem by bringing formalized recycling services to rural areas, where end-of-life vehicles are often abandoned or improperly dismantled due to lack of access to authorized facilities.</p>
+        
+        <p>"Rural communities have been largely excluded from the benefits of proper vehicle recycling," explained Dr. Meenakshi Sharma, Joint Secretary at the Rural Development Ministry. "These mobile units democratize access to environmentally responsible disposal options and ensure rural vehicle owners can also benefit from scrapping incentives."</p>
+        
+        <p>The program will initially focus on 50 districts across six states: Uttar Pradesh, Bihar, Rajasthan, Madhya Pradesh, Odisha, and Maharashtra. Based on first-phase results, expansion to additional districts is planned for 2025.</p>
+      `,
+      contactInfo: "Village panchayats can request mobile scrapping unit visits by registering at www.mobilescrap.gov.in or by contacting their district rural development office. Schedule information will also be distributed through gram panchayats.",
+    },
+    {
+      id: 12,
+      title: "Automotive Manufacturers Launch Exchange Program with Enhanced Scrap Value",
+      summary: "Major car manufacturers introduce new vehicle exchange program offering premium value for scrapped vehicles regardless of condition.",
+      category: "Industry Initiative",
+      date: "April 15, 2024",
+      urgent: false,
+      source: "Society of Indian Automobile Manufacturers",
+      image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80",
+      fullContent: `
+        <p>Six major automotive manufacturers have jointly announced an ambitious vehicle exchange program that offers enhanced value for scrapped vehicles, regardless of their condition or operational status.</p>
+        
+        <h4>Program Highlights:</h4>
+        <ul>
+          <li>Minimum guaranteed valuation 30% above standard scrap rates</li>
+          <li>Additional 5% discount on new vehicle purchases</li>
+          <li>Acceptance of vehicles in any condition – running or non-running</li>
+          <li>Free towing services from any location</li>
+          <li>Simplified paperwork with single-window processing</li>
+          <li>Valid for both private and commercial vehicles</li>
+        </ul>
+        
+        <p>The program represents a significant shift in manufacturer approach to vehicle exchange, with participating companies establishing direct partnerships with authorized RVSFs rather than relying on third-party intermediaries.</p>
+        
+        <p>"This industry-led initiative aims to accelerate the retirement of older vehicles while providing tangible economic benefits to consumers," said Vikram Singh, President of the Society of Indian Automobile Manufacturers. "By offering premium value regardless of vehicle condition, we're removing a major barrier to scrapping decisions."</p>
+        
+        <p>Participating manufacturers include Maruti Suzuki, Hyundai, Tata Motors, Mahindra, Kia, and Honda. The program will be operational across all authorized dealerships starting May 1, 2024, and is scheduled to run for a minimum of 12 months.</p>
+      `,
+      contactInfo: "For program details and participating dealerships, consumers can visit www.carexchange-india.com or contact the customer care number of any participating manufacturer.",
+    }
   ];
 
   // Modal state
   const [openModal, setOpenModal] = useState<null | typeof newsItems[0]>(null);
+  
+  // Quick Links modal state
+  const [quickLinkModal, setQuickLinkModal] = useState<string | null>(null);
 
   const trendingTopics = [
     "Vehicle Scrappage Policy 2024",
@@ -190,6 +370,85 @@ const News = () => {
     "Metal Price Trends",
     "Legal Compliance Updates",
   ];
+
+  // Quick Links content
+  const quickLinksContent = {
+    "Government Policies": {
+      title: "Government Policies",
+      content: `
+        <h4>Latest Government Policies on Vehicle Scrapping</h4>
+        <p>The Vehicle Scrappage Policy offers incentives to vehicle owners for scrapping old and unfit vehicles through registered scrapping centers. The policy aims to phase out unfit and polluting vehicles.</p>
+        <ul>
+          <li>Certificate of Deposit for scrapped vehicles</li>
+          <li>Up to 25% rebate on road tax for personal vehicles</li>
+          <li>Up to 15% rebate on road tax for commercial vehicles</li>
+          <li>Registration fee waiver for new vehicle purchase</li>
+          <li>5% discount from automobile manufacturers</li>
+        </ul>
+        <p>The policy is applicable to vehicles older than 15 years for private vehicles and 10 years for commercial vehicles.</p>
+      `
+    },
+    "Legal Updates": {
+      title: "Legal Updates",
+      content: `
+        <h4>Recent Legal Developments in Vehicle Recycling</h4>
+        <p>Several recent court rulings and legislative updates have impacted the vehicle recycling industry:</p>
+        <ul>
+          <li><strong>Supreme Court ruling (March 2024):</strong> Mandatory fitness testing for vehicles older than 15 years</li>
+          <li><strong>National Green Tribunal order (April 2024):</strong> Accelerated phase-out of pre-2005 diesel vehicles in 14 cities</li>
+          <li><strong>Motor Vehicles Act Amendment:</strong> New provisions for end-of-life vehicle management</li>
+          <li><strong>Environmental Protection Act updates:</strong> Stricter norms for recycling facilities</li>
+          <li><strong>Waste Management Rules 2023:</strong> Special provisions for automotive waste</li>
+        </ul>
+        <p>Compliance deadlines for most regulations have been set for December 2024.</p>
+      `
+    },
+    "Market Analysis": {
+      title: "Market Analysis",
+      content: `
+        <h4>Vehicle Recycling Market Trends</h4>
+        <p>The automotive recycling market is experiencing significant growth, driven by several factors:</p>
+        <ul>
+          <li><strong>Metal price surge:</strong> 32% increase in scrap vehicle values year-over-year</li>
+          <li><strong>Parts demand:</strong> Growing market for refurbished components due to supply chain issues</li>
+          <li><strong>Precious metals:</strong> Catalytic converter recycling values up by 65%</li>
+          <li><strong>Market forecast:</strong> Projected 18% CAGR through 2028</li>
+          <li><strong>Regional variations:</strong> Highest values in western and southern states</li>
+        </ul>
+        <p>Industry experts predict continued strong performance through at least Q3 2024.</p>
+      `
+    },
+    "Environmental News": {
+      title: "Environmental News",
+      content: `
+        <h4>Environmental Impact of Vehicle Recycling</h4>
+        <p>Recent environmental studies highlight the positive impact of proper vehicle recycling:</p>
+        <ul>
+          <li><strong>Carbon reduction:</strong> Each properly recycled vehicle saves approximately 1.5 tons of CO2</li>
+          <li><strong>Resource conservation:</strong> Up to 85% of vehicle materials can be reused or recycled</li>
+          <li><strong>Water pollution prevention:</strong> Proper fluid removal prevents contamination of water bodies</li>
+          <li><strong>Energy savings:</strong> Recycling metal requires 60% less energy than new production</li>
+          <li><strong>Waste reduction:</strong> Prevents 25 million tons of waste from entering landfills annually</li>
+        </ul>
+        <p>The Green Certification Program launched in March 2024 aims to standardize eco-friendly practices in the auto recycling industry.</p>
+      `
+    },
+    "Technology Updates": {
+      title: "Technology Updates",
+      content: `
+        <h4>Technological Innovations in Vehicle Recycling</h4>
+        <p>The vehicle recycling industry is being transformed by technological advancements:</p>
+        <ul>
+          <li><strong>VAHAAN-End platform:</strong> Blockchain-based digital documentation system</li>
+          <li><strong>AI-powered dismantling:</strong> Automated systems for efficient parts separation</li>
+          <li><strong>Mobile recycling units:</strong> Bringing formal recycling services to remote areas</li>
+          <li><strong>Advanced material recovery:</strong> New processes recovering up to 95% of EV battery materials</li>
+          <li><strong>IoT tracking:</strong> Digital monitoring of recycling process efficiency</li>
+        </ul>
+        <p>These technological solutions are improving efficiency, transparency, and environmental outcomes in vehicle recycling operations across the country.</p>
+      `
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -385,20 +644,14 @@ const News = () => {
                     Quick Links
                   </h3>
                   <div className="space-y-2">
-                    {[
-                      "Government Policies",
-                      "Legal Updates",
-                      "Market Analysis",
-                      "Environmental News",
-                      "Technology Updates",
-                    ].map((link, index) => (
-                      <a
+                    {Object.keys(quickLinksContent).map((link, index) => (
+                      <button
                         key={index}
-                        href="#"
-                        className="block text-muted-foreground hover:text-primary transition-colors py-1"
+                        onClick={() => setQuickLinkModal(link)}
+                        className="block w-full text-left text-muted-foreground hover:text-primary transition-colors py-1"
                       >
                         {link}
-                      </a>
+                      </button>
                     ))}
                   </div>
                 </CardContent>
@@ -487,6 +740,45 @@ const News = () => {
                   <span>Visit Official Source</span>
                   <ExternalLink className="h-4 w-4" />
                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Quick Links Modal Popup */}
+      {quickLinkModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 overflow-y-auto">
+          <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full relative animate-fade-in overflow-hidden max-h-[80vh] flex flex-col">
+            <div className="bg-gradient-to-r from-premium-green to-emerald-600 p-6 text-white">
+              <h3 className="text-2xl font-bold">{quickLinksContent[quickLinkModal as keyof typeof quickLinksContent].title}</h3>
+            </div>
+            
+            <button
+              className="absolute top-4 right-4 text-white hover:text-gray-200 z-20"
+              onClick={() => setQuickLinkModal(null)}
+              aria-label="Close"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            
+            {/* Content */}
+            <div className="p-6 overflow-y-auto">
+              <div 
+                className="prose prose-green max-w-none"
+                dangerouslySetInnerHTML={{ 
+                  __html: quickLinksContent[quickLinkModal as keyof typeof quickLinksContent].content 
+                }}
+              />
+              
+              {/* Footer */}
+              <div className="mt-6 pt-4 border-t border-gray-100 flex justify-center">
+                <button
+                  onClick={() => setQuickLinkModal(null)}
+                  className="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50"
+                >
+                  Close
+                </button>
               </div>
             </div>
           </div>

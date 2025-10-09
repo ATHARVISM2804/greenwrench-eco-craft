@@ -77,34 +77,53 @@ const Advantages = () => {
                   {/* Car icon */}
                   <span className="flex flex-col items-center">
                     <span className="text-3xl">🚗</span>
+                    <span className="text-xs text-gray-500 mt-1">Your Car</span>
                   </span>
                   {/* SVG Diagram */}
                   <div className="flex-1 flex items-center justify-center">
-                    <svg width="320" height="80" viewBox="0 0 320 80" fill="none">
-                      {/* Wavy red path */}
-                      <path d="M20 40 Q80 10 140 40 Q200 70 260 40 Q290 25 300 40" stroke="#f87171" strokeWidth="5" fill="none"/>
+                    <svg width="320" height="100" viewBox="0 0 320 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      {/* Background path */}
+                      <path d="M40 50 C70 20 100 20 140 50 C180 80 220 80 260 50" stroke="#fee2e2" strokeWidth="10" strokeLinecap="round"/>
+                      
                       {/* Dealer/Third-party websites */}
-                      <rect x="60" y="5" width="60" height="36" rx="8" fill="#fff" stroke="#fca5a5" strokeWidth="2"/>
-                      <text x="90" y="22" fontSize="11" fill="#b91c1c" textAnchor="middle" fontWeight="bold">Dealer/</text>
-                      <text x="90" y="34" fontSize="11" fill="#b91c1c" textAnchor="middle">Third-party</text>
-                      <text x="90" y="46" fontSize="11" fill="#b91c1c" textAnchor="middle">websites</text>
+                      <g>
+                        <rect x="80" y="10" width="80" height="40" rx="10" fill="#fff" stroke="#f87171" strokeWidth="2"/>
+                        <text x="120" y="30" fontSize="12" fill="#ef4444" textAnchor="middle" fontWeight="bold">Dealer /</text>
+                        <text x="120" y="44" fontSize="11" fill="#ef4444" textAnchor="middle">Third-party websites</text>
+                        <circle cx="80" y="10" r="16" fill="#fee2e2" stroke="#f87171" strokeWidth="2"/>
+                        <text x="80" y="14" fontSize="16" fill="#ef4444" textAnchor="middle" fontWeight="bold">!</text>
+                      </g>
+                      
                       {/* Agents */}
-                      <rect x="140" y="40" width="60" height="36" rx="8" fill="#fff" stroke="#fca5a5" strokeWidth="2"/>
-                      <text x="170" y="62" fontSize="13" fill="#b91c1c" textAnchor="middle" fontWeight="bold">Agents</text>
+                      <g>
+                        <rect x="160" y="50" width="80" height="40" rx="10" fill="#fff" stroke="#f87171" strokeWidth="2"/>
+                        <text x="200" y="75" fontSize="14" fill="#ef4444" textAnchor="middle" fontWeight="bold">Agents</text>
+                        <circle cx="160" y="90" r="16" fill="#fee2e2" stroke="#f87171" strokeWidth="2"/>
+                        <text x="160" y="94" fontSize="16" fill="#ef4444" textAnchor="middle" fontWeight="bold">!</text>
+                      </g>
+                      
                       {/* Unknown Yard */}
-                      <rect x="260" y="20" width="60" height="36" rx="8" fill="#fff" stroke="#fca5a5" strokeWidth="2"/>
-                      <text x="290" y="42" fontSize="13" fill="#b91c1c" textAnchor="middle" fontWeight="bold">Unknown</text>
-                      <text x="290" y="56" fontSize="13" fill="#b91c1c" textAnchor="middle" fontWeight="bold">Yard</text>
-                      {/* Red circles with exclamation marks */}
-                      <circle cx="120" cy="22" r="13" fill="#fee2e2" stroke="#f87171" strokeWidth="3"/>
-                      <text x="120" y="28" fontSize="18" fill="#f87171" textAnchor="middle" fontWeight="bold">!</text>
-                      <circle cx="200" cy="58" r="13" fill="#fee2e2" stroke="#f87171" strokeWidth="3"/>
-                      <text x="200" y="64" fontSize="18" fill="#f87171" textAnchor="middle" fontWeight="bold">!</text>
+                      <g>
+                        <rect x="240" y="20" width="80" height="40" rx="10" fill="#fff" stroke="#f87171" strokeWidth="2"/>
+                        <text x="280" y="40" fontSize="14" fill="#ef4444" textAnchor="middle" fontWeight="bold">Unknown</text>
+                        <text x="280" y="58" fontSize="14" fill="#ef4444" textAnchor="middle" fontWeight="bold">Yard</text>
+                      </g>
+                      
+                      {/* Arrows */}
+                      <defs>
+                        <marker id="redArrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+                          <path d="M0,0 L0,6 L9,3 z" fill="#f87171" />
+                        </marker>
+                      </defs>
+                      <path d="M40 50 L80 30" stroke="#f87171" strokeWidth="2" strokeDasharray="5,3" markerEnd="url(#redArrow)"/>
+                      <path d="M160 30 L160 50" stroke="#f87171" strokeWidth="2" strokeDasharray="5,3" markerEnd="url(#redArrow)"/>
+                      <path d="M240 70 L240 40" stroke="#f87171" strokeWidth="2" strokeDasharray="5,3" markerEnd="url(#redArrow)"/>
                     </svg>
                   </div>
                   {/* Exclamation icon */}
                   <span className="flex flex-col items-center">
                     <span className="text-2xl text-red-500">❗</span>
+                    <span className="text-xs text-gray-500 mt-1">Risk</span>
                   </span>
                 </div>
               </div>
@@ -121,6 +140,7 @@ const Advantages = () => {
               </div>
             </CardContent>
           </Card>
+          
           {/* The Smart Way */}
           <Card className="bg-green-50 border border-green-100 shadow-none rounded-3xl">
             <CardContent className="p-10 md:p-12">
@@ -134,38 +154,49 @@ const Advantages = () => {
                   {/* Car icon */}
                   <span className="flex flex-col items-center">
                     <span className="text-3xl">🚗</span>
+                    <span className="text-xs text-gray-500 mt-1">Your Car</span>
                   </span>
                   {/* SVG Diagram */}
                   <div className="flex-1 flex items-center justify-center">
-                    <svg width="320" height="80" viewBox="0 0 320 80" fill="none">
-                      {/* Green straight path */}
-                      <rect x="40" y="36" width="240" height="8" rx="4" fill="#bbf7d0"/>
-                      <rect x="40" y="36" width="240" height="8" rx="4" fill="#34d399" fillOpacity="0.2"/>
-                      {/* Car to GreenWrench */}
-                      <rect x="90" y="20" width="70" height="40" rx="10" fill="#fff" stroke="#34d399" strokeWidth="2"/>
-                      <text x="125" y="40" fontSize="14" fill="#059669" textAnchor="middle" fontWeight="bold">GreenWrench</text>
-                      <text x="125" y="56" fontSize="10" fill="#059669" textAnchor="middle">Authorized RVSF</text>
+                    <svg width="320" height="100" viewBox="0 0 320 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      {/* Background path */}
+                      <rect x="40" y="45" width="240" height="10" rx="5" fill="#d1fae5"/>
+                      
+                      {/* GreenWrench */}
+                      <g>
+                        <rect x="110" y="30" width="100" height="40" rx="10" fill="#fff" stroke="#10b981" strokeWidth="2"/>
+                        <text x="160" y="50" fontSize="14" fill="#059669" textAnchor="middle" fontWeight="bold">GreenWrench</text>
+                        <text x="160" y="64" fontSize="10" fill="#059669" textAnchor="middle">Authorized RVSF</text>
+                        <circle cx="110" y="50" r="16" fill="#d1fae5" stroke="#10b981" strokeWidth="2"/>
+                        <text x="110" y="54" fontSize="16" fill="#10b981" textAnchor="middle" fontWeight="bold">✓</text>
+                      </g>
+                      
                       {/* Certificate */}
-                      <rect x="220" y="20" width="60" height="40" rx="10" fill="#fff" stroke="#34d399" strokeWidth="2"/>
-                      <text x="250" y="40" fontSize="14" fill="#059669" textAnchor="middle" fontWeight="bold">Certificate</text>
-                      {/* Green checkmarks */}
                       <g>
-                        <circle cx="80" cy="40" r="14" fill="#bbf7d0" stroke="#34d399" strokeWidth="2"/>
-                        <text x="80" y="46" fontSize="18" fill="#22c55e" textAnchor="middle" fontWeight="bold">✓</text>
+                        <rect x="240" y="30" width="80" height="40" rx="10" fill="#fff" stroke="#10b981" strokeWidth="2"/>
+                        <text x="280" y="50" fontSize="14" fill="#059669" textAnchor="middle" fontWeight="bold">Certificate</text>
+                        <circle cx="240" y="50" r="16" fill="#d1fae5" stroke="#10b981" strokeWidth="2"/>
+                        <text x="240" y="54" fontSize="16" fill="#10b981" textAnchor="middle" fontWeight="bold">✓</text>
                       </g>
-                      <g>
-                        <circle cx="210" cy="40" r="14" fill="#bbf7d0" stroke="#34d399" strokeWidth="2"/>
-                        <text x="210" y="46" fontSize="18" fill="#22c55e" textAnchor="middle" fontWeight="bold">✓</text>
-                      </g>
-                      <g>
-                        <circle cx="280" cy="40" r="14" fill="#bbf7d0" stroke="#34d399" strokeWidth="2"/>
-                        <text x="280" y="46" fontSize="18" fill="#22c55e" textAnchor="middle" fontWeight="bold">✓</text>
-                      </g>
+                      
+                      {/* Arrows */}
+                      <defs>
+                        <marker id="greenArrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+                          <path d="M0,0 L0,6 L9,3 z" fill="#10b981" />
+                        </marker>
+                      </defs>
+                      <path d="M40 50 L110 50" stroke="#10b981" strokeWidth="2" markerEnd="url(#greenArrow)"/>
+                      <path d="M210 50 L240 50" stroke="#10b981" strokeWidth="2" markerEnd="url(#greenArrow)"/>
+                      
+                      {/* Final checkmark */}
+                      <circle cx="320" y="50" r="16" fill="#d1fae5" stroke="#10b981" strokeWidth="2"/>
+                      <text x="320" y="54" fontSize="16" fill="#10b981" textAnchor="middle" fontWeight="bold">✓</text>
                     </svg>
                   </div>
                   {/* Checkmark icon */}
                   <span className="flex flex-col items-center">
                     <span className="text-2xl text-green-600">✅</span>
+                    <span className="text-xs text-gray-500 mt-1">Safe</span>
                   </span>
                 </div>
               </div>
