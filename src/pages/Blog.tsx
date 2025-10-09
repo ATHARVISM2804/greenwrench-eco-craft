@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight, X } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Blog = () => {
   const blogPosts = [
@@ -65,12 +65,92 @@ const Blog = () => {
       readTime: "9 min read",
       image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80",
     },
+    {
+      id: 7,
+      title: "Eco-Friendly Disposal: How Car Scrapping Reduces Landfill Waste",
+      excerpt: "Discover how responsible car scrapping practices help minimize landfill waste and promote recycling of valuable materials.",
+      author: "Dr. Sarah Green",
+      date: "March 1, 2024",
+      category: "Environment",
+      readTime: "5 min read",
+      image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
+    },
+    {
+      id: 8,
+      title: "2024 Policy Updates: What Car Owners Need to Know About Scrapping",
+      excerpt: "A summary of the latest policy changes affecting car scrapping in India, including new incentives and compliance requirements.",
+      author: "Rajesh Kumar",
+      date: "February 27, 2024",
+      category: "Policy",
+      readTime: "6 min read",
+      image: "https://images.unsplash.com/photo-1465101178521-c1a4c8a0f8b9?auto=format&fit=crop&w=600&q=80",
+    },
+    {
+      id: 9,
+      title: "Top 10 Tips for Preparing Your Car for Scrapping",
+      excerpt: "Get the most value from your scrap car with these essential preparation tips, from paperwork to removing personal items.",
+      author: "Priya Sharma",
+      date: "February 25, 2024",
+      category: "Tips & Guides",
+      readTime: "4 min read",
+      image: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=600&q=80",
+    },
+    {
+      id: 10,
+      title: "Step-by-Step: The Car Scrapping Process Explained",
+      excerpt: "Follow the journey of a car from collection to dismantling and recycling, and learn what happens at each stage.",
+      author: "Mike Johnson",
+      date: "February 22, 2024",
+      category: "Process",
+      readTime: "7 min read",
+      image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80",
+    },
+    {
+      id: 11,
+      title: "Legal Checklist: Documents Required for Car Scrapping",
+      excerpt: "Ensure a hassle-free scrapping experience by preparing all necessary legal documents before you visit a scrap yard.",
+      author: "Adv. Neha Gupta",
+      date: "February 20, 2024",
+      category: "Legal",
+      readTime: "3 min read",
+      image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+    },
+    {
+      id: 12,
+      title: "The Future of Car Scrapping: Innovations in Recycling Technology",
+      excerpt: "Explore how new technologies are making car scrapping more efficient, sustainable, and profitable for all stakeholders.",
+      author: "Dr. Amit Patel",
+      date: "February 18, 2024",
+      category: "Future Trends",
+      readTime: "8 min read",
+      image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=600&q=80",
+    },
   ];
 
   const categories = ["All", "Environment", "Policy", "Tips & Guides", "Process", "Legal", "Future Trends"];
 
   // Modal state
   const [openModal, setOpenModal] = useState<null | typeof blogPosts[0]>(null);
+
+  // Category filter state
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+
+  // Filtered posts
+  const filteredPosts = selectedCategory === "All"
+    ? blogPosts
+    : blogPosts.filter(post => post.category === selectedCategory);
+
+  // Prevent background scroll when modal is open
+  useEffect(() => {
+    if (openModal) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [openModal]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -153,8 +233,9 @@ const Blog = () => {
             {categories.map((category) => (
               <Button
                 key={category}
-                variant={category === "All" ? "default" : "outline"}
+                variant={category === selectedCategory ? "default" : "outline"}
                 className="rounded-full"
+                onClick={() => setSelectedCategory(category)}
               >
                 {category}
               </Button>
@@ -163,7 +244,7 @@ const Blog = () => {
 
           {/* Blog Posts Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
+            {filteredPosts.map((post, index) => (
               <Card key={post.id} className="h-full shadow-card hover:shadow-premium transition-all duration-300 transform hover:-translate-y-2 animate-slide-up flex flex-col" style={{ animationDelay: `${index * 0.1}s` }}>
                 {/* Blog Image */}
                 <div className="w-full h-48 rounded-t-lg overflow-hidden">
@@ -222,8 +303,15 @@ const Blog = () => {
 
           {/* Modal Popup */}
           {openModal && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-              <div className="bg-white rounded-lg shadow-xl max-w-lg w-full relative animate-fade-in">
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+              onClick={() => setOpenModal(null)}
+            >
+              <div
+                className="bg-white rounded-xl shadow-2xl w-full max-w-2xl relative animate-fade-in flex flex-col"
+                style={{ minHeight: "520px", maxHeight: "90vh" }}
+                onClick={e => e.stopPropagation()}
+              >
                 <button
                   className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
                   onClick={() => setOpenModal(null)}
@@ -231,14 +319,14 @@ const Blog = () => {
                 >
                   <X className="w-6 h-6" />
                 </button>
-                <div className="w-full h-56 rounded-t-lg overflow-hidden">
+                <div className="w-full h-56 rounded-t-xl overflow-hidden">
                   <img
                     src={openModal.image}
                     alt={openModal.title}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 pt-4 flex-1 flex flex-col overflow-y-auto" style={{ maxHeight: "calc(90vh - 224px)" }}>
                   <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-2">
                     {openModal.category}
                   </span>
@@ -252,12 +340,50 @@ const Blog = () => {
                     </span>
                     <span className="text-primary font-medium">{openModal.readTime}</span>
                   </div>
-                  <p className="text-foreground mb-4">{openModal.excerpt}</p>
-                  {/* Placeholder for full content */}
-                  <p className="text-muted-foreground">
-                    {/* Replace this with real content if available */}
-                    This is a demo modal. Replace this with the full blog content as needed.
-                  </p>
+                  {/* Systematic Content */}
+                  <div className="space-y-5">
+                    <section>
+                      <h3 className="text-lg font-semibold mb-1">Introduction</h3>
+                      <p className="text-foreground">{openModal.excerpt}</p>
+                    </section>
+                    <section>
+                      <h3 className="text-lg font-semibold mb-1">Key Points</h3>
+                      <ul className="list-disc pl-5 text-muted-foreground">
+                        <li>Key point 1 about {openModal.category}.</li>
+                        <li>Key point 2 relevant to the topic.</li>
+                        <li>Key point 3 for readers to consider.</li>
+                      </ul>
+                    </section>
+                    <section>
+                      <h3 className="text-lg font-semibold mb-1">About the Author</h3>
+                      <p className="text-muted-foreground">
+                        {openModal.author} is an expert in {openModal.category.toLowerCase()} and has contributed to several publications on car recycling and sustainability.
+                      </p>
+                    </section>
+                    <section>
+                      <h3 className="text-lg font-semibold mb-1">Sample Content</h3>
+                      <p className="text-foreground">
+                        Car recycling is a multi-step process that involves collection, dismantling, material recovery, and reuse. Each stage is crucial for maximizing environmental benefits and economic value. For example, metals are separated and sent to smelters, plastics are sorted for reuse, and hazardous materials are disposed of safely. By following best practices, car scrapping can significantly reduce landfill waste and promote a circular economy.
+                      </p>
+                      <p className="text-foreground mt-2">
+                        In India, new policies have made it easier for car owners to scrap their vehicles responsibly. Documentation requirements have been streamlined, and incentives are available for those who choose eco-friendly disposal methods. Always check with your local authorities for the latest regulations.
+                      </p>
+                    </section>
+                    <section>
+                      <h3 className="text-lg font-semibold mb-1">Related Articles</h3>
+                      <ul className="list-disc pl-5 text-primary">
+                        <li>How to Get the Best Price for Your Scrap Car</li>
+                        <li>Legal Documentation for Car Scrapping</li>
+                        <li>Sustainable Transportation: The Future of Automotive Industry</li>
+                      </ul>
+                    </section>
+                    <section>
+                      <h3 className="text-lg font-semibold mb-1">Conclusion</h3>
+                      <p className="text-muted-foreground">
+                        This is a demo modal. Replace this with the full blog content as needed.
+                      </p>
+                    </section>
+                  </div>
                 </div>
               </div>
             </div>
