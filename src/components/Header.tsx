@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/GreenLogo.png";
+import logoName from "@/assets/nameLogo.png"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,9 +30,9 @@ const Header = () => {
               <img src={logo} alt="GreenWrench Solutions" className="h-16 w-auto group-hover:scale-105 transition-transform duration-300" />
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-800/20 to-emerald-600/20 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-300"></div>
             </div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold bg-gradient-to-r from-emerald-800 to-emerald-600 bg-clip-text text-transparent">GreenWrench</span>
-              <span className="text-sm text-emerald-700 font-medium">Solutions</span>
+            <div className="relative">
+              <img src={logoName} alt="GreenWrench Solutions" className="h-40 w-auto group-hover:scale-105 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-800/20 to-emerald-600/20 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-300"></div>
             </div>
           </Link>
 

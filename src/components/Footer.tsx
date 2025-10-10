@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { MessageCircle, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { MessageCircle, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 import logo from "@/assets/GreenLogo.png";
 import PolicyModal from "@/components/ui/PolicyModal";
 
@@ -51,15 +51,42 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="flex space-x-4 mt-2">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 hover:bg-primary rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-                >
-                  <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
-                </a>
-              ))}
+              <a
+                href="https://facebook.com/greenwrench"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 hover:bg-primary rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-4 w-4 sm:h-5 sm:w-5" />
+              </a>
+              <a
+                href="https://twitter.com/greenwrench"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 hover:bg-primary rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                aria-label="Twitter"
+              >
+                <Twitter className="h-4 w-4 sm:h-5 sm:w-5" />
+              </a>
+              <a
+                href="https://instagram.com/greenwrench"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 hover:bg-primary rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-4 w-4 sm:h-5 sm:w-5" />
+              </a>
+              <a
+                href="https://youtube.com/@greenwrench"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 hover:bg-primary rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                aria-label="YouTube"
+              >
+                <Youtube className="h-4 w-4 sm:h-5 sm:w-5" />
+              </a>
             </div>
           </div>
 
