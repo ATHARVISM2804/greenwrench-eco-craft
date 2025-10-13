@@ -55,18 +55,21 @@ const Header = () => {
 
           {/* Contact & CTA */}
           <div className="hidden md:flex items-center space-x-6">
-            <div className="flex items-center space-x-3 px-4 py-3 bg-emerald-50 rounded-lg border-2 border-emerald-200">
-              <div className="p-2 rounded-full bg-gradient-to-r from-emerald-800 to-emerald-600">
+            <a 
+              href="tel:+919311068290" 
+              className="flex items-center space-x-3 px-4 py-3 bg-emerald-50 rounded-lg border-2 border-emerald-200 hover:bg-emerald-100 transition-all duration-300 cursor-pointer group"
+            >
+              <div className="p-2 rounded-full bg-gradient-to-r from-emerald-800 to-emerald-600 group-hover:shadow-md transition-all duration-300">
                 <Phone className="h-4 w-4 text-white" />
               </div>
-              <span className="text-sm font-medium text-emerald-800">+91 99999 99999</span>
-            </div>
+              <span className="text-sm font-medium text-emerald-800">+91 9311068290</span>
+            </a>
             <Button 
               variant="default" 
               className="bg-gradient-to-r from-emerald-800 to-emerald-600 hover:from-emerald-700 hover:to-emerald-500 hover:shadow-lg hover:shadow-emerald-300/40 transition-all duration-500 px-6 py-6 font-semibold transform hover:-translate-y-0.5"
               asChild
             >
-              <a href="https://wa.me/919999999999?text=Get Best Rate Now" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/919311068290?text=Get Best Rate Now" target="_blank" rel="noopener noreferrer">
                 Get Best Rate Now
               </a>
             </Button>
@@ -102,18 +105,21 @@ const Header = () => {
                 </Link>
               ))}
               <div className="border-t-2 border-emerald-200 pt-6 mt-4">
-                <div className="flex items-center space-x-3 text-sm text-emerald-800 mb-4 px-4 py-3 bg-emerald-50 rounded-lg border border-emerald-200">
+                <a 
+                  href="tel:+919311068290"
+                  className="flex items-center space-x-3 text-sm text-emerald-800 mb-4 px-4 py-3 bg-emerald-50 rounded-lg border border-emerald-200 hover:bg-emerald-100 transition-all duration-300"
+                >
                   <div className="p-2 rounded-full bg-gradient-to-r from-emerald-800 to-emerald-600">
                     <Phone className="h-4 w-4 text-white" />
                   </div>
-                  <span className="font-medium">+91 99999 99999</span>
-                </div>
+                  <span className="font-medium">+91 9311068290</span>
+                </a>
                 <Button 
                   variant="default" 
                   className="w-full bg-gradient-to-r from-emerald-800 to-emerald-600 hover:from-emerald-700 hover:to-emerald-500 py-5 font-semibold"
                   asChild
                 >
-                  <a href="https://wa.me/919999999999?text=Get Best Rate Now" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/919311068290?text=Get Best Rate Now" target="_blank" rel="noopener noreferrer">
                     Get Best Rate Now
                   </a>
                 </Button>
