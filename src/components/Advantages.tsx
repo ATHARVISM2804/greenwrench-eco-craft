@@ -77,7 +77,7 @@ const Advantages = () => {
                   {/* Full width Cloudinary Image */}
                   <div className="w-full flex items-center justify-center py-2">
                     <img 
-                      src="https://res.cloudinary.com/dmhabztbf/image/upload/v1760358636/Screenshot_2025-10-13_180000_bqmtux.png" 
+                      src="https://res.cloudinary.com/dmhabztbf/image/upload/v1760359750/Gemini_Generated_Image_ys764uys764uys76_jbphgl.png" 
                       alt="The old way showing dealers, agents and unknown yards"
                       className="max-w-full h-auto rounded-lg shadow-sm"
                       style={{ width: "100%" }}
@@ -112,7 +112,7 @@ const Advantages = () => {
                   {/* Full width Cloudinary Image */}
                   <div className="w-full flex items-center justify-center py-2">
                     <img 
-                      src="https://res.cloudinary.com/dmhabztbf/image/upload/v1760358915/Screenshot_2025-10-13_180438_amkmrx.png" 
+                      src="https://res.cloudinary.com/dmhabztbf/image/upload/v1760359896/Gemini_Generated_Image_1kfs6g1kfs6g1kfs_mkrn68.png" 
                       alt="The smart way showing direct path from car to certificate through GreenWrench"
                       className="max-w-full h-auto rounded-lg shadow-sm"
                       style={{ width: "100%" }}
