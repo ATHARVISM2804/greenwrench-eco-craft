@@ -8,8 +8,10 @@ import { MessageCircle, Star, Shield, Clock, Car, Bike, Truck, Bus, User, Phone,
 const HERO_IMAGES = [
   "https://res.cloudinary.com/dmhabztbf/image/upload/v1760015353/WhatsApp_Image_2025-10-05_at_16.53.36_04fe8349_hiakow.jpg",
   "https://res.cloudinary.com/dmhabztbf/image/upload/v1760015353/WhatsApp_Image_2025-10-05_at_16.53.36_79edcc40_pxp5bf.jpg",
-  "https://res.cloudinary.com/dmhabztbf/image/upload/v1760015353/WhatsApp_Image_2025-10-05_at_16.53.35_3382a173_zyyeab.jpg",
-  "https://res.cloudinary.com/dmhabztbf/image/upload/v1760015864/Scrapping-A-Car-Vancouver-e1684021029702_b9wlb1.jpg",
+  "https://res.cloudinary.com/dmhabztbf/image/upload/v1760358290/What_To_Look_For_When_Hiring_Auto_Wreckers_In_Brisbane_Steemit_edvdbq.jpg",
+  "https://res.cloudinary.com/dmhabztbf/image/upload/v1760358290/Japan_Metal_Recycling_Market_Forecast_xxlu7z.jpg",
+  "https://res.cloudinary.com/dmhabztbf/image/upload/v1760358290/What_To_Look_For_When_Hiring_Auto_Wreckers_In_Brisbane_Steemit_edvdbq.jpg",
+   "https://res.cloudinary.com/dmhabztbf/image/upload/v1760015864/Scrapping-A-Car-Vancouver-e1684021029702_b9wlb1.jpg",
   "https://res.cloudinary.com/dmhabztbf/image/upload/v1760015864/shutterstock_769028497-1000x600_ihbww2.jpg"
 ];
 
@@ -52,7 +54,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16 px-4 sm:px-6">
       {/* Background Image Slideshow */}
-      <div className="absolute inset-0 bg-black">
+      <div className="absolute inset-0 bg-green-50">
         {HERO_IMAGES.map((image, index) => (
           <div 
             key={image}
@@ -61,13 +63,16 @@ const Hero = () => {
             }`}
             style={{ backgroundImage: `url(${image})` }}
           >
-            {/* Reduced opacity from 0.8 to 0.4 for better image visibility */}
-            <div className="absolute inset-0 bg-gradient-hero opacity-70"></div>
-            {/* Reduced opacity of color overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-premium-green-dark/10 via-transparent to-premium-green/5"></div>
+            {/* Darker overlay for better text visibility */}
+            <div className="absolute inset-0 bg-black/50"></div>
+            {/* Add green tint */}
+            <div className="absolute inset-0 bg-gradient-to-br from-green-900/50 via-green-800/30 to-green-700/30"></div>
           </div>
         ))}
       </div>
+
+      {/* Enhanced text background gradient for better readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent pointer-events-none"></div>
 
       {/* Image Slide Indicators */}
       <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 left-1/2 transform -translate-x-1/2 z-20 space-x-1 sm:space-x-2 hidden">
@@ -87,19 +92,19 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
         <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
           
-          {/* Left Content */}
+          {/* Left Content - Enhanced text visibility */}
           <div className="space-y-4 sm:space-y-6 md:space-y-8 animate-fade-in">
             <div className="space-y-3 sm:space-y-4 md:space-y-6">
               <div className="inline-block">
-                <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-premium-green/20 border border-primary-glow/30 rounded-full text-white text-xs sm:text-sm font-medium backdrop-blur-sm">
+                <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-premium-green/30 border border-primary-glow/40 rounded-full text-white text-xs sm:text-sm font-medium backdrop-blur-sm shadow-sm">
                   🌱 Eco-Friendly Car Recycling
                 </span>
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight drop-shadow-md">
                 Scrap Your Old Car{" "}
-                <span className="bg-gradient-premium bg-clip-text text-transparent">Now</span>
+                <span className="bg-gradient-premium bg-clip-text text-transparent drop-shadow-md">Now</span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl">
+              <p className="text-base sm:text-lg md:text-xl text-white leading-relaxed max-w-2xl drop-shadow-sm font-medium">
                 Transform your old vehicle into cash while protecting the environment. We buy cars in any condition - non-runners, write-offs, damaged, or flood-damaged vehicles.
               </p>
             </div>
@@ -128,19 +133,19 @@ const Hero = () => {
               </Button>
             </div>
 
-            {/* Trust Indicators */}
-            <div className="flex items-center gap-1 md:gap-8 text-white/80">
+            {/* Trust Indicators - Enhanced visibility */}
+            <div className="flex items-center gap-1 md:gap-8 text-white">
               <div className="flex items-center space-x-1.5 sm:space-x-2">
                 <Star className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 fill-current" />
-                <span className="text-xs sm:text-sm">4.9/5 Rating</span>
+                <span className="text-xs sm:text-sm font-medium drop-shadow-sm">4.9/5 Rating</span>
               </div>
               <div className="flex items-center space-x-1.5 sm:space-x-2">
                 <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400" />
-                <span className="text-xs sm:text-sm">Certified Service</span>
+                <span className="text-xs sm:text-sm font-medium drop-shadow-sm">Certified Service</span>
               </div>
               <div className="flex items-center space-x-1.5 sm:space-x-2">
                 <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400" />
-                <span className="text-xs sm:text-sm">60s Quote</span>
+                <span className="text-xs sm:text-sm font-medium drop-shadow-sm">60s Quote</span>
               </div>
             </div>
           </div>
@@ -288,11 +293,11 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Certificate of Deposit CTA */}
+      {/* Certificate of Deposit CTA - Enhanced visibility */}
       <div className="absolute -bottom-2 sm:bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 z-20">
         <Button 
           variant="outline" 
-          className="bg-white/10 border-primary-glow/40 text-white hover:bg-primary-glow/20 hover:border-primary-glow backdrop-blur-md animate-float shadow-glow text-xs sm:text-sm md:text-base px-3 py-1.5 sm:px-4 sm:py-2 h-auto"
+          className="bg-white/20 border-primary-glow/60 text-white hover:bg-primary-glow/30 hover:border-primary-glow backdrop-blur-md animate-float shadow-glow text-xs sm:text-sm md:text-base px-3 py-1.5 sm:px-4 sm:py-2 h-auto font-medium"
           asChild
         >
           <a href="/by-cd">

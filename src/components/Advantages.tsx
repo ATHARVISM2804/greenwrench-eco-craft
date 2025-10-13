@@ -73,58 +73,16 @@ const Advantages = () => {
               </div>
               <div className="mb-4 sm:mb-6">
                 <div className="font-semibold text-gray-700 mb-2">Indirect Route (via third-party agents)</div>
-                <div className="flex flex-col sm:flex-row items-center justify-between mb-4">
-                  {/* Car icon */}
-                  <span className="flex flex-col items-center mb-2 sm:mb-0">
-                    <span className="text-2xl sm:text-3xl">🚗</span>
-                    <span className="text-[10px] sm:text-xs text-gray-500 mt-1">Your Car</span>
-                  </span>
-                  {/* SVG Diagram - Made responsive and fixed for mobile */}
-                  <div className="w-full sm:flex-1 flex items-center justify-center py-4 sm:py-0">
-                    <svg width="100%" height="120" viewBox="0 0 320 100" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg" className="max-w-[280px] sm:max-w-full">
-                      {/* Background path */}
-                      <path d="M40 50 C70 20 100 20 140 50 C180 80 220 80 260 50" stroke="#fee2e2" strokeWidth="10" strokeLinecap="round"/>
-                      
-                      {/* Dealer/Third-party websites */}
-                      <g>
-                        <rect x="80" y="10" width="80" height="40" rx="10" fill="#fff" stroke="#f87171" strokeWidth="2"/>
-                        <text x="120" y="30" fontSize="12" fill="#ef4444" textAnchor="middle" fontWeight="bold">Dealer /</text>
-                        <text x="120" y="44" fontSize="11" fill="#ef4444" textAnchor="middle">Third-party websites</text>
-                        <circle cx="80" cy="10" r="16" fill="#fee2e2" stroke="#f87171" strokeWidth="2"/>
-                        <text x="80" y="14" fontSize="16" fill="#ef4444" textAnchor="middle" fontWeight="bold">!</text>
-                      </g>
-                      
-                      {/* Agents */}
-                      <g>
-                        <rect x="160" y="50" width="80" height="40" rx="10" fill="#fff" stroke="#f87171" strokeWidth="2"/>
-                        <text x="200" y="75" fontSize="14" fill="#ef4444" textAnchor="middle" fontWeight="bold">Agents</text>
-                        <circle cx="160" cy="90" r="16" fill="#fee2e2" stroke="#f87171" strokeWidth="2"/>
-                        <text x="160" y="94" fontSize="16" fill="#ef4444" textAnchor="middle" fontWeight="bold">!</text>
-                      </g>
-                      
-                      {/* Unknown Yard */}
-                      <g>
-                        <rect x="240" y="20" width="80" height="40" rx="10" fill="#fff" stroke="#f87171" strokeWidth="2"/>
-                        <text x="280" y="40" fontSize="14" fill="#ef4444" textAnchor="middle" fontWeight="bold">Unknown</text>
-                        <text x="280" y="58" fontSize="14" fill="#ef4444" textAnchor="middle" fontWeight="bold">Yard</text>
-                      </g>
-                      
-                      {/* Arrows */}
-                      <defs>
-                        <marker id="redArrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
-                          <path d="M0,0 L0,6 L9,3 z" fill="#f87171" />
-                        </marker>
-                      </defs>
-                      <path d="M40 50 L80 30" stroke="#f87171" strokeWidth="2" strokeDasharray="5,3" markerEnd="url(#redArrow)"/>
-                      <path d="M160 30 L160 50" stroke="#f87171" strokeWidth="2" strokeDasharray="5,3" markerEnd="url(#redArrow)"/>
-                      <path d="M240 70 L240 40" stroke="#f87171" strokeWidth="2" strokeDasharray="5,3" markerEnd="url(#redArrow)"/>
-                    </svg>
+                <div className="w-full flex items-center justify-center mb-4">
+                  {/* Full width Cloudinary Image */}
+                  <div className="w-full flex items-center justify-center py-2">
+                    <img 
+                      src="https://res.cloudinary.com/dmhabztbf/image/upload/v1760358636/Screenshot_2025-10-13_180000_bqmtux.png" 
+                      alt="The old way showing dealers, agents and unknown yards"
+                      className="max-w-full h-auto rounded-lg shadow-sm"
+                      style={{ width: "100%" }}
+                    />
                   </div>
-                  {/* Exclamation icon */}
-                  <span className="flex flex-col items-center mb-2 sm:mb-0">
-                    <span className="text-xl sm:text-2xl text-red-500">❗</span>
-                    <span className="text-[10px] sm:text-xs text-gray-500 mt-1">Risk</span>
-                  </span>
                 </div>
               </div>
               <ul className="space-y-1.5 sm:space-y-2 text-red-700 text-xs sm:text-sm mb-2 pl-1">
@@ -150,54 +108,16 @@ const Advantages = () => {
               </div>
               <div className="mb-4 sm:mb-6">
                 <div className="font-semibold text-gray-700 mb-2">Direct Legal Scrapping (with GreenWrench)</div>
-                <div className="flex flex-col sm:flex-row items-center justify-between mb-4">
-                  {/* Car icon */}
-                  <span className="flex flex-col items-center mb-2 sm:mb-0">
-                    <span className="text-2xl sm:text-3xl">🚗</span>
-                    <span className="text-[10px] sm:text-xs text-gray-500 mt-1">Your Car</span>
-                  </span>
-                  {/* SVG Diagram - Made responsive and fixed for mobile */}
-                  <div className="w-full sm:flex-1 flex items-center justify-center py-4 sm:py-0">
-                    <svg width="100%" height="120" viewBox="0 0 320 100" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg" className="max-w-[280px] sm:max-w-full">
-                      {/* Background path */}
-                      <rect x="40" y="45" width="240" height="10" rx="5" fill="#d1fae5"/>
-                      
-                      {/* GreenWrench */}
-                      <g>
-                        <rect x="110" y="30" width="100" height="40" rx="10" fill="#fff" stroke="#10b981" strokeWidth="2"/>
-                        <text x="160" y="50" fontSize="14" fill="#059669" textAnchor="middle" fontWeight="bold">GreenWrench</text>
-                        <text x="160" y="64" fontSize="10" fill="#059669" textAnchor="middle">Authorized RVSF</text>
-                        <circle cx="110" cy="50" r="16" fill="#d1fae5" stroke="#10b981" strokeWidth="2"/>
-                        <text x="110" y="54" fontSize="16" fill="#10b981" textAnchor="middle" fontWeight="bold">✓</text>
-                      </g>
-                      
-                      {/* Certificate */}
-                      <g>
-                        <rect x="240" y="30" width="80" height="40" rx="10" fill="#fff" stroke="#10b981" strokeWidth="2"/>
-                        <text x="280" y="50" fontSize="14" fill="#059669" textAnchor="middle" fontWeight="bold">Certificate</text>
-                        <circle cx="240" cy="50" r="16" fill="#d1fae5" stroke="#10b981" strokeWidth="2"/>
-                        <text x="240" y="54" fontSize="16" fill="#10b981" textAnchor="middle" fontWeight="bold">✓</text>
-                      </g>
-                      
-                      {/* Arrows */}
-                      <defs>
-                        <marker id="greenArrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
-                          <path d="M0,0 L0,6 L9,3 z" fill="#10b981" />
-                        </marker>
-                      </defs>
-                      <path d="M40 50 L110 50" stroke="#10b981" strokeWidth="2" markerEnd="url(#greenArrow)"/>
-                      <path d="M210 50 L240 50" stroke="#10b981" strokeWidth="2" markerEnd="url(#greenArrow)"/>
-                      
-                      {/* Final checkmark */}
-                      <circle cx="320" cy="50" r="16" fill="#d1fae5" stroke="#10b981" strokeWidth="2"/>
-                      <text x="320" y="54" fontSize="16" fill="#10b981" textAnchor="middle" fontWeight="bold">✓</text>
-                    </svg>
+                <div className="w-full flex items-center justify-center mb-4">
+                  {/* Full width Cloudinary Image */}
+                  <div className="w-full flex items-center justify-center py-2">
+                    <img 
+                      src="https://res.cloudinary.com/dmhabztbf/image/upload/v1760358915/Screenshot_2025-10-13_180438_amkmrx.png" 
+                      alt="The smart way showing direct path from car to certificate through GreenWrench"
+                      className="max-w-full h-auto rounded-lg shadow-sm"
+                      style={{ width: "100%" }}
+                    />
                   </div>
-                  {/* Checkmark icon */}
-                  <span className="flex flex-col items-center mb-2 sm:mb-0">
-                    <span className="text-xl sm:text-2xl text-green-600">✅</span>
-                    <span className="text-[10px] sm:text-xs text-gray-500 mt-1">Safe</span>
-                  </span>
                 </div>
               </div>
               <ul className="space-y-1.5 sm:space-y-2 text-green-800 text-xs sm:text-sm mb-2 pl-1">

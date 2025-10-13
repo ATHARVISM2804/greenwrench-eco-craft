@@ -342,6 +342,107 @@ const ByCD = () => {
         </div>
       </section>
 
+      {/* Sell Your COD Section */}
+      <section className="py-20 bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-premium-green/15 via-transparent to-transparent"></div>
+        <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-72 h-72 bg-gradient-to-l from-green-200/10 to-emerald-300/10 rounded-full blur-2xl"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-extrabold text-foreground mb-6 tracking-tight">
+              Sell Your COD for Instant Cash
+            </h2>
+            <p className="text-xl text-muted-foreground font-medium">
+              Don't want to wait for tax benefits? Get immediate value for your Certificate of Destruction
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <Card className="shadow-xl rounded-2xl border-0 bg-white/90 backdrop-blur-lg h-full">
+              <CardContent className="p-10">
+                <h3 className="text-2xl font-bold text-foreground mb-6">Why Sell Your COD?</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <CheckCircle className="h-6 w-6 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                    <span className="text-lg text-muted-foreground">
+                      <span className="font-bold">Immediate Cash:</span> Don't wait 3 years for tax benefits
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-6 w-6 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                    <span className="text-lg text-muted-foreground">
+                      <span className="font-bold">No Hassle:</span> We handle all paperwork and transfer processes
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-6 w-6 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                    <span className="text-lg text-muted-foreground">
+                      <span className="font-bold">Competitive Rates:</span> Get the best market value for your certificate
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-6 w-6 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                    <span className="text-lg text-muted-foreground">
+                      <span className="font-bold">Fast Process:</span> Complete transaction within 24-48 hours
+                    </span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-xl rounded-2xl border-0 bg-gradient-primary text-white h-full">
+              <CardContent className="p-10 flex flex-col justify-between h-full">
+                <div>
+                  <h3 className="text-2xl font-bold mb-6">How It Works</h3>
+                  <ol className="space-y-4 mb-8">
+                    <li className="flex items-start">
+                      <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">1</div>
+                      <span className="text-lg">Submit your COD details via our form or WhatsApp</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">2</div>
+                      <span className="text-lg">Receive an instant quote based on vehicle make and model</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">3</div>
+                      <span className="text-lg">Accept the offer and submit verification documents</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">4</div>
+                      <span className="text-lg">Receive payment directly in your bank account</span>
+                    </li>
+                  </ol>
+                </div>
+                
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="px-8 py-6 text-lg w-full bg-white hover:bg-white/90 text-primary"
+                  asChild
+                >
+                  <a
+                    href="https://wa.me/919999999999?text=I want to sell my Certificate of Destruction"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Get Quote for Your COD
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <p className="text-muted-foreground text-lg italic">
+              "Sold my COD to GreenWrench instead of waiting for tax benefits. Process was quick and the amount offered was very fair!"
+              <br />
+              <span className="font-bold text-foreground mt-2 block">— Rahul Sharma, Delhi</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-20 bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-premium-green/15 via-transparent to-transparent"></div>

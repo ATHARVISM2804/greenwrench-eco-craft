@@ -127,15 +127,22 @@ const About = () => {
         <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-l from-green-200/10 to-emerald-300/10 rounded-full blur-2xl"></div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-foreground mb-6">Our Purpose</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Guiding principles that define our business and operations
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 items-start">
             
             {/* Mission */}
-            <div className="animate-fade-in">
+            <div className="animate-fade-in bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-card border border-green-100 h-full flex flex-col">
               <div className="flex items-center mb-6">
                 <Target className="h-8 w-8 text-primary mr-4" />
                 <h2 className="text-3xl font-bold text-foreground">Our Mission</h2>
               </div>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8 flex-grow">
                 To revolutionize the automotive recycling industry in India by providing eco-friendly, transparent, and 
                 customer-centric car scrapping services. We aim to make vehicle disposal hassle-free while contributing 
                 to environmental sustainability and circular economy principles.
@@ -157,30 +164,28 @@ const About = () => {
             </div>
 
             {/* Vision */}
-            <div className="animate-slide-up">
+            <div className="animate-slide-up bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-card border border-green-100 h-full flex flex-col">
               <div className="flex items-center mb-6">
                 <Heart className="h-8 w-8 text-primary mr-4" />
                 <h2 className="text-3xl font-bold text-foreground">Our Vision</h2>
               </div>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8 flex-grow">
                 To become India's most trusted and largest eco-friendly automotive recycling network, setting industry 
                 standards for environmental responsibility while empowering millions of vehicle owners to make sustainable choices.
               </p>
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-card border border-green-100">
+              <div className="space-y-3 bg-premium-green/10 p-5 rounded-xl">
                 <h3 className="text-xl font-bold text-foreground mb-4">2030 Goals</h3>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Cars Recycled</span>
-                    <span className="font-bold text-primary">100,000+</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Cities Covered</span>
-                    <span className="font-bold text-primary">500+</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">CO₂ Reduction</span>
-                    <span className="font-bold text-primary">50,000 tons</span>
-                  </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-muted-foreground">Cars Recycled</span>
+                  <span className="font-bold text-primary">100,000+</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-muted-foreground">Cities Covered</span>
+                  <span className="font-bold text-primary">500+</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-muted-foreground">CO₂ Reduction</span>
+                  <span className="font-bold text-primary">50,000 tons</span>
                 </div>
               </div>
             </div>
@@ -260,7 +265,7 @@ const About = () => {
           </div>
 
           {/* Modified grid to center a single card */}
-          <div className="flex justify-center">
+          <div className="flex justify-center mb-16">
             {team.map((member, index) => (
               <Card 
                 key={index} 
@@ -289,6 +294,62 @@ const About = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+          
+          {/* Partnership Section */}
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-10 shadow-card border border-green-100 mt-8 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl font-bold text-foreground mb-4">Ready to Partner With Us?</h3>
+                <p className="text-muted-foreground mb-6">
+                  Join our network of partners to create a more sustainable future for automotive recycling. 
+                  Whether you're a dealership, service center, or eco-conscious business, we welcome collaboration opportunities.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start">
+                    <div className="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center text-white mt-1 mr-3">
+                      <span className="text-xs">✓</span>
+                    </div>
+                    <span className="text-muted-foreground">Access to our nationwide network</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center text-white mt-1 mr-3">
+                      <span className="text-xs">✓</span>
+                    </div>
+                    <span className="text-muted-foreground">Transparent revenue sharing model</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center text-white mt-1 mr-3">
+                      <span className="text-xs">✓</span>
+                    </div>
+                    <span className="text-muted-foreground">Co-branding opportunities</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="flex flex-col items-center justify-center text-center space-y-6">
+                <div className="w-20 h-20 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+                    <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path>
+                    <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
+                  </svg>
+                </div>
+                <Button 
+                  className="px-8 py-6 text-lg bg-gradient-primary hover:bg-gradient-primary/90 shadow-lg hover:shadow-xl transition-all"
+                  asChild
+                >
+                  <a
+                    href="https://wa.me/919999999999?text=I'm interested in partnering with GreenWrench"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Partner With Us
+                  </a>
+                </Button>
+                <p className="text-sm text-muted-foreground">
+                  Our partnership team will contact you within 24 hours
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
