@@ -437,7 +437,7 @@ const ByCD = () => {
             <p className="text-muted-foreground text-lg italic">
               "Sold my COD to GreenWrench instead of waiting for tax benefits. Process was quick and the amount offered was very fair!"
               <br />
-              <span className="font-bold text-foreground mt-2 block">— Rahul Sharma, Delhi</span>
+              <span className="font-bold text-foreground mt-2 block">— Saurabh, Delhi</span>
             </p>
           </div>
         </div>

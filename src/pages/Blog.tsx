@@ -143,12 +143,33 @@ const Blog = () => {
   // Prevent background scroll when modal is open
   useEffect(() => {
     if (openModal) {
-      document.body.classList.add("overflow-hidden");
+      // Save current scroll position
+      const scrollY = window.scrollY;
+      
+      // Add styles to body to prevent scrolling but maintain position
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflowY = 'scroll'; // Keep scrollbar to avoid layout shift
     } else {
-      document.body.classList.remove("overflow-hidden");
+      // Restore scroll position when modal is closed
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflowY = '';
+      
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+      }
     }
+    
     return () => {
-      document.body.classList.remove("overflow-hidden");
+      // Clean up in case component unmounts while modal is open
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflowY = '';
     };
   }, [openModal]);
 
@@ -297,36 +318,55 @@ const Blog = () => {
           {/* Load More */}
           <div className="text-center mt-12">
             <Button size="lg" variant="outline" className="px-8">
-              Load More Articles
+             More Articles Comming soon
             </Button>
           </div>
 
-          {/* Modal Popup */}
+          {/* Modal Popup - fixed scrolling issues */}
           {openModal && (
             <div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
-              onClick={() => setOpenModal(null)}
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+              onClick={(e) => {
+                e.stopPropagation();
+                setOpenModal(null);
+              }}
+              style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
             >
               <div
-                className="bg-white rounded-xl shadow-2xl w-full max-w-2xl relative animate-fade-in flex flex-col"
-                style={{ minHeight: "520px", maxHeight: "90vh" }}
+                className="bg-white rounded-xl shadow-2xl w-full max-w-2xl relative flex flex-col"
+                style={{ maxHeight: '90vh' }}
                 onClick={e => e.stopPropagation()}
               >
+                {/* More visible close button */}
                 <button
-                  className="absolute top-2 right-2 sm:top-4 sm:right-4 text-gray-500 hover:text-gray-800 bg-white/80 hover:bg-white rounded-full p-2 shadow-md z-50"
-                  onClick={() => setOpenModal(null)}
+                  className="absolute top-3 right-3 z-50 bg-primary text-white p-2.5 rounded-full shadow-lg hover:bg-primary/80 transition-colors duration-200 flex items-center justify-center"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setOpenModal(null);
+                  }}
                   aria-label="Close"
                 >
-                  <X className="w-5 h-5 sm:w-6 sm:h-6" />
+                  <X className="w-5 h-5" />
                 </button>
-                <div className="w-full h-56 rounded-t-xl overflow-hidden">
+                
+                {/* Fixed header with image - not scrollable */}
+                <div className="w-full h-56 rounded-t-xl overflow-hidden flex-shrink-0">
                   <img
                     src={openModal.image}
                     alt={openModal.title}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6 pt-4 flex-1 flex flex-col overflow-y-auto" style={{ maxHeight: "calc(90vh - 224px)" }}>
+                
+                {/* Scrollable content area */}
+                <div 
+                  className="p-6 pt-4 overflow-y-auto flex-grow"
+                  style={{ 
+                    overflowY: 'auto',
+                    WebkitOverflowScrolling: 'touch' // For smoother scrolling on iOS
+                  }}
+                  onClick={(e) => e.stopPropagation()}
+                >
                   <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-2">
                     {openModal.category}
                   </span>
@@ -340,6 +380,7 @@ const Blog = () => {
                     </span>
                     <span className="text-primary font-medium">{openModal.readTime}</span>
                   </div>
+                  
                   {/* Systematic Content */}
                   <div className="space-y-5">
                     <section>
@@ -383,6 +424,20 @@ const Blog = () => {
                         This is a demo modal. Replace this with the full blog content as needed.
                       </p>
                     </section>
+                    
+                    {/* Additional footer button for closing */}
+                    <div className="mt-8 text-center">
+                      <Button 
+                        variant="outline" 
+                        className="px-6" 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setOpenModal(null);
+                        }}
+                      >
+                        Close Article
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
