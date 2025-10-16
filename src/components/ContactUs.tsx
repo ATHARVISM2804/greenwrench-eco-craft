@@ -57,13 +57,14 @@ const ContactUs = () => {
             <Card className="overflow-hidden border-none shadow-xl bg-gradient-to-br from-white to-premium-green/5">
               <div className="h-[400px] w-full rounded-t-xl overflow-hidden shadow-inner">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.9729344346366!2d-73.9478760842308!3d40.7750389793243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2589a018531e3%3A0xb9df1f7387a94119!2sCentral%20Park!5e0!3m2!1sen!2sus!4v1632301926307!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.7469198861647!2d77.13249567635509!3d28.5815092890726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1c16086e9a85%3A0xb4f7a71f3215e639!2sMayapuri%20Industrial%20Area%20Phase%20II%2C%20Mayapuri%20Phase%20II%2C%20Mayapuri%2C%20Delhi%2C%20110064!5e0!3m2!1sen!2sin!4v1717221884156!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen={false}
                   loading="lazy"
                   title="GreenWrench Location"
+                  referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
               <CardContent className="p-8 bg-white/80 backdrop-blur-sm">
@@ -75,7 +76,10 @@ const ContactUs = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground">Our Location</h4>
-                      <p className="text-muted-foreground">123 Eco Street, Green City, 10001</p>
+                     <span className="leading-relaxed text-center sm:text-left">
+                  123 Green Street, Eco Park,<br />
+                  New Delhi - 110001, India
+                </span>
                     </div>
                   </div>
                   
@@ -85,7 +89,7 @@ const ContactUs = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground">Phone Number</h4>
-                      <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                      <p className="text-muted-foreground">+91 9311068290</p>
                     </div>
                   </div>
                   
@@ -95,7 +99,7 @@ const ContactUs = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground">Email Address</h4>
-                      <p className="text-muted-foreground">contact@greenwrench.com</p>
+                      <p className="text-muted-foreground">greenwrenchsolutions@gamil.com</p>
                     </div>
                   </div>
                   

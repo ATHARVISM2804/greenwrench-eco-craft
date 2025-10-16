@@ -13,7 +13,7 @@ const Blog = () => {
       date: "March 15, 2024",
       category: "Environment",
       readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+      image: "https://plus.unsplash.com/premium_photo-1682310063773-b521f91afb97?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8VGhlJTIwRW52aXJvbm1lbnRhbCUyMEltcGFjdCUyMG9mJTIwQ2FyJTIwUmVjeWNsaW5nJTNBJTIwQSUyMENvbXByZWhlbnNpdmUlMjBHdWlkZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ const Blog = () => {
       date: "March 12, 2024",
       category: "Policy",
       readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+      image: "https://media.istockphoto.com/id/1362776762/photo/junkyard-with-wrecked-cars-aerial-view.webp?a=1&b=1&s=612x612&w=0&k=20&c=XM_7BCGPmZMQUKGnBBa7OuplOVtkmMw12vQc2w12GZw=",
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ const Blog = () => {
       date: "March 10, 2024",
       category: "Tips & Guides",
       readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+      image: "https://media.istockphoto.com/id/679156702/photo/businessman-with-dollar-and-broken-car.webp?a=1&b=1&s=612x612&w=0&k=20&c=ZHkJVbZdwJjnEFFdQuzmA9QB1lww_AEJlUA4rzGYQXo=",
     },
     {
       id: 4,
@@ -43,7 +43,7 @@ const Blog = () => {
       date: "March 8, 2024",
       category: "Process",
       readTime: "8 min read",
-      image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1645216755684-c946ce202427?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8VW5kZXJzdGFuZGluZyUyMHRoZSUyMENhciUyMFJlY3ljbGluZyUyMFByb2Nlc3MlM0ElMjBGcm9tJTIwQ29sbGVjdGlvbiUyMHRvJTIwUmV1c2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600",
     },
     {
       id: 5,
@@ -53,7 +53,7 @@ const Blog = () => {
       date: "March 5, 2024",
       category: "Legal",
       readTime: "4 min read",
-      image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
+      image: "https://media.istockphoto.com/id/1357813206/photo/cropped-shot-insurance-agent-holding-insurance-claim-form-and-inspecting-damaged-car.webp?a=1&b=1&s=612x612&w=0&k=20&c=SKqJ_qiQklX6PLBZ6m8snev648kXMYEyFQ_Cx4xeKfA=",
     },
     {
       id: 6,
@@ -63,7 +63,7 @@ const Blog = () => {
       date: "March 3, 2024",
       category: "Future Trends",
       readTime: "9 min read",
-      image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80",
+      image: "https://plus.unsplash.com/premium_photo-1737151618128-55a9f063eef1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fFN1c3RhaW5hYmxlJTIwVHJhbnNwb3J0YXRpb24lM0ElMjBUaGUlMjBGdXR1cmUlMjBvZiUyMEF1dG9tb3RpdmUlMjBJbmR1c3RyeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
     },
     {
       id: 7,
@@ -73,7 +73,7 @@ const Blog = () => {
       date: "March 1, 2024",
       category: "Environment",
       readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
+      image: "https://media.istockphoto.com/id/476886921/photo/car-scrapyard.webp?a=1&b=1&s=612x612&w=0&k=20&c=rpPp1FVgVLYG_GooZHgk9vmFcto23aHD4NqmseY_uMM=",
     },
     {
       id: 8,
@@ -83,7 +83,7 @@ const Blog = () => {
       date: "February 27, 2024",
       category: "Policy",
       readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1465101178521-c1a4c8a0f8b9?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1687867452629-a8c337d0e72e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8MjAyNCUyMFBvbGljeSUyMFVwZGF0ZXMlM0ElMjBXaGF0JTIwQ2FyJTIwT3duZXJzJTIwTmVlZCUyMHRvJTIwS25vdyUyMEFib3V0JTIwU2NyYXBwaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
     },
     {
       id: 9,
@@ -93,7 +93,7 @@ const Blog = () => {
       date: "February 25, 2024",
       category: "Tips & Guides",
       readTime: "4 min read",
-      image: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1687867453664-8e1c9f17bda0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fFRvcCUyMDEwJTIwVGlwcyUyMGZvciUyMFByZXBhcmluZyUyMFlvdXIlMjBDYXIlMjBmb3IlMjBTY3JhcHBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600",
     },
     {
       id: 10,
@@ -103,7 +103,7 @@ const Blog = () => {
       date: "February 22, 2024",
       category: "Process",
       readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80",
+      image: "https://media.istockphoto.com/id/172305949/photo/scrap-cars-in-a-stack.webp?a=1&b=1&s=612x612&w=0&k=20&c=FxLjyAD_b1RVyF1YYNoXo3pCIjDt5gBtJIZhsBI5dM4=",
     },
     {
       id: 11,
@@ -113,7 +113,7 @@ const Blog = () => {
       date: "February 20, 2024",
       category: "Legal",
       readTime: "3 min read",
-      image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1707573057277-63d1bb13e43c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8TGVnYWwlMjBDaGVja2xpc3QlM0ElMjBEb2N1bWVudHMlMjBSZXF1aXJlZCUyMGZvciUyMENhciUyMFNjcmFwcGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
     },
     {
       id: 12,
@@ -123,7 +123,7 @@ const Blog = () => {
       date: "February 18, 2024",
       category: "Future Trends",
       readTime: "8 min read",
-      image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1690913967340-df8d3c40319a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8VGhlJTIwRnV0dXJlJTIwb2YlMjBDYXIlMjBTY3JhcHBpbmclM0ElMjBJbm5vdmF0aW9ucyUyMGluJTIwUmVjeWNsaW5nJTIwVGVjaG5vbG9neXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
     },
   ];
 
