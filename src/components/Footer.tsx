@@ -163,7 +163,7 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-4 sm:py-6">
           <div className="flex flex-col md:flex-row justify-center md:justify-between items-center space-y-3 md:space-y-0">
             <p className="text-white/60 text-xs sm:text-sm text-center md:text-left">
-              © 2024 GreenWrench Solutions. All rights reserved.
+              © 2025 Greenwrench solutions all rights reserved .
             </p>
             
             <div className="flex flex-wrap justify-center space-x-4 sm:space-x-6 text-xs sm:text-sm">

@@ -112,7 +112,7 @@ const Advantages = () => {
                   {/* Full width Cloudinary Image */}
                   <div className="w-full flex items-center justify-center py-2">
                     <img 
-                      src="https://res.cloudinary.com/dmhabztbf/image/upload/v1760359896/Gemini_Generated_Image_1kfs6g1kfs6g1kfs_mkrn68.png" 
+                      src="https://res.cloudinary.com/dmhabztbf/image/upload/v1761680268/Gemini_Generated_Image_jxnlpmjxnlpmjxnl_ycyv0o.png" 
                       alt="The smart way showing direct path from car to certificate through GreenWrench"
                       className="max-w-full h-auto rounded-lg shadow-sm"
                       style={{ width: "100%" }}
@@ -121,14 +121,14 @@ const Advantages = () => {
                 </div>
               </div>
               <ul className="space-y-1.5 sm:space-y-2 text-green-800 text-xs sm:text-sm mb-2 pl-1">
-                <li>✓ Direct path from customer to authorized RVSF (GreenWrench)</li>
+                <li>✓ Direct path from customer to GreenWrench</li>
                 <li>✓ Legally valid Certificate of Deposit (CoD) and Certificate of Vehicle Scrapping (CVS)</li>
                 <li>✓ Maximum value with no middlemen taking cuts</li>
                 <li>✓ Environmentally responsible disposal with 90% recycling rate</li>
                 <li>✓ Quick processing and immediate certificate issuance</li>
               </ul>
               <div className="text-[10px] sm:text-xs text-green-700 mt-2">
-                *Avoid unnecessary middlemen. Go direct for maximum value and legal safety with GreenWrench, a government-authorized RVSF.
+                *Avoid unnecessary middlemen. Go direct for maximum value and legal safety with GreenWrench.
               </div>
             </CardContent>
           </Card>

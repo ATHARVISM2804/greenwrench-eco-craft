@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, TrendingUp, X, ExternalLink, ArrowRight, FileText } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const News = () => {
   const newsItems = [
@@ -362,6 +362,22 @@ const News = () => {
   // Quick Links modal state
   const [quickLinkModal, setQuickLinkModal] = useState<string | null>(null);
 
+  // Effect to prevent background scrolling when modal is open
+  useEffect(() => {
+    if (openModal || quickLinkModal) {
+      // Lock scroll on body
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Restore scroll when modal is closed
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Cleanup function to ensure scroll is restored when component unmounts
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [openModal, quickLinkModal]);
+
   const trendingTopics = [
     "Vehicle Scrappage Policy 2024",
     "Electric Vehicle Incentives",
@@ -663,8 +679,14 @@ const News = () => {
 
       {/* Article Modal Popup */}
       {openModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 overflow-y-auto">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full relative animate-fade-in overflow-hidden max-h-[90vh] flex flex-col">
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 overflow-hidden"
+          onClick={() => setOpenModal(null)}
+        >
+          <div 
+            className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full relative animate-fade-in max-h-[90vh] flex flex-col my-4 mx-4"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               className="absolute top-6 right-6 text-gray-500 hover:text-gray-800 z-20 bg-white/80 rounded-full p-2"
               onClick={() => setOpenModal(null)}
@@ -674,7 +696,7 @@ const News = () => {
             </button>
             
             {/* Header with Image */}
-            <div className="w-full h-64 relative">
+            <div className="w-full h-64 relative flex-shrink-0">
               <img
                 src={openModal.image}
                 alt={openModal.title}
@@ -689,7 +711,7 @@ const News = () => {
             </div>
             
             {/* Article Content */}
-            <div className="p-8 overflow-y-auto">
+            <div className="p-8 overflow-y-auto flex-grow">
               <div className="flex items-center justify-between mb-6 text-sm text-muted-foreground border-b border-gray-100 pb-4">
                 <div className="flex items-center space-x-4">
                   <span className="flex items-center gap-1">
@@ -711,36 +733,7 @@ const News = () => {
               </div>
               
               {/* Share & External Link */}
-              <div className="flex justify-between items-center mt-6 pt-4 border-t border-gray-100">
-                <div className="flex items-center gap-2">
-                  <span className="text-sm text-muted-foreground">Share:</span>
-                  <button className="p-2 bg-blue-100 text-blue-600 rounded-full hover:bg-blue-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-facebook" viewBox="0 0 16 16">
-                      <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.049c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.049H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-                    </svg>
-                  </button>
-                  <button className="p-2 bg-sky-100 text-sky-600 rounded-full hover:bg-sky-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-twitter" viewBox="0 0 16 16">
-                      <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-                    </svg>
-                  </button>
-                  <button className="p-2 bg-green-100 text-green-600 rounded-full hover:bg-green-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-whatsapp" viewBox="0 0 16 16">
-                      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-                    </svg>
-                  </button>
-                </div>
-                
-                <a 
-                  href="#" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-primary hover:underline"
-                >
-                  <span>Visit Official Source</span>
-                  <ExternalLink className="h-4 w-4" />
-                </a>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -748,9 +741,15 @@ const News = () => {
 
       {/* Quick Links Modal Popup */}
       {quickLinkModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 overflow-y-auto">
-          <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full relative animate-fade-in overflow-hidden max-h-[80vh] flex flex-col">
-            <div className="bg-gradient-to-r from-premium-green to-emerald-600 p-6 text-white">
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 overflow-hidden"
+          onClick={() => setQuickLinkModal(null)}
+        >
+          <div 
+            className="bg-white rounded-xl shadow-2xl max-w-2xl w-full relative animate-fade-in max-h-[80vh] flex flex-col my-4 mx-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="bg-gradient-to-r from-premium-green to-emerald-600 p-6 text-white flex-shrink-0">
               <h3 className="text-2xl font-bold">{quickLinksContent[quickLinkModal as keyof typeof quickLinksContent].title}</h3>
             </div>
             
@@ -763,7 +762,7 @@ const News = () => {
             </button>
             
             {/* Content */}
-            <div className="p-6 overflow-y-auto">
+            <div className="p-6 overflow-y-auto flex-grow">
               <div 
                 className="prose prose-green max-w-none"
                 dangerouslySetInnerHTML={{ 

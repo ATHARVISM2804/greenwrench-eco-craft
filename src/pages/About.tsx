@@ -91,8 +91,8 @@ const About = () => {
                 <Target className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <div className="text-2xl font-bold text-white">8+ Years</div>
-                <div className="text-white/70">Of experience</div>
+                <div className="text-2xl font-bold text-white">2500+ Cars</div>
+                <div className="text-white/70">Recycled</div>
               </div>
             </div>
             
@@ -101,18 +101,8 @@ const About = () => {
                 <Users className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <div className="text-2xl font-bold text-white">45+ Team</div>
-                <div className="text-white/70">Of experts</div>
-              </div>
-            </div>
-            
-            <div className="flex items-center">
-              <div className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 bg-white/10 mr-4">
-                <Leaf className="w-5 h-5 text-white" />
-              </div>
-              <div className="text-left">
-                <div className="text-2xl font-bold text-white">100K+ Cars</div>
-                <div className="text-white/70">Recycled</div>
+                <div className="text-2xl font-bold text-white">1500+</div>
+                <div className="text-white/70">Happy Customers</div>
               </div>
             </div>
           </div>
@@ -177,11 +167,11 @@ const About = () => {
                 <h3 className="text-xl font-bold text-foreground mb-4">2030 Goals</h3>
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Cars Recycled</span>
-                  <span className="font-bold text-primary">100,000+</span>
+                  <span className="font-bold text-primary">12500+</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Cities Covered</span>
-                  <span className="font-bold text-primary">500+</span>
+                  <span className="text-muted-foreground">Customer satisfaction</span>
+                  <span className="font-bold text-primary">1500+</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">CO₂ Reduction</span>
