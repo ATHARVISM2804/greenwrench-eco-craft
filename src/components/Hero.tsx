@@ -862,6 +862,17 @@ Please provide me with the best quote for my vehicle. Thank you!`;
     window.open(whatsappUrl, '_blank');
   };
 
+  // Function to scroll to ContactUs section
+  const scrollToContactUs = () => {
+    const contactSection = document.getElementById('contact-us');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   // Get makes based on selected vehicle type
   const getMakesByVehicleType = (type: string) => {
     switch (type) {
@@ -1116,12 +1127,10 @@ Please provide me with the best quote for my vehicle. Thank you!`;
               <Button 
                 size="lg" 
                 className="bg-gradient-primary hover:bg-gradient-premium text-white px-4 py-3 sm:px-5 sm:py-4 md:px-6 md:py-5 text-sm sm:text-base md:text-lg font-semibold shadow-glow hover:shadow-premium transition-all duration-500 transform hover:-translate-y-1"
-                asChild
+                onClick={scrollToContactUs}
               >
-                <a href="https://wa.me/919311068290?text=I want to scrap my car" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-1.5 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                  <span className="whitespace-nowrap">Scrap My Car Now</span>
-                </a>
+                <MessageCircle className="mr-1.5 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                <span className="whitespace-nowrap">Scrap My Car Now</span>
               </Button>
               <Button 
                 size="lg" 
