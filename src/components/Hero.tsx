@@ -392,6 +392,37 @@ const MARUTI_SUZUKI_MODELS = [
   "Fronx"
 ];
 
+const CHEVROLET_MODELS = [
+  "Spark",
+  "Beat",
+  "Aveo",
+  "Cruze",
+  "Optra",
+  "Sail",
+  "Enjoy",
+  "Tavera",
+  "Captiva",
+  "Trailblazer",
+  "Other"
+];
+
+const FIAT_MODELS = [
+  "Punto",
+  "Linea",
+  "Palio",
+  "Siena",
+  "Avventura",
+  "Urban Cross",
+  "Other"
+];
+
+const DAEWOO_MODELS = [
+  "Matiz",
+  "Cielo",
+  "Nexia",
+  "Other"
+];
+
 const MODELS = ["Model 1", "Model 2", "Model 3"];
 
 const Hero = () => {
@@ -501,6 +532,15 @@ const Hero = () => {
     }
     if (selectedMake === "Mitsubishi") {
       return MITSUBISHI_MODELS;
+    }
+    if (selectedMake === "Chevrolet") {
+      return CHEVROLET_MODELS;
+    }
+    if (selectedMake === "Fiat") {
+      return FIAT_MODELS;
+    }
+    if (selectedMake === "Daewoo") {
+      return DAEWOO_MODELS;
     }
     return MODELS;
   };
