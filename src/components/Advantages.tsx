@@ -195,7 +195,7 @@ const Advantages = () => {
                 <div className="space-y-2 sm:space-y-3 text-sm text-muted-foreground">
                   <div className="flex items-center space-x-2 sm:space-x-3">
                     <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
-                    <span>WhatsApp: +91 99999 99999</span>
+                    <span>WhatsApp: +91 9311068290</span>
                   </div>
                   <div className="flex items-center space-x-2 sm:space-x-3">
                     <Truck className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
