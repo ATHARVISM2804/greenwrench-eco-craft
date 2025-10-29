@@ -93,6 +93,305 @@ const TRUCK_MAKES = [
   "Others"
 ];
 
+const NISSAN_MODELS = [
+  "Micra",
+  "Sunny",
+  "Terrano",
+  "Teana",
+  "X-Trail",
+  "Kicks",
+  "Magnite",
+  "Other"
+];
+
+const MG_MODELS = [
+  "Hector",
+  "Hector Plus",
+  "Astor",
+  "Gloster",
+  "Comet",
+  "ZS EV",
+  "Other"
+];
+
+const FORD_MODELS = [
+  "Ikon",
+  "Fusion",
+  "Fiesta",
+  "Figo",
+  "Aspire",
+  "EcoSport",
+  "Endeavour",
+  "Freestyle",
+  "Other"
+];
+
+const JEEP_MODELS = [
+  "Compass",
+  "Meridian",
+  "Wrangler",
+  "Grand Cherokee",
+  "Other"
+];
+
+const MERCEDES_BENZ_MODELS = [
+  "A-Class",
+  "B-Class",
+  "C-Class",
+  "E-Class",
+  "S-Class",
+  "CLA",
+  "GLA",
+  "GLC",
+  "GLE",
+  "GLS",
+  "EQB",
+  "EQS",
+  "Other"
+];
+
+const BMW_MODELS = [
+  "1 Series",
+  "2 Series",
+  "3 Series",
+  "5 Series",
+  "7 Series",
+  "X1",
+  "X3",
+  "X5",
+  "X7",
+  "i4",
+  "iX",
+  "Other"
+];
+
+const AUDI_MODELS = [
+  "A3",
+  "A4",
+  "A6",
+  "A8",
+  "Q3",
+  "Q5",
+  "Q7",
+  "Q8",
+  "e-tron",
+  "Other"
+];
+
+const JAGUAR_MODELS = [
+  "XE",
+  "XF",
+  "XJ",
+  "F-Type",
+  "F-Pace",
+  "I-Pace",
+  "Other"
+];
+
+const LAND_ROVER_MODELS = [
+  "Freelander",
+  "Discovery",
+  "Discovery Sport",
+  "Range Rover Evoque",
+  "Velar",
+  "Defender",
+  "Other"
+];
+
+const VOLVO_MODELS = [
+  "S40",
+  "S60",
+  "S80",
+  "S90",
+  "XC40",
+  "XC60",
+  "XC90",
+  "C40 Recharge",
+  "Other"
+];
+
+const ROLLS_ROYCE_MODELS = [
+  "Ghost",
+  "Phantom",
+  "Wraith",
+  "Dawn",
+  "Cullinan",
+  "Other"
+];
+
+const MITSUBISHI_MODELS = [
+  "Lancer",
+  "Cedia",
+  "Pajero",
+  "Montero",
+  "Outlander",
+  "Other"
+];
+
+const RENAULT_MODELS = [
+  "Logan",
+  "Fluence",
+  "Pulse",
+  "Scala",
+  "Duster",
+  "Lodgy",
+  "Kwid",
+  "Triber",
+  "Kiger",
+  "Other"
+];
+
+const SKODA_MODELS = [
+  "Octavia",
+  "Fabia",
+  "Rapid",
+  "Laura",
+  "Yeti",
+  "Kushaq",
+  "Slavia",
+  "Superb",
+  "Kodiaq",
+  "Other"
+];
+
+const VOLKSWAGEN_MODELS = [
+  "Polo",
+  "Vento",
+  "Jetta",
+  "Passat",
+  "Touareg",
+  "Taigun",
+  "Virtus",
+  "Tiguan",
+  "Other"
+];
+
+const KIA_MODELS = [
+  "Seltos",
+  "Sonet",
+  "Carnival",
+  "Carens",
+  "EV6",
+  "Other"
+];
+
+const MAHINDRA_MODELS = [
+  "Marshal",
+  "Armada",
+  "Scorpio",
+  "Bolero",
+  "Xylo",
+  "Quanto",
+  "Verito",
+  "Thar",
+  "KUV100",
+  "TUV300",
+  "XUV300",
+  "XUV500",
+  "XUV700",
+  "Scorpio N",
+  "Marazzo",
+  "Other"
+];
+
+const TOYOTA_MODELS = [
+  "Qualis",
+  "Corolla",
+  "Corolla Altis",
+  "Camry",
+  "Innova",
+  "Innova Crysta",
+  "Fortuner",
+  "Etios",
+  "Liva",
+  "Yaris",
+  "Urban Cruiser",
+  "Glanza",
+  "Hilux",
+  "Rumion",
+  "Vellfire",
+  "Land Cruiser",
+  "Other"
+];
+
+const HONDA_MODELS = [
+  "City",
+  "Accord",
+  "Civic",
+  "Jazz",
+  "Brio",
+  "Amaze",
+  "Mobilio",
+  "WR-V",
+  "CR-V",
+  "Elevate",
+  "Other"
+];
+
+const TATA_MODELS = [
+  "Indica",
+  "Indigo",
+  "Nano",
+  "Vista",
+  "Zest",
+  "Bolt",
+  "Tiago",
+  "Tigor",
+  "Altroz",
+  "Punch",
+  "Nexon",
+  "Harrier",
+  "Safari",
+  "Aria",
+  "Hexa",
+  "Other"
+];
+
+const HYUNDAI_MODELS = [
+  "Santro",
+  "Accent",
+  "Getz",
+  "i10",
+  "i20",
+  "Eon",
+  "Xcent",
+  "Aura",
+  "Verna",
+  "Creta",
+  "Venue",
+  "Elantra",
+  "Tucson",
+  "Exter",
+  "Sonata",
+  "Terracan",
+  "Other"
+];
+
+const MARUTI_SUZUKI_MODELS = [
+  "800",
+  "Zen",
+  "Esteem", 
+  "Omni",
+  "Gypsy",
+  "Baleno",
+  "Alto",
+  "Alto K10",
+  "WagonR",
+  "Swift",
+  "Dzire",
+  "SX4",
+  "Ritz",
+  "Celerio",
+  "Ignis",
+  "Ertiga",
+  "S-Cross",
+  "Vitara Brezza",
+  "XL6",
+  "Swift Dzire",
+  "Grand Vitara",
+  "Fronx"
+];
+
 const MODELS = ["Model 1", "Model 2", "Model 3"];
 
 const Hero = () => {
@@ -135,7 +434,79 @@ const Hero = () => {
     }
   };
 
+  // Get models based on selected make
+  const getModelsByMake = (selectedMake: string) => {
+    if (selectedMake === "Maruti Suzuki") {
+      return MARUTI_SUZUKI_MODELS;
+    }
+    if (selectedMake === "Hyundai") {
+      return HYUNDAI_MODELS;
+    }
+    if (selectedMake === "Tata") {
+      return TATA_MODELS;
+    }
+    if (selectedMake === "Honda") {
+      return HONDA_MODELS;
+    }
+    if (selectedMake === "Toyota") {
+      return TOYOTA_MODELS;
+    }
+    if (selectedMake === "Mahindra") {
+      return MAHINDRA_MODELS;
+    }
+    if (selectedMake === "Kia") {
+      return KIA_MODELS;
+    }
+    if (selectedMake === "Volkswagen") {
+      return VOLKSWAGEN_MODELS;
+    }
+    if (selectedMake === "Skoda") {
+      return SKODA_MODELS;
+    }
+    if (selectedMake === "Renault") {
+      return RENAULT_MODELS;
+    }
+    if (selectedMake === "Nissan") {
+      return NISSAN_MODELS;
+    }
+    if (selectedMake === "MG") {
+      return MG_MODELS;
+    }
+    if (selectedMake === "Ford") {
+      return FORD_MODELS;
+    }
+    if (selectedMake === "Jeep") {
+      return JEEP_MODELS;
+    }
+    if (selectedMake === "Mercedes-Benz") {
+      return MERCEDES_BENZ_MODELS;
+    }
+    if (selectedMake === "BMW") {
+      return BMW_MODELS;
+    }
+    if (selectedMake === "Audi") {
+      return AUDI_MODELS;
+    }
+    if (selectedMake === "Jaguar") {
+      return JAGUAR_MODELS;
+    }
+    if (selectedMake === "Land Rover") {
+      return LAND_ROVER_MODELS;
+    }
+    if (selectedMake === "Volvo") {
+      return VOLVO_MODELS;
+    }
+    if (selectedMake === "Rolls Royce") {
+      return ROLLS_ROYCE_MODELS;
+    }
+    if (selectedMake === "Mitsubishi") {
+      return MITSUBISHI_MODELS;
+    }
+    return MODELS;
+  };
+
   const currentMakes = getMakesByVehicleType(vehicleType);
+  const currentModels = getModelsByMake(make);
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16 px-4 sm:px-6">
@@ -323,7 +694,7 @@ const Hero = () => {
                           required
                         >
                           <option value="">Select Model</option>
-                          {MODELS.map(m => <option key={m} value={m}>{m}</option>)}
+                          {currentModels.map(m => <option key={m} value={m}>{m}</option>)}
                         </select>
                       )}
                     </div>
