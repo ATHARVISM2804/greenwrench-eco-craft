@@ -79,7 +79,7 @@ const Footer = () => {
                 <Instagram className="h-4 w-4 sm:h-5 sm:w-5" />
               </a>
               <a
-                href="https://www.instagram.com/greenwrenchsolutions?igsh=MTdnYnI2Y21zd2JzNw%3D%3D&utm_source=qr"
+                href="https://youtube.com/@greenwrenchsolutions?si=Hk1OOwzZoEm347NO"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 hover:bg-primary rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
