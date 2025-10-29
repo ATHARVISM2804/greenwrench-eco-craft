@@ -290,6 +290,22 @@ const MAHINDRA_MODELS = [
   "Other"
 ];
 
+const MAHINDRA_TRUCK_MODELS = [
+  "Jeeto",
+  "Jeeto Plus",
+  "Supro Cargo",
+  "Supro Mini Truck",
+  "Jayo",
+  "Bolero Pickup",
+  "Bolero Maxi Truck",
+  "Furio 7",
+  "Furio 11",
+  "Furio 14",
+  "Blazo X",
+  "Cruzio",
+  "Other"
+];
+
 const TOYOTA_MODELS = [
   "Qualis",
   "Corolla",
@@ -630,6 +646,180 @@ const TVS_ELECTRIC_BIKE_MODELS = [
   "Other"
 ];
 
+const TATA_TRUCK_MODELS = [
+  "Prima LX 3123.T",
+  "Prima 4038.S",
+  "Prima 5530.S",
+  "Signa 1923.K",
+  "Signa 4018.S",
+  "Signa 4825.T",
+  "Signa 5530.S",
+  "SE1613",
+  "SE1615",
+  "Other"
+];
+
+const ASHOK_LEYLAND_TRUCK_MODELS = [
+  "Dost",
+  "Dost Plus",
+  "Partner 4 Tyre",
+  "Partner 6 Tyre",
+  "Boss 1115 HB",
+  "Boss 1315 HB",
+  "Boss 1615 HB",
+  "Captain 2523",
+  "Captain 3123",
+  "Ecomet 1015 HE",
+  "Ecomet 1215",
+  "U Truck 3118",
+  "1112 IL",
+  "1616 IL",
+  "Hino",
+  "Falcon",
+  "Stallion",
+  "Other"
+];
+
+const EICHER_TRUCK_MODELS = [
+  "Pro 1049",
+  "Pro 1059",
+  "Pro 1110",
+  "Pro 1112",
+  "Pro 3015",
+  "Pro 3019",
+  "Pro 6025",
+  "Pro 6031",
+  "Pro 8049",
+  "Pro 8035XM",
+  "Pro 2055",
+  "Pro 2110 XP",
+  "Skyline Pro",
+  "Other"
+];
+
+const BHARATBENZ_TRUCK_MODELS = [
+  "1015R",
+  "1215R",
+  "1415R",
+  "1617R",
+  "1923C",
+  "2523R",
+  "2823C",
+  "2828CH",
+  "2828C",
+  "3528CM",
+  "4023T",
+  "4228R",
+  "4828R",
+  "Others",
+  "Other"
+];
+
+const FORCE_MOTORS_TRUCK_MODELS = [
+  "Trump",
+  "Trump 40",
+  "Traveller Pickup",
+  "Traveller Delivery Van",
+  "Shaktiman",
+  "Kargo King",
+  "Kargo King Grand",
+  "Others",
+  "Other"
+];
+
+const ISUZU_TRUCK_MODELS = [
+  "D-Max",
+  "D-Max S-Cab",
+  "S-Cab Z",
+  "V-Cross",
+  "N-Series",
+  "FRR 90",
+  "FVR 34",
+  "FVZ 34",
+  "GIGA Series",
+  "ELF",
+  "Others",
+  "Other"
+];
+
+const VOLVO_TRUCK_MODELS = [
+  "FM 420",
+  "FM 400",
+  "FM 370",
+  "FMX 440",
+  "FMX 460",
+  "FH 520",
+  "FH 540",
+  "FM 480",
+  "FMX 520",
+  "VM Series",
+  "Others",
+  "Other"
+];
+
+const SCANIA_TRUCK_MODELS = [
+  "P230",
+  "P280",
+  "P360",
+  "P410",
+  "R500",
+  "R580",
+  "G310",
+  "G410",
+  "G460",
+  "Others",
+  "Other"
+];
+
+const MAN_TRUCK_MODELS = [
+  "CLA 25.300",
+  "CLA 31.300",
+  "CLA 49.300",
+  "TGS 40.440",
+  "TGS 33.360",
+  "TGM",
+  "TGA",
+  "Others",
+  "Other"
+];
+
+const AMW_TRUCK_MODELS = [
+  "2518 TP",
+  "3118",
+  "4018",
+  "4923",
+  "1618 TP",
+  "2523",
+  "2528 TP",
+  "Others",
+  "Other"
+];
+
+const SML_ISUZU_TRUCK_MODELS = [
+  "Prestige GS",
+  "Super GS",
+  "Samrat GS",
+  "Sartaj HG 72",
+  "Hiroi",
+  "S7",
+  "Tippers",
+  "Others",
+  "Other"
+];
+
+const PIAGGIO_TRUCK_MODELS = [
+  "Ape Xtra LDX",
+  "Ape HT",
+  "Ape Auto DX",
+  "Porter",
+  "Porter 1000",
+  "Ape Xtra Cargo",
+  "Ape Xtra FX",
+  "Ape E-City",
+  "Others",
+  "Other"
+];
+
 const MODELS = ["Model 1", "Model 2", "Model 3"];
 
 const Hero = () => {
@@ -680,8 +870,11 @@ const Hero = () => {
     if (selectedMake === "Hyundai") {
       return HYUNDAI_MODELS;
     }
-    if (selectedMake === "Tata") {
+    if (selectedMake === "Tata" && vehicleType === "Car") {
       return TATA_MODELS;
+    }
+    if (selectedMake === "Tata" && vehicleType === "Truck") {
+      return TATA_TRUCK_MODELS;
     }
     if (selectedMake === "Honda" && vehicleType === "Bike") {
       return HONDA_BIKE_MODELS;
@@ -692,8 +885,11 @@ const Hero = () => {
     if (selectedMake === "Toyota") {
       return TOYOTA_MODELS;
     }
-    if (selectedMake === "Mahindra") {
+    if (selectedMake === "Mahindra" && vehicleType === "Car") {
       return MAHINDRA_MODELS;
+    }
+    if (selectedMake === "Mahindra" && vehicleType === "Truck") {
+      return MAHINDRA_TRUCK_MODELS;
     }
     if (selectedMake === "Kia") {
       return KIA_MODELS;
@@ -734,8 +930,11 @@ const Hero = () => {
     if (selectedMake === "Land Rover") {
       return LAND_ROVER_MODELS;
     }
-    if (selectedMake === "Volvo") {
+    if (selectedMake === "Volvo" && vehicleType === "Car") {
       return VOLVO_MODELS;
+    }
+    if (selectedMake === "Volvo" && vehicleType === "Truck") {
+      return VOLVO_TRUCK_MODELS;
     }
     if (selectedMake === "Rolls Royce") {
       return ROLLS_ROYCE_MODELS;
@@ -802,6 +1001,36 @@ const Hero = () => {
     }
     if (selectedMake === "TVS Electric") {
       return TVS_ELECTRIC_BIKE_MODELS;
+    }
+    if (selectedMake === "Ashok Leyland") {
+      return ASHOK_LEYLAND_TRUCK_MODELS;
+    }
+    if (selectedMake === "Eicher") {
+      return EICHER_TRUCK_MODELS;
+    }
+    if (selectedMake === "BharatBenz") {
+      return BHARATBENZ_TRUCK_MODELS;
+    }
+    if (selectedMake === "Force Motors") {
+      return FORCE_MOTORS_TRUCK_MODELS;
+    }
+    if (selectedMake === "Isuzu") {
+      return ISUZU_TRUCK_MODELS;
+    }
+    if (selectedMake === "Scania") {
+      return SCANIA_TRUCK_MODELS;
+    }
+    if (selectedMake === "MAN") {
+      return MAN_TRUCK_MODELS;
+    }
+    if (selectedMake === "AMW") {
+      return AMW_TRUCK_MODELS;
+    }
+    if (selectedMake === "SML Isuzu") {
+      return SML_ISUZU_TRUCK_MODELS;
+    }
+    if (selectedMake === "Piaggio") {
+      return PIAGGIO_TRUCK_MODELS;
     }
     
     return MODELS;
