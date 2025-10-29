@@ -22,7 +22,77 @@ const VEHICLE_TYPES = [
   { label: "Other", icon: Bus },
 ];
 
-const MAKES = ["Maruti", "Hyundai", "Honda", "Tata", "Toyota"];
+const CAR_MAKES = [
+  "Maruti Suzuki",
+  "Hyundai", 
+  "Tata",
+  "Honda",
+  "Toyota",
+  "Mahindra",
+  "Kia",
+  "Volkswagen",
+  "Skoda",
+  "Renault",
+  "Nissan",
+  "MG",
+  "Ford",
+  "Jeep",
+  "Mercedes-Benz",
+  "BMW",
+  "Audi",
+  "Jaguar",
+  "Land Rover",
+  "Volvo",
+  "Rolls Royce",
+  "Mitsubishi",
+  "Chevrolet",
+  "Fiat",
+  "Daewoo"
+];
+
+const BIKE_MAKES = [
+  "Hero",
+  "Honda",
+  "TVS",
+  "Bajaj",
+  "Royal Enfield",
+  "Yamaha",
+  "Suzuki",
+  "KTM",
+  "Kawasaki",
+  "BMW",
+  "Harley Davidson",
+  "Jawa",
+  "Yezdi",
+  "Triumph",
+  "Ducati",
+  "Ather",
+  "Ola",
+  "TVS Electric",
+  "Simple Energy",
+  "Tork Motors",
+  "Ultraviolette",
+  "Revolt",
+  "Other"
+];
+
+const TRUCK_MAKES = [
+  "Tata",
+  "Ashok Leyland", 
+  "Mahindra",
+  "Eicher",
+  "BharatBenz",
+  "Force Motors",
+  "Isuzu",
+  "Volvo",
+  "Scania",
+  "MAN",
+  "AMW",
+  "SML Isuzu",
+  "Piaggio",
+  "Others"
+];
+
 const MODELS = ["Model 1", "Model 2", "Model 3"];
 
 const Hero = () => {
@@ -50,6 +120,22 @@ const Hero = () => {
     const whatsappUrl = `https://wa.me/919999999999?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
   };
+
+  // Get makes based on selected vehicle type
+  const getMakesByVehicleType = (type: string) => {
+    switch (type) {
+      case "Car":
+        return CAR_MAKES;
+      case "Bike":
+        return BIKE_MAKES;
+      case "Truck":
+        return TRUCK_MAKES;
+      default:
+        return ["Other"];
+    }
+  };
+
+  const currentMakes = getMakesByVehicleType(vehicleType);
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16 px-4 sm:px-6">
@@ -184,7 +270,11 @@ const Hero = () => {
                           ? "bg-green-50 border-green-400 text-green-700 shadow"
                           : "bg-white border-gray-200 text-green-600 hover:bg-green-50"}
                       `}
-                      onClick={() => setVehicleType(type.label)}
+                      onClick={() => {
+                        setVehicleType(type.label);
+                        setMake(""); // Reset make when vehicle type changes
+                        setModel(""); // Reset model when vehicle type changes
+                      }}
                     >
                       <type.icon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 mb-1" />
                       {type.label}
@@ -196,26 +286,46 @@ const Hero = () => {
                 <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
                   <div className="grid grid-cols-2 gap-2 sm:gap-3">
                     <div>
-                      <select
-                        className="w-full h-10 sm:h-12 px-2 sm:px-3 text-sm sm:text-base rounded-lg border border-gray-200 bg-white text-gray-700 focus:border-green-500 focus:ring-1 focus:ring-green-200"
-                        value={make}
-                        onChange={e => setMake(e.target.value)}
-                        required
-                      >
-                        <option value="">Select Make</option>
-                        {MAKES.map(m => <option key={m} value={m}>{m}</option>)}
-                      </select>
+                      {vehicleType === "Other" ? (
+                        <Input
+                          className="w-full h-10 sm:h-12 px-2 sm:px-3 text-sm sm:text-base rounded-lg border border-gray-200 bg-white text-gray-700 focus:border-green-500 focus:ring-1 focus:ring-green-200"
+                          placeholder="Enter Make (e.g Toyota)"
+                          value={make}
+                          onChange={e => setMake(e.target.value)}
+                          required
+                        />
+                      ) : (
+                        <select
+                          className="w-full h-10 sm:h-12 px-2 sm:px-3 text-sm sm:text-base rounded-lg border border-gray-200 bg-white text-gray-700 focus:border-green-500 focus:ring-1 focus:ring-green-200"
+                          value={make}
+                          onChange={e => setMake(e.target.value)}
+                          required
+                        >
+                          <option value="">Select Make</option>
+                          {currentMakes.map(m => <option key={m} value={m}>{m}</option>)}
+                        </select>
+                      )}
                     </div>
                     <div>
-                      <select
-                        className="w-full h-10 sm:h-12 px-2 sm:px-3 text-sm sm:text-base rounded-lg border border-gray-200 bg-white text-gray-700 focus:border-green-500 focus:ring-1 focus:ring-green-200"
-                        value={model}
-                        onChange={e => setModel(e.target.value)}
-                        required
-                      >
-                        <option value="">Select Model</option>
-                        {MODELS.map(m => <option key={m} value={m}>{m}</option>)}
-                      </select>
+                      {vehicleType === "Other" ? (
+                        <Input
+                          className="w-full h-10 sm:h-12 px-2 sm:px-3 text-sm sm:text-base rounded-lg border border-gray-200 bg-white text-gray-700 focus:border-green-500 focus:ring-1 focus:ring-green-200"
+                          placeholder="Enter Model (e.g Glanza)"
+                          value={model}
+                          onChange={e => setModel(e.target.value)}
+                          required
+                        />
+                      ) : (
+                        <select
+                          className="w-full h-10 sm:h-12 px-2 sm:px-3 text-sm sm:text-base rounded-lg border border-gray-200 bg-white text-gray-700 focus:border-green-500 focus:ring-1 focus:ring-green-200"
+                          value={model}
+                          onChange={e => setModel(e.target.value)}
+                          required
+                        >
+                          <option value="">Select Model</option>
+                          {MODELS.map(m => <option key={m} value={m}>{m}</option>)}
+                        </select>
+                      )}
                     </div>
                   </div>
                   
