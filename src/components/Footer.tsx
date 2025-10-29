@@ -137,8 +137,8 @@ const Footer = () => {
               <div className="flex items-center sm:items-start space-x-3 text-white/80">
                 <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-primary mt-0 sm:mt-1 flex-shrink-0" />
                 <span className="leading-relaxed text-center sm:text-left">
-                  123 Green Street, Eco Park,<br />
-                  New Delhi - 110001, India
+                  5/36, East Patel Nagar, <br />
+                  New Delhi, Delhi, India
                 </span>
               </div>
 

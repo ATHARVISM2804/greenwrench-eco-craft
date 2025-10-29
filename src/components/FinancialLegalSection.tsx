@@ -140,38 +140,39 @@ const benefits = [
 ];
 
 const FinancialLegalSection = () => (
-	<section className="py-16 bg-white">
-		<div className="max-w-6xl mx-auto px-4">
+	<section className="py-8 sm:py-12 md:py-16 bg-white">
+		<div className="max-w-6xl mx-auto px-4 sm:px-6">
 			{/* Heading styled similar to the provided image */}
 			<div className="flex flex-col items-center mb-2">
-				<span className="inline-flex items-center px-6 py-2 rounded-full border border-green-200 bg-green-50 text-green-700 font-semibold text-lg mb-6">
+				<span className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-2 rounded-full border border-green-200 bg-green-50 text-green-700 font-semibold text-base sm:text-lg mb-4 sm:mb-6">
 					<span className="mr-2">🏆</span> Finance
 				</span>
-				<h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
+				<h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-3 sm:mb-4 px-2">
 					Finance and{" "}
-					<span className="text-green-600 font-extrabold">Legal</span>
+					<span className="text-green-600 font-extrabold">Legal </span>
 					<span className="text-green-600 font-extrabold">Benefits</span>
 				</h2>
-				<p className="text-center text-lg text-gray-500 max-w-2xl">
+				<p className="text-center text-sm sm:text-base md:text-lg text-gray-500 max-w-2xl px-2">
 					Scrapping your vehicle with a Government-Authorized Facility offers significant advantages
 				</p>
 			</div>
 			{/* Cards grid */}
-			<div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+			<div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-8 sm:mt-10">
 				{benefits.map((benefit, idx) => (
 					<div
 						key={benefit.title}
-						className="bg-white rounded-2xl shadow p-7 flex flex-col h-full transition-all duration-300 border border-transparent hover:shadow-xl hover:-translate-y-2 hover:border-green-300"
+						className="bg-white rounded-xl sm:rounded-2xl shadow p-4 sm:p-6 md:p-7 flex flex-col h-full transition-all duration-300 border border-transparent hover:shadow-xl hover:-translate-y-2 hover:border-green-300"
 					>
-						<div className="mb-4">{benefit.icon}</div>
-						<h3 className="text-xl font-semibold mb-4">{benefit.title}</h3>
-						<ul className="space-y-3 mb-2">
+						<div className="mb-3 sm:mb-4">{benefit.icon}</div>
+						<h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{benefit.title}</h3>
+						<ul className="space-y-2 sm:space-y-3 mb-2">
 							{benefit.points.map((point, i) => (
 								<li key={i} className="flex items-start gap-2">
-									<span className="mt-1 text-green-600">
+									<span className="mt-1 text-green-600 flex-shrink-0">
 										<svg
-											width="20"
-											height="20"
+											width="16"
+											height="16"
+											className="sm:w-5 sm:h-5"
 											fill="none"
 											stroke="currentColor"
 											strokeWidth="2"
@@ -180,7 +181,7 @@ const FinancialLegalSection = () => (
 											<path d="M5 13l4 4L19 7" />
 										</svg>
 									</span>
-									<span>
+									<span className="text-sm sm:text-base">
 										<b>{point.bold}</b>
 										{point.text}
 									</span>
@@ -193,24 +194,24 @@ const FinancialLegalSection = () => (
 			</div>
 
 			{/* Enforcement Alert Section */}
-			<div className="mt-20 w-full bg-white">
-				<div className="flex flex-col md:flex-row items-center gap-8">
+			<div className="mt-12 sm:mt-16 md:mt-20 w-full bg-white">
+				<div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8">
 					{/* Left: Text */}
-					<div className="flex-1 min-w-0">
-						<span className="inline-block bg-red-600 text-white font-semibold rounded-full px-5 py-2 text-sm mb-6">
+					<div className="flex-1 min-w-0 text-center md:text-left">
+						<span className="inline-block bg-red-600 text-white font-semibold rounded-full px-4 py-2 sm:px-5 sm:py-2 text-xs sm:text-sm mb-4 sm:mb-6">
 							URGENT ENFORCEMENT ALERT
 						</span>
-						<h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
-							Don't Let Your Vehicle<br />
-							Get <span className="text-green-600">Seized.</span> Act Now.
+						<h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-3 sm:mb-4 leading-tight px-2">
+							Don't Let Your Vehicle<br className="hidden sm:block" />
+							<span className="sm:hidden"> </span>Get <span className="text-green-600">Seized.</span> Act Now.
 						</h2>
-						<p className="text-lg text-gray-600 mb-6 max-w-xl">
+						<p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6 max-w-xl mx-auto md:mx-0 px-2">
 							Government agencies are actively seizing end-of-life vehicles across Delhi-NCR without prior notice. Protect your investment before it's too late{" "}
 							<a href="#" className="text-red-600 font-medium underline hover:text-red-700 transition">Learn more.</a>
 						</p>
 						<a 
 							href="#contact" 
-							className="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-3 rounded-full text-lg shadow transition inline-block"
+							className="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg shadow transition inline-block"
 							onClick={(e) => {
 								e.preventDefault();
 								document.getElementById('contact')?.scrollIntoView({
@@ -222,12 +223,12 @@ const FinancialLegalSection = () => (
 						</a>
 					</div>
 					{/* Right: Illustration */}
-					<div className="flex-1 flex justify-center items-center min-w-0 mt-10 md:mt-0">
+					<div className="flex-1 flex justify-center items-center min-w-0 mt-6 md:mt-0 px-4">
 						<img
 							src={scarp}
 							alt="Vehicle being seized illustration"
-							className="max-w-full h-auto"
-							style={{ maxHeight: 260 }}
+							className="max-w-full h-auto w-full max-w-sm md:max-w-none"
+							style={{ maxHeight: '200px', objectFit: 'contain' }}
 						/>
 					</div>
 				</div>

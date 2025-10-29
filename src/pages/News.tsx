@@ -469,8 +469,8 @@ const News = () => {
   return (
     <div className="min-h-screen bg-background">
       
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#004d25] via-[#00592a] to-[#005628] text-white py-32 overflow-hidden">
+      {/* Hero Section - Mobile Optimized */}
+      <section className="relative bg-gradient-to-br from-[#004d25] via-[#00592a] to-[#005628] text-white py-16 sm:py-24 lg:py-32 overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 z-0"
@@ -478,45 +478,45 @@ const News = () => {
             backgroundImage: "url('https://images.unsplash.com/photo-1529307474719-3d0a417aaf8a?auto=format&fit=crop&w=1200&q=80')",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            opacity: 0.5, // Reduced opacity to show the deep green better
+            opacity: 0.5,
           }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-br from-[#004d25]/80 via-[#00592a]/70 to-[#005628]/60 z-10"></div>
         
-        {/* Decorative circles */}
-        <div className="absolute -left-24 top-1/4 w-64 h-64 bg-[#007c3e]/20 rounded-full blur-3xl z-10"></div>
-        <div className="absolute -right-32 bottom-0 w-80 h-80 bg-[#007c3e]/20 rounded-full blur-3xl z-10"></div>
-        <div className="absolute right-1/4 top-1/3 w-40 h-40 bg-[#008f47]/20 rounded-full blur-2xl z-10"></div>
+        {/* Decorative circles - Hidden on small screens */}
+        <div className="absolute -left-24 top-1/4 w-64 h-64 bg-[#007c3e]/20 rounded-full blur-3xl z-10 hidden md:block"></div>
+        <div className="absolute -right-32 bottom-0 w-80 h-80 bg-[#007c3e]/20 rounded-full blur-3xl z-10 hidden md:block"></div>
+        <div className="absolute right-1/4 top-1/3 w-40 h-40 bg-[#008f47]/20 rounded-full blur-2xl z-10 hidden lg:block"></div>
         
-        <div className="container mx-auto px-4 text-center relative z-20">
-          <div className="inline-block mb-6">
-            <span className="px-6 py-3 bg-white/10 border border-white/20 rounded-full text-white text-lg font-semibold backdrop-blur-sm">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
+          <div className="inline-block mb-4 sm:mb-6">
+            <span className="px-4 sm:px-6 py-2 sm:py-3 bg-white/10 border border-white/20 rounded-full text-white text-sm sm:text-lg font-semibold backdrop-blur-sm">
               📰 Latest Updates
             </span>
           </div>
           
-          <h1 className="text-6xl lg:text-7xl font-extrabold mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight">
             <span className="text-white">Latest </span>
             <span className="text-[#40c67d]">News</span>
           </h1>
           
-          {/* Animated underline similar to the image */}
-          <div className="w-40 h-1 bg-[#40c67d] mx-auto mb-8"></div>
+          {/* Animated underline */}
+          <div className="w-24 sm:w-40 h-1 bg-[#40c67d] mx-auto mb-6 sm:mb-8"></div>
           
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 px-4">
             Stay updated with the latest government policies, regulations, and industry developments 
             in automotive recycling and sustainable practices
           </p>
           
-          {/* Stats display similar to the image */}
-          <div className="flex flex-wrap justify-center gap-8 mt-12">
+          {/* Stats display - Mobile optimized */}
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 mt-8 sm:mt-12">
             <div className="flex items-center">
               <div className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 bg-white/10 mr-4">
                 <Calendar className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <div className="text-2xl font-bold text-white">{new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</div>
-                <div className="text-white/70">Latest Updates</div>
+                <div className="text-xl sm:text-2xl font-bold text-white">{new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</div>
+                <div className="text-sm sm:text-base text-white/70">Latest Updates</div>
               </div>
             </div>
             
@@ -525,64 +525,64 @@ const News = () => {
                 <FileText className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <div className="text-2xl font-bold text-white">{newsItems.length}+ Articles</div>
-                <div className="text-white/70">Updated Weekly</div>
+                <div className="text-xl sm:text-2xl font-bold text-white">{newsItems.length}+ Articles</div>
+                <div className="text-sm sm:text-base text-white/70">Updated Weekly</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Main Content with Green Gradient Background (similar to HowItWorks) */}
-      <section className="py-20 bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 relative overflow-hidden">
-        {/* Decorative elements similar to HowItWorks */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-premium-green/15 via-transparent to-transparent"></div>
-        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-l from-green-200/10 to-emerald-300/10 rounded-full blur-2xl"></div>
+      {/* Main Content - Mobile Optimized */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 relative overflow-hidden">
+        {/* Decorative elements - Hidden on mobile */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-premium-green/15 via-transparent to-transparent hidden md:block"></div>
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl hidden md:block"></div>
+        <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-l from-green-200/10 to-emerald-300/10 rounded-full blur-2xl hidden md:block"></div>
         
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-4 gap-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
             
-            {/* Main News Content */}
-            <div className="lg:col-span-3 space-y-8">
+            {/* Main News Content - Mobile First */}
+            <div className="lg:col-span-3 space-y-6 lg:space-y-8">
               {newsItems.map((news, index) => (
                 <Card key={news.id} className="shadow-card hover:shadow-premium transition-all duration-300 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <CardContent className="p-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex items-center space-x-3">
-                        <Badge variant={news.urgent ? "destructive" : "secondary"}>
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 sm:mb-4 gap-2">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <Badge variant={news.urgent ? "destructive" : "secondary"} className="text-xs">
                           {news.category}
                         </Badge>
                         {news.urgent && (
-                          <Badge variant="destructive" className="animate-pulse">
+                          <Badge variant="destructive" className="animate-pulse text-xs">
                             URGENT
                           </Badge>
                         )}
                       </div>
-                      <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                        <Calendar className="h-4 w-4" />
+                      <div className="flex items-center space-x-2 text-xs sm:text-sm text-muted-foreground">
+                        <Calendar className="h-3 w-3 sm:h-4 sm:w-4" />
                         <span>{news.date}</span>
                       </div>
                     </div>
                     
-                    <h2 className="text-2xl font-bold text-foreground mb-4 hover:text-primary transition-colors cursor-pointer">
+                    <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground mb-3 sm:mb-4 hover:text-primary transition-colors cursor-pointer leading-tight">
                       {news.title}
                     </h2>
                     
-                    <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                    <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed mb-4 line-clamp-3 sm:line-clamp-none">
                       {news.summary}
                     </p>
                     
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm text-muted-foreground">
-                        <span className="font-medium">Source:</span> {news.source}
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                      <div className="text-xs sm:text-sm text-muted-foreground">
+                        <span className="font-medium">Source:</span> <span className="truncate">{news.source}</span>
                       </div>
                       <button 
-                        className="text-primary hover:underline font-medium flex items-center"
+                        className="text-primary hover:underline font-medium flex items-center self-start sm:self-auto text-sm"
                         onClick={() => setOpenModal(news)}
                       >
                         Read Full Article
-                        <ArrowRight className="ml-1 h-4 w-4" />
+                        <ArrowRight className="ml-1 h-3 w-3 sm:h-4 sm:w-4" />
                       </button>
                     </div>
                   </CardContent>
@@ -590,14 +590,14 @@ const News = () => {
               ))}
             </div>
 
-            {/* Sidebar */}
-            <div className="space-y-8">
+            {/* Sidebar - Mobile Optimized */}
+            <div className="space-y-6 lg:space-y-8">
               
-              {/* Breaking News */}
+              {/* Breaking News - Mobile Optimized */}
               <Card className="bg-gradient-primary text-white">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-4 flex items-center">
-                    <TrendingUp className="mr-2 h-5 w-5" />
+                <CardContent className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 flex items-center">
+                    <TrendingUp className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                     Breaking News
                   </h3>
                   <div className="space-y-3">
@@ -606,7 +606,7 @@ const News = () => {
                         <Clock className="h-3 w-3" />
                         <span>2 hours ago</span>
                       </div>
-                      <p className="text-white/90">
+                      <p className="text-white/90 leading-relaxed">
                         Parliament passes new vehicle scrapping bill with enhanced benefits for citizens.
                       </p>
                     </div>
@@ -614,49 +614,49 @@ const News = () => {
                 </CardContent>
               </Card>
 
-              {/* Trending Topics */}
+              {/* Trending Topics - Mobile Optimized */}
               <Card className="shadow-card">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-4">
+                <CardContent className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3 sm:mb-4">
                     Trending Topics
                   </h3>
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-3">
                     {trendingTopics.map((topic, index) => (
                       <div key={index} className="flex items-center space-x-2 p-2 rounded-lg hover:bg-accent/50 transition-colors cursor-pointer">
-                        <TrendingUp className="h-4 w-4 text-primary" />
-                        <span className="text-sm text-foreground">{topic}</span>
+                        <TrendingUp className="h-3 w-3 sm:h-4 sm:w-4 text-primary flex-shrink-0" />
+                        <span className="text-xs sm:text-sm text-foreground leading-tight">{topic}</span>
                       </div>
                     ))}
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Newsletter Signup */}
+              {/* Newsletter Signup - Mobile Optimized */}
               <Card className="shadow-card">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-4">
+                <CardContent className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3 sm:mb-4">
                     Stay Updated
                   </h3>
-                  <p className="text-muted-foreground mb-4">
+                  <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4">
                     Get the latest news and updates delivered to your inbox.
                   </p>
                   <div className="space-y-3">
                     <input
                       type="email"
                       placeholder="Enter your email"
-                      className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                      className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                     />
-                    <button className="w-full bg-gradient-primary text-white py-2 rounded-lg font-medium hover:shadow-button transition-all duration-300">
+                    <button className="w-full bg-gradient-primary text-white py-2 rounded-lg font-medium hover:shadow-button transition-all duration-300 text-sm sm:text-base">
                       Subscribe
                     </button>
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Quick Links */}
+              {/* Quick Links - Mobile Optimized */}
               <Card className="shadow-card">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-4">
+                <CardContent className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3 sm:mb-4">
                     Quick Links
                   </h3>
                   <div className="space-y-2">
@@ -664,7 +664,7 @@ const News = () => {
                       <button
                         key={index}
                         onClick={() => setQuickLinkModal(link)}
-                        className="block w-full text-left text-muted-foreground hover:text-primary transition-colors py-1"
+                        className="block w-full text-left text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors py-1 sm:py-2"
                       >
                         {link}
                       </button>
@@ -677,104 +677,109 @@ const News = () => {
         </div>
       </section>
 
-      {/* Article Modal Popup */}
+      {/* Article Modal Popup - Mobile Optimized */}
       {openModal && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 overflow-hidden"
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 overflow-hidden p-2 sm:p-4"
           onClick={() => setOpenModal(null)}
         >
           <div 
-            className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full relative animate-fade-in max-h-[90vh] flex flex-col my-4 mx-4"
+            className="bg-white rounded-t-xl sm:rounded-2xl shadow-2xl w-full sm:max-w-4xl relative animate-fade-in flex flex-col"
+            style={{ 
+              maxHeight: '95vh',
+              height: '95vh'
+            }}
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              className="absolute top-6 right-6 text-gray-500 hover:text-gray-800 z-20 bg-white/80 rounded-full p-2"
+              className="absolute top-3 sm:top-6 right-3 sm:right-6 text-gray-500 hover:text-gray-800 z-20 bg-white/80 rounded-full p-2"
               onClick={() => setOpenModal(null)}
               aria-label="Close"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
             
-            {/* Header with Image */}
-            <div className="w-full h-64 relative flex-shrink-0">
+            {/* Header with Image - Mobile Optimized */}
+            <div className="w-full h-32 sm:h-48 lg:h-64 relative flex-shrink-0">
               <img
                 src={openModal.image}
                 alt={openModal.title}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 text-white">
-                <Badge variant={openModal.urgent ? "destructive" : "secondary"} className="mb-2 self-start">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4 sm:p-6 text-white">
+                <Badge variant={openModal.urgent ? "destructive" : "secondary"} className="mb-2 self-start text-xs">
                   {openModal.category}
                 </Badge>
-                <h2 className="text-3xl font-bold">{openModal.title}</h2>
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight pr-8">{openModal.title}</h2>
               </div>
             </div>
             
-            {/* Article Content */}
-            <div className="p-8 overflow-y-auto flex-grow">
-              <div className="flex items-center justify-between mb-6 text-sm text-muted-foreground border-b border-gray-100 pb-4">
-                <div className="flex items-center space-x-4">
+            {/* Article Content - Mobile Optimized */}
+            <div className="p-4 sm:p-6 lg:p-8 overflow-y-auto flex-grow">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 text-xs sm:text-sm text-muted-foreground border-b border-gray-100 pb-3 sm:pb-4 gap-2">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 gap-1 sm:gap-0">
                   <span className="flex items-center gap-1">
-                    <Calendar className="h-4 w-4" /> {openModal.date}
+                    <Calendar className="h-3 w-3 sm:h-4 sm:w-4" /> {openModal.date}
                   </span>
                   <span className="flex items-center gap-1">
-                    <Clock className="h-4 w-4" /> {new Date().toLocaleTimeString()}
+                    <Clock className="h-3 w-3 sm:h-4 sm:w-4" /> {new Date().toLocaleTimeString()}
                   </span>
                 </div>
-                <span className="font-medium">Source: {openModal.source}</span>
+                <span className="font-medium text-xs sm:text-sm">Source: {openModal.source}</span>
               </div>
               
-              <div className="prose prose-green max-w-none mb-6" dangerouslySetInnerHTML={{ __html: openModal.fullContent }} />
+              <div className="prose prose-green prose-sm sm:prose-base max-w-none mb-4 sm:mb-6" dangerouslySetInnerHTML={{ __html: openModal.fullContent }} />
               
-              {/* Additional Information */}
-              <div className="mt-8 bg-green-50 p-4 rounded-lg">
-                <h4 className="text-lg font-semibold text-green-800 mb-2">Further Information</h4>
-                <p className="text-green-700">{openModal.contactInfo}</p>
+              {/* Additional Information - Mobile Optimized */}
+              <div className="mt-6 sm:mt-8 bg-green-50 p-3 sm:p-4 rounded-lg">
+                <h4 className="text-base sm:text-lg font-semibold text-green-800 mb-2">Further Information</h4>
+                <p className="text-sm sm:text-base text-green-700 leading-relaxed">{openModal.contactInfo}</p>
               </div>
-              
-              {/* Share & External Link */}
-              
             </div>
           </div>
         </div>
       )}
 
-      {/* Quick Links Modal Popup */}
+      {/* Quick Links Modal Popup - Mobile Optimized */}
       {quickLinkModal && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 overflow-hidden"
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 overflow-hidden p-2 sm:p-4"
           onClick={() => setQuickLinkModal(null)}
         >
           <div 
-            className="bg-white rounded-xl shadow-2xl max-w-2xl w-full relative animate-fade-in max-h-[80vh] flex flex-col my-4 mx-4"
+            className="bg-white rounded-t-xl sm:rounded-xl shadow-2xl w-full sm:max-w-2xl relative animate-fade-in flex flex-col"
+            style={{ 
+              maxHeight: '90vh',
+              height: '90vh'
+            }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="bg-gradient-to-r from-premium-green to-emerald-600 p-6 text-white flex-shrink-0">
-              <h3 className="text-2xl font-bold">{quickLinksContent[quickLinkModal as keyof typeof quickLinksContent].title}</h3>
+            <div className="bg-gradient-to-r from-premium-green to-emerald-600 p-4 sm:p-6 text-white flex-shrink-0">
+              <h3 className="text-xl sm:text-2xl font-bold pr-8">{quickLinksContent[quickLinkModal as keyof typeof quickLinksContent].title}</h3>
             </div>
             
             <button
-              className="absolute top-4 right-4 text-white hover:text-gray-200 z-20"
+              className="absolute top-3 sm:top-4 right-3 sm:right-4 text-white hover:text-gray-200 z-20"
               onClick={() => setQuickLinkModal(null)}
               aria-label="Close"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
             
-            {/* Content */}
-            <div className="p-6 overflow-y-auto flex-grow">
+            {/* Content - Mobile Optimized */}
+            <div className="p-4 sm:p-6 overflow-y-auto flex-grow">
               <div 
-                className="prose prose-green max-w-none"
+                className="prose prose-green prose-sm sm:prose-base max-w-none"
                 dangerouslySetInnerHTML={{ 
                   __html: quickLinksContent[quickLinkModal as keyof typeof quickLinksContent].content 
                 }}
               />
               
-              {/* Footer */}
+              {/* Footer - Mobile Optimized */}
               <div className="mt-6 pt-4 border-t border-gray-100 flex justify-center">
                 <button
                   onClick={() => setQuickLinkModal(null)}
-                  className="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50"
+                  className="px-4 sm:px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 text-sm sm:text-base"
                 >
                   Close
                 </button>

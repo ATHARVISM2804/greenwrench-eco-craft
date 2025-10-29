@@ -294,10 +294,10 @@ const Hero = () => {
       </div>
 
       {/* Certificate of Deposit CTA - Enhanced visibility */}
-      <div className="absolute -bottom-2 sm:bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 z-20">
+      <div className="absolute bottom-2 sm:bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 z-20">
         <Button 
           variant="outline" 
-          className="bg-white/20 border-primary-glow/60 text-white hover:bg-primary-glow/30 hover:border-primary-glow backdrop-blur-md animate-float shadow-glow text-xs sm:text-sm md:text-base px-3 py-1.5 sm:px-4 sm:py-2 h-auto font-medium"
+          className="bg-white/30 sm:bg-white/20 border-primary-glow/80 sm:border-primary-glow/60 text-white hover:bg-primary-glow/40 sm:hover:bg-primary-glow/30 hover:border-primary-glow backdrop-blur-md animate-float shadow-glow text-sm sm:text-sm md:text-base px-4 py-2 sm:px-4 sm:py-2 h-auto font-medium"
           asChild
         >
           <a href="/by-cd">

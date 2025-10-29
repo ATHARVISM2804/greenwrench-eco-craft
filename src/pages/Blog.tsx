@@ -176,8 +176,8 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-background">
       
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#004d25] via-[#00592a] to-[#005628] text-white py-32 overflow-hidden">
+      {/* Hero Section - Mobile Optimized */}
+      <section className="relative bg-gradient-to-br from-[#004d25] via-[#00592a] to-[#005628] text-white py-16 sm:py-24 lg:py-32 overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 z-0"
@@ -185,47 +185,47 @@ const Blog = () => {
             backgroundImage: "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80')",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            opacity: 0.5, // Reduced opacity to let the deep green show through more
+            opacity: 0.5,
           }}
         ></div>
         
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#004d25]/80 via-[#00592a]/70 to-[#005628]/60 z-10"></div>
         
-        {/* Decorative circles */}
-        <div className="absolute -left-24 top-1/4 w-64 h-64 bg-[#007c3e]/20 rounded-full blur-3xl z-10"></div>
-        <div className="absolute -right-32 bottom-0 w-80 h-80 bg-[#007c3e]/20 rounded-full blur-3xl z-10"></div>
-        <div className="absolute right-1/4 top-1/3 w-40 h-40 bg-[#008f47]/20 rounded-full blur-2xl z-10"></div>
+        {/* Decorative circles - Hidden on small screens */}
+        <div className="absolute -left-24 top-1/4 w-64 h-64 bg-[#007c3e]/20 rounded-full blur-3xl z-10 hidden md:block"></div>
+        <div className="absolute -right-32 bottom-0 w-80 h-80 bg-[#007c3e]/20 rounded-full blur-3xl z-10 hidden md:block"></div>
+        <div className="absolute right-1/4 top-1/3 w-40 h-40 bg-[#008f47]/20 rounded-full blur-2xl z-10 hidden lg:block"></div>
         
-        <div className="container mx-auto px-4 text-center relative z-20">
-          <div className="inline-block mb-6">
-            <span className="px-6 py-3 bg-white/10 border border-white/20 rounded-full text-white text-lg font-semibold backdrop-blur-sm">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
+          <div className="inline-block mb-4 sm:mb-6">
+            <span className="px-4 sm:px-6 py-2 sm:py-3 bg-white/10 border border-white/20 rounded-full text-white text-sm sm:text-lg font-semibold backdrop-blur-sm">
               📚 Knowledge Hub
             </span>
           </div>
           
-          <h1 className="text-6xl lg:text-7xl font-extrabold mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight">
             <span className="text-white">Our </span>
             <span className="text-[#40c67d]">Blog</span>
           </h1>
           
-          {/* Animated underline similar to the image */}
-          <div className="w-40 h-1 bg-[#40c67d] mx-auto mb-8"></div>
+          {/* Animated underline */}
+          <div className="w-24 sm:w-40 h-1 bg-[#40c67d] mx-auto mb-6 sm:mb-8"></div>
           
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 px-4">
             Stay informed with the latest insights on eco-friendly car recycling, 
             industry updates, and sustainability practices
           </p>
           
-          {/* Stats display similar to the image */}
-          <div className="flex flex-wrap justify-center gap-8 mt-12">
+          {/* Stats display - Mobile optimized */}
+          <div className="flex flex-row justify-center items-center gap-8 sm:gap-12 lg:gap-16 mt-8 sm:mt-12">
             <div className="flex items-center">
               <div className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 bg-white/10 mr-4">
                 <Calendar className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <div className="text-2xl font-bold text-white">{blogPosts.length}+</div>
-                <div className="text-white/70">Articles</div>
+                <div className="text-xl sm:text-2xl font-bold text-white">{blogPosts.length}+</div>
+                <div className="text-sm sm:text-base text-white/70">Articles</div>
               </div>
             </div>
             
@@ -234,28 +234,29 @@ const Blog = () => {
                 <User className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <div className="text-2xl font-bold text-white">{new Set(blogPosts.map(post => post.author)).size}</div>
-                <div className="text-white/70">Expert Contributors</div>
+                <div className="text-xl sm:text-2xl font-bold text-white">{new Set(blogPosts.map(post => post.author)).size}</div>
+                <div className="text-sm sm:text-base text-white/70">Expert Contributors</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Blog Content */}
-      <section className="py-20 relative bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 overflow-hidden">
-        {/* Optional: Decorative gradients for extra effect, similar to HowItWorks */}
-        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-l from-green-200/10 to-emerald-300/10 rounded-full blur-2xl"></div>
-        <div className="container mx-auto px-4 relative z-10">
+      {/* Blog Content - Mobile Optimized */}
+      <section className="py-12 sm:py-16 lg:py-20 relative bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 overflow-hidden">
+        {/* Decorative gradients - Hidden on mobile */}
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl hidden md:block"></div>
+        <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-l from-green-200/10 to-emerald-300/10 rounded-full blur-2xl hidden md:block"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          {/* Categories Filter */}
-          <div className="flex flex-wrap gap-4 justify-center mb-12">
+          {/* Categories Filter - Mobile Optimized */}
+          <div className="flex flex-wrap gap-2 sm:gap-4 justify-center mb-8 sm:mb-12 px-2">
             {categories.map((category) => (
               <Button
                 key={category}
                 variant={category === selectedCategory ? "default" : "outline"}
-                className="rounded-full"
+                className="rounded-full text-xs sm:text-sm px-3 sm:px-4 py-2 whitespace-nowrap"
                 onClick={() => setSelectedCategory(category)}
               >
                 {category}
@@ -263,12 +264,12 @@ const Blog = () => {
             ))}
           </div>
 
-          {/* Blog Posts Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Blog Posts Grid - Mobile Optimized */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {filteredPosts.map((post, index) => (
               <Card key={post.id} className="h-full shadow-card hover:shadow-premium transition-all duration-300 transform hover:-translate-y-2 animate-slide-up flex flex-col" style={{ animationDelay: `${index * 0.1}s` }}>
-                {/* Blog Image */}
-                <div className="w-full h-48 rounded-t-lg overflow-hidden">
+                {/* Blog Image - Mobile Optimized */}
+                <div className="w-full h-40 sm:h-48 rounded-t-lg overflow-hidden">
                   <img
                     src={post.image}
                     alt={post.title}
@@ -276,56 +277,58 @@ const Blog = () => {
                     loading="lazy"
                   />
                 </div>
-                <CardContent className="p-6 h-full flex flex-col flex-1">
-                  <div className="mb-4">
-                    <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">
+                <CardContent className="p-4 sm:p-6 h-full flex flex-col flex-1">
+                  <div className="mb-3 sm:mb-4">
+                    <span className="inline-block px-2 sm:px-3 py-1 bg-primary/10 text-primary text-xs sm:text-sm font-medium rounded-full">
                       {post.category}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-3 line-clamp-2">
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3 line-clamp-2 leading-tight">
                     {post.title}
                   </h3>
-                  {/* Description below image */}
-                  <p className="text-muted-foreground mb-6 flex-grow line-clamp-3">
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 flex-grow line-clamp-3">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
-                    <div className="flex items-center space-x-4">
+                  
+                  {/* Meta info - Mobile Optimized */}
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4 gap-2">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 gap-1 sm:gap-0">
                       <div className="flex items-center space-x-1">
-                        <User className="h-4 w-4" />
-                        <span>{post.author}</span>
+                        <User className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+                        <span className="truncate">{post.author}</span>
                       </div>
                       <div className="flex items-center space-x-1">
-                        <Calendar className="h-4 w-4" />
-                        <span>{post.date}</span>
+                        <Calendar className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+                        <span className="truncate">{post.date}</span>
                       </div>
                     </div>
-                    <span className="text-primary font-medium">{post.readTime}</span>
+                    <span className="text-primary font-medium text-xs sm:text-sm">{post.readTime}</span>
                   </div>
+                  
                   <Button
                     variant="outline"
-                    className="w-full group mt-auto"
+                    className="w-full group text-sm sm:text-base mt-auto"
                     onClick={() => setOpenModal(post)}
                   >
                     Read More
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          {/* Load More */}
-          <div className="text-center mt-12">
-            <Button size="lg" variant="outline" className="px-8">
-             More Articles Comming soon
+          {/* Load More - Mobile Optimized */}
+          <div className="text-center mt-8 sm:mt-12 px-4">
+            <Button size="lg" variant="outline" className="px-6 sm:px-8 text-sm sm:text-base">
+             More Articles Coming Soon
             </Button>
           </div>
 
-          {/* Modal Popup - fixed scrolling issues */}
+          {/* Modal Popup - Mobile Optimized */}
           {openModal && (
             <div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+              className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/70 p-2 sm:p-4"
               onClick={(e) => {
                 e.stopPropagation();
                 setOpenModal(null);
@@ -333,24 +336,27 @@ const Blog = () => {
               style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
             >
               <div
-                className="bg-white rounded-xl shadow-2xl w-full max-w-2xl relative flex flex-col"
-                style={{ maxHeight: '90vh' }}
+                className="bg-white rounded-t-xl sm:rounded-xl shadow-2xl w-full sm:max-w-2xl relative flex flex-col"
+                style={{ 
+                  maxHeight: '95vh',
+                  height: '95vh'
+                }}
                 onClick={e => e.stopPropagation()}
               >
-                {/* More visible close button */}
+                {/* Close button - Mobile Optimized */}
                 <button
-                  className="absolute top-3 right-3 z-50 bg-primary text-white p-2.5 rounded-full shadow-lg hover:bg-primary/80 transition-colors duration-200 flex items-center justify-center"
+                  className="absolute top-2 sm:top-3 right-2 sm:right-3 z-50 bg-primary text-white p-2 sm:p-2.5 rounded-full shadow-lg hover:bg-primary/80 transition-colors duration-200 flex items-center justify-center"
                   onClick={(e) => {
                     e.stopPropagation();
                     setOpenModal(null);
                   }}
                   aria-label="Close"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
                 
-                {/* Fixed header with image - not scrollable */}
-                <div className="w-full h-56 rounded-t-xl overflow-hidden flex-shrink-0">
+                {/* Fixed header with image - Mobile Optimized */}
+                <div className="w-full h-32 sm:h-48 lg:h-56 rounded-t-xl overflow-hidden flex-shrink-0">
                   <img
                     src={openModal.image}
                     alt={openModal.title}
@@ -358,78 +364,80 @@ const Blog = () => {
                   />
                 </div>
                 
-                {/* Scrollable content area */}
+                {/* Scrollable content area - Mobile Optimized */}
                 <div 
-                  className="p-6 pt-4 overflow-y-auto flex-grow"
+                  className="p-4 sm:p-6 pt-3 sm:pt-4 overflow-y-auto flex-grow"
                   style={{ 
                     overflowY: 'auto',
-                    WebkitOverflowScrolling: 'touch' // For smoother scrolling on iOS
+                    WebkitOverflowScrolling: 'touch'
                   }}
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-2">
+                  <span className="inline-block px-2 sm:px-3 py-1 bg-primary/10 text-primary text-xs sm:text-sm font-medium rounded-full mb-2">
                     {openModal.category}
                   </span>
-                  <h2 className="text-2xl font-bold mb-2">{openModal.title}</h2>
-                  <div className="flex items-center text-sm text-muted-foreground mb-4 gap-4">
+                  <h2 className="text-xl sm:text-2xl font-bold mb-2 leading-tight pr-8">{openModal.title}</h2>
+                  
+                  {/* Meta info - Mobile Optimized */}
+                  <div className="flex flex-col sm:flex-row sm:items-center text-xs sm:text-sm text-muted-foreground mb-4 gap-2 sm:gap-4">
                     <span className="flex items-center gap-1">
-                      <User className="h-4 w-4" /> {openModal.author}
+                      <User className="h-3 w-3 sm:h-4 sm:w-4" /> {openModal.author}
                     </span>
                     <span className="flex items-center gap-1">
-                      <Calendar className="h-4 w-4" /> {openModal.date}
+                      <Calendar className="h-3 w-3 sm:h-4 sm:w-4" /> {openModal.date}
                     </span>
                     <span className="text-primary font-medium">{openModal.readTime}</span>
                   </div>
                   
-                  {/* Systematic Content */}
-                  <div className="space-y-5">
+                  {/* Content sections - Mobile Optimized */}
+                  <div className="space-y-4 sm:space-y-5">
                     <section>
-                      <h3 className="text-lg font-semibold mb-1">Introduction</h3>
-                      <p className="text-foreground">{openModal.excerpt}</p>
+                      <h3 className="text-base sm:text-lg font-semibold mb-1">Introduction</h3>
+                      <p className="text-sm sm:text-base text-foreground leading-relaxed">{openModal.excerpt}</p>
                     </section>
                     <section>
-                      <h3 className="text-lg font-semibold mb-1">Key Points</h3>
-                      <ul className="list-disc pl-5 text-muted-foreground">
+                      <h3 className="text-base sm:text-lg font-semibold mb-1">Key Points</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 text-sm sm:text-base text-muted-foreground space-y-1">
                         <li>Key point 1 about {openModal.category}.</li>
                         <li>Key point 2 relevant to the topic.</li>
                         <li>Key point 3 for readers to consider.</li>
                       </ul>
                     </section>
                     <section>
-                      <h3 className="text-lg font-semibold mb-1">About the Author</h3>
-                      <p className="text-muted-foreground">
+                      <h3 className="text-base sm:text-lg font-semibold mb-1">About the Author</h3>
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                         {openModal.author} is an expert in {openModal.category.toLowerCase()} and has contributed to several publications on car recycling and sustainability.
                       </p>
                     </section>
                     <section>
-                      <h3 className="text-lg font-semibold mb-1">Sample Content</h3>
-                      <p className="text-foreground">
+                      <h3 className="text-base sm:text-lg font-semibold mb-1">Sample Content</h3>
+                      <p className="text-sm sm:text-base text-foreground leading-relaxed mb-3">
                         Car recycling is a multi-step process that involves collection, dismantling, material recovery, and reuse. Each stage is crucial for maximizing environmental benefits and economic value. For example, metals are separated and sent to smelters, plastics are sorted for reuse, and hazardous materials are disposed of safely. By following best practices, car scrapping can significantly reduce landfill waste and promote a circular economy.
                       </p>
-                      <p className="text-foreground mt-2">
+                      <p className="text-sm sm:text-base text-foreground leading-relaxed">
                         In India, new policies have made it easier for car owners to scrap their vehicles responsibly. Documentation requirements have been streamlined, and incentives are available for those who choose eco-friendly disposal methods. Always check with your local authorities for the latest regulations.
                       </p>
                     </section>
                     <section>
-                      <h3 className="text-lg font-semibold mb-1">Related Articles</h3>
-                      <ul className="list-disc pl-5 text-primary">
+                      <h3 className="text-base sm:text-lg font-semibold mb-1">Related Articles</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 text-sm sm:text-base text-primary space-y-1">
                         <li>How to Get the Best Price for Your Scrap Car</li>
                         <li>Legal Documentation for Car Scrapping</li>
                         <li>Sustainable Transportation: The Future of Automotive Industry</li>
                       </ul>
                     </section>
                     <section>
-                      <h3 className="text-lg font-semibold mb-1">Conclusion</h3>
-                      <p className="text-muted-foreground">
+                      <h3 className="text-base sm:text-lg font-semibold mb-1">Conclusion</h3>
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                         This is a demo modal. Replace this with the full blog content as needed.
                       </p>
                     </section>
                     
-                    {/* Additional footer button for closing */}
-                    <div className="mt-8 text-center">
+                    {/* Footer button - Mobile Optimized */}
+                    <div className="mt-6 sm:mt-8 text-center pb-4">
                       <Button 
                         variant="outline" 
-                        className="px-6" 
+                        className="px-4 sm:px-6 text-sm sm:text-base" 
                         onClick={(e) => {
                           e.stopPropagation();
                           setOpenModal(null);
