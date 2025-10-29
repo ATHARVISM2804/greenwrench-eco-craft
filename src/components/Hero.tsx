@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { MessageCircle, Star, Shield, Clock, Car, Bike, Truck, Bus, User, Phone, CreditCard } from "lucide-react";
+import { MessageCircle, Star, Shield, Clock, Car, Bike, Truck, Bus, User, Phone, CreditCard, X } from "lucide-react";
 
 // Image slideshow array with Cloudinary links
 const HERO_IMAGES = [
@@ -831,6 +831,7 @@ const Hero = () => {
   const [phone, setPhone] = useState("");
   const [agree, setAgree] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [showTermsModal, setShowTermsModal] = useState(false);
 
   // Automatically advance slides every 5 seconds
   useEffect(() => {
@@ -843,8 +844,21 @@ const Hero = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const whatsappMessage = `Hi! I want to get a quote for my vehicle: ${vehicleNo}. Name: ${name}, Phone: ${phone}`;
-    const whatsappUrl = `https://wa.me/919999999999?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappMessage = `Hi! I want to get a quote for scrapping my vehicle.
+
+🚗 Vehicle Details:
+- Type: ${vehicleType}
+- Make: ${make}
+- Model: ${model}
+- Vehicle Number: ${vehicleNo}
+
+👤 Contact Information:
+- Name: ${name}
+- Phone: ${phone}
+
+Please provide me with the best quote for my vehicle. Thank you!`;
+    
+    const whatsappUrl = `https://wa.me/919311068290?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -1104,7 +1118,7 @@ const Hero = () => {
                 className="bg-gradient-primary hover:bg-gradient-premium text-white px-4 py-3 sm:px-5 sm:py-4 md:px-6 md:py-5 text-sm sm:text-base md:text-lg font-semibold shadow-glow hover:shadow-premium transition-all duration-500 transform hover:-translate-y-1"
                 asChild
               >
-                <a href="https://wa.me/919999999999?text=I want to scrap my car" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/919311068290?text=I want to scrap my car" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-1.5 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                   <span className="whitespace-nowrap">Scrap My Car Now</span>
                 </a>
@@ -1115,7 +1129,7 @@ const Hero = () => {
                 className="border-2 border-primary-glow/50 text-white hover:bg-primary-glow/20 hover:border-primary-glow px-4 py-3 sm:px-5 sm:py-4 md:px-6 md:py-5 text-sm sm:text-base md:text-lg font-semibold backdrop-blur-md bg-white/10 transition-all duration-300"
                 asChild
               >
-                <a href="https://wa.me/919999999999?text=Get the best rate" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/919311068290?text=Get the best rate" target="_blank" rel="noopener noreferrer">
                   <span className="whitespace-nowrap">Get the Best Rate</span>
                 </a>
               </Button>
@@ -1284,7 +1298,14 @@ const Hero = () => {
                       required
                     />
                     <label htmlFor="agree" className="text-xs sm:text-sm text-gray-700">
-                      I agree to the <a href="#" className="text-green-700 underline">Terms & Conditions</a>
+                      I agree to the{" "}
+                      <button
+                        type="button"
+                        onClick={() => setShowTermsModal(true)}
+                        className="text-green-700 underline hover:text-green-800 transition-colors"
+                      >
+                        Terms & Conditions
+                      </button>
                     </label>
                   </div>
                   
@@ -1317,6 +1338,72 @@ const Hero = () => {
           </a>
         </Button>
       </div>
+
+      {/* Terms & Conditions Modal */}
+      {showTermsModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl max-w-2xl max-h-[80vh] overflow-y-auto">
+            <div className="sticky top-0 bg-white border-b border-gray-200 p-4 sm:p-6 flex items-center justify-between rounded-t-2xl">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Terms & Conditions</h2>
+              <button
+                onClick={() => setShowTermsModal(false)}
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+              >
+                <X className="h-5 w-5 text-gray-500" />
+              </button>
+            </div>
+            <div className="p-4 sm:p-6 space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">1. Service Agreement</h3>
+                <p>By using our vehicle scrapping service, you agree to these terms and conditions. We provide eco-friendly car recycling services with free pickup and competitive pricing.</p>
+              </div>
+              
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">2. Vehicle Evaluation</h3>
+                <p>Vehicle valuations are based on current market conditions, vehicle condition, and scrap metal prices. Final quotes may vary after physical inspection of the vehicle.</p>
+              </div>
+              
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">3. Required Documentation</h3>
+                <p>Valid ownership documents, ID proof, and pollution certificate (if applicable) must be provided. We ensure proper legal disposal and provide necessary certificates.</p>
+              </div>
+              
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">4. Payment Terms</h3>
+                <p>Payment is made upon vehicle pickup and completion of documentation. We offer secure payment methods and immediate transfer of funds.</p>
+              </div>
+              
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">5. Environmental Compliance</h3>
+                <p>All vehicles are recycled in accordance with environmental regulations. We ensure proper disposal of hazardous materials and maximum recycling of usable components.</p>
+              </div>
+              
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">6. Privacy Policy</h3>
+                <p>Your personal information is kept confidential and used only for service delivery. We do not share customer data with third parties without consent.</p>
+              </div>
+              
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">7. Cancellation Policy</h3>
+                <p>Services can be cancelled up to 24 hours before scheduled pickup without any charges. Last-minute cancellations may incur nominal fees.</p>
+              </div>
+              
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">8. Liability</h3>
+                <p>We maintain comprehensive insurance coverage. Our liability is limited to the agreed vehicle value. Customers are responsible for removing personal belongings before pickup.</p>
+              </div>
+            </div>
+            <div className="sticky bottom-0 bg-white border-t border-gray-200 p-4 sm:p-6 rounded-b-2xl">
+              <Button
+                onClick={() => setShowTermsModal(false)}
+                className="w-full bg-green-600 hover:bg-green-700 text-white"
+              >
+                I Understand
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

@@ -77,7 +77,7 @@ const ContactUs = () => {
                     <div>
                       <h4 className="font-medium text-foreground text-sm sm:text-base">Our Location</h4>
                       <span className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
-                        5/36, East Patel Nagar, <br />
+                        25/36, East Patel Nagar, <br />
                         New Delhi, Delhi, India
                       </span>
                     </div>
