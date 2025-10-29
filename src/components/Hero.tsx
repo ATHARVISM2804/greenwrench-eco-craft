@@ -69,10 +69,6 @@ const BIKE_MAKES = [
   "Ather",
   "Ola",
   "TVS Electric",
-  "Simple Energy",
-  "Tork Motors",
-  "Ultraviolette",
-  "Revolt",
   "Other"
 ];
 
@@ -423,6 +419,217 @@ const DAEWOO_MODELS = [
   "Other"
 ];
 
+const HERO_BIKE_MODELS = [
+  "Splendor Plus",
+  "HF Deluxe",
+  "Passion Pro",
+  "Glamour",
+  "Xpulse 200",
+  "Destini 125",
+  "Maestro Edge",
+  "CD 100",
+  "CBZ",
+  "Ambition",
+  "Other"
+];
+
+const HONDA_BIKE_MODELS = [
+  "Activa 6G",
+  "Activa 125",
+  "Dio",
+  "Shine",
+  "SP 125",
+  "Unicorn",
+  "Hornet 2.0",
+  "CB200X",
+  "CB350 H'ness",
+  "CBR 650R",
+  "Eterno",
+  "CB Trigger",
+  "Other"
+];
+
+const TVS_BIKE_MODELS = [
+  "Apache RTR 160",
+  "Apache RTR 200",
+  "Apache RR 310",
+  "Jupiter",
+  "NTorq 125",
+  "Star City Plus",
+  "Victor",
+  "Scooty Pep+",
+  "Radeon",
+  "Sport",
+  "iQube Electric",
+  "Ronin",
+  "Raider",
+  "XL100",
+  "Other"
+];
+
+const BAJAJ_BIKE_MODELS = [
+  "Pulsar 125",
+  "Pulsar NS160",
+  "Pulsar NS200",
+  "Pulsar 220F",
+  "Avenger Cruise 220",
+  "Dominar 250",
+  "Dominar 400",
+  "CT 100",
+  "Platina 110",
+  "Chetak Electric",
+  "Chetak (Petrol)",
+  "Discover 125",
+  "Discover 150",
+  "Boxer",
+  "Other"
+];
+
+const ROYAL_ENFIELD_MODELS = [
+  "Classic 350",
+  "Bullet 350",
+  "Hunter 350",
+  "Meteor 350",
+  "Scram 411",
+  "Interceptor 650",
+  "Continental GT 650",
+  "Shotgun 650",
+  "Thunderbird 350",
+  "Himalayan",
+  "Other"
+];
+
+const YAMAHA_BIKE_MODELS = [
+  "MT 15",
+  "R15 V4",
+  "FZ-X",
+  "FZ S FI",
+  "FZ FI",
+  "Fazer",
+  "RayZR 125",
+  "Aerox 155",
+  "RX 100",
+  "RX135",
+  "Crux",
+  "Gladiator",
+  "Other"
+];
+
+const SUZUKI_BIKE_MODELS = [
+  "Access 125",
+  "Burgman Street",
+  "Gixxer",
+  "Gixxer SF",
+  "V-Strom SX",
+  "Hayabusa",
+  "Samurai",
+  "Shogun",
+  "Fiero",
+  "Other"
+];
+
+const KTM_BIKE_MODELS = [
+  "Duke 125",
+  "Duke 200",
+  "Duke 250",
+  "Duke 390",
+  "RC 125",
+  "RC 200",
+  "RC 390",
+  "Adventure 250",
+  "Adventure 390",
+  "Other"
+];
+
+const KAWASAKI_BIKE_MODELS = [
+  "Ninja 300",
+  "Ninja 400",
+  "Ninja ZX-4R",
+  "Ninja 650",
+  "Ninja 1000SX",
+  "Z650",
+  "Z900",
+  "Versys 650",
+  "Versys 1000",
+  "W175",
+  "Other"
+];
+
+const BMW_BIKE_MODELS = [
+  "G 310 R",
+  "G 310 GS",
+  "F 900 R",
+  "F 850 GS",
+  "S 1000 RR",
+  "R 1250 GS",
+  "Other"
+];
+
+const HARLEY_DAVIDSON_MODELS = [
+  "Iron 883",
+  "Forty-Eight",
+  "Street Bob",
+  "Fat Bob",
+  "Pan America 1250",
+  "Other"
+];
+
+const JAWA_BIKE_MODELS = [
+  "42",
+  "Perak",
+  "42 Bobber",
+  "Jawa Classic",
+  "Other"
+];
+
+const YEZDI_BIKE_MODELS = [
+  "Roadster",
+  "Scrambler",
+  "Adventure",
+  "Other"
+];
+
+const TRIUMPH_BIKE_MODELS = [
+  "Speed 400",
+  "Scrambler 400 X",
+  "Trident 660",
+  "Tiger 660",
+  "Tiger 900",
+  "Bonneville T100",
+  "Other"
+];
+
+const DUCATI_BIKE_MODELS = [
+  "Monster",
+  "Panigale V2",
+  "Panigale V4",
+  "Multistrada",
+  "Streetfighter V2",
+  "Scrambler Icon",
+  "Other"
+];
+
+const ATHER_BIKE_MODELS = [
+  "450X",
+  "450S",
+  "450 Plus",
+  "450",
+  "Other"
+];
+
+const OLA_BIKE_MODELS = [
+  "S1 Air",
+  "S1 Pro",
+  "Other"
+];
+
+const TVS_ELECTRIC_BIKE_MODELS = [
+  "iQube Standard",
+  "iQube S",
+  "iQube ST",
+  "Other"
+];
+
 const MODELS = ["Model 1", "Model 2", "Model 3"];
 
 const Hero = () => {
@@ -476,8 +683,11 @@ const Hero = () => {
     if (selectedMake === "Tata") {
       return TATA_MODELS;
     }
+    if (selectedMake === "Honda" && vehicleType === "Bike") {
+      return HONDA_BIKE_MODELS;
+    }
     if (selectedMake === "Honda") {
-      return HONDA_MODELS;
+      return HONDA_MODELS; // For Honda cars
     }
     if (selectedMake === "Toyota") {
       return TOYOTA_MODELS;
@@ -542,6 +752,58 @@ const Hero = () => {
     if (selectedMake === "Daewoo") {
       return DAEWOO_MODELS;
     }
+    if (selectedMake === "Hero") {
+      return HERO_BIKE_MODELS;
+    }
+    if (selectedMake === "TVS") {
+      return TVS_BIKE_MODELS;
+    }
+    if (selectedMake === "Bajaj") {
+      return BAJAJ_BIKE_MODELS;
+    }
+    if (selectedMake === "Royal Enfield") {
+      return ROYAL_ENFIELD_MODELS;
+    }
+    if (selectedMake === "Yamaha") {
+      return YAMAHA_BIKE_MODELS;
+    }
+    if (selectedMake === "Suzuki" && vehicleType === "Bike") {
+      return SUZUKI_BIKE_MODELS;
+    }
+    if (selectedMake === "KTM") {
+      return KTM_BIKE_MODELS;
+    }
+    if (selectedMake === "Kawasaki") {
+      return KAWASAKI_BIKE_MODELS;
+    }
+    if (selectedMake === "BMW" && vehicleType === "Bike") {
+      return BMW_BIKE_MODELS;
+    }
+    if (selectedMake === "Harley Davidson") {
+      return HARLEY_DAVIDSON_MODELS;
+    }
+    if (selectedMake === "Jawa") {
+      return JAWA_BIKE_MODELS;
+    }
+    if (selectedMake === "Yezdi") {
+      return YEZDI_BIKE_MODELS;
+    }
+    if (selectedMake === "Triumph") {
+      return TRIUMPH_BIKE_MODELS;
+    }
+    if (selectedMake === "Ducati") {
+      return DUCATI_BIKE_MODELS;
+    }
+    if (selectedMake === "Ather") {
+      return ATHER_BIKE_MODELS;
+    }
+    if (selectedMake === "Ola") {
+      return OLA_BIKE_MODELS;
+    }
+    if (selectedMake === "TVS Electric") {
+      return TVS_ELECTRIC_BIKE_MODELS;
+    }
+    
     return MODELS;
   };
 
