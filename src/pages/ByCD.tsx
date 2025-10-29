@@ -429,7 +429,7 @@ const ByCD = () => {
                   asChild
                 >
                   <a
-                    href="https://wa.me/919999999999?text=I want to sell my Certificate of Destruction"
+                    href="https://wa.me/919311068290?text=I want to sell my Certificate of Destruction"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -473,7 +473,7 @@ const ByCD = () => {
                 className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
                 asChild
               >
-                <a href="tel:+919999999999">
+                <a href="tel:+919311068290">
                   <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                   Call Now
                 </a>
@@ -485,7 +485,7 @@ const ByCD = () => {
                 asChild
               >
                 <a
-                  href="https://wa.me/919999999999?text=I need help choosing the right Certificate of Deposit"
+                  href="https://wa.me/919311068290?text=I need help choosing the right Certificate of Deposit"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

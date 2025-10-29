@@ -329,7 +329,7 @@ const About = () => {
                   asChild
                 >
                   <a
-                    href="https://wa.me/919999999999?text=I'm interested in partnering with GreenWrench"
+                    href="https://wa.me/919311068290?text=I'm interested in partnering with GreenWrench"
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
@@ -366,8 +366,7 @@ const About = () => {
                   asChild
                 >
                   <a
-                    href="https://wa.me/919999999999?text=I want to know more about GreenWrench Solutions"
-                    target="_blank"
+                    href="tel:+919311068290"
                     rel="noopener noreferrer"
                   >
                     <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
@@ -381,7 +380,7 @@ const About = () => {
                   asChild
                 >
                   <a
-                    href="https://wa.me/919999999999?text=Get instant quote for my car"
+                    href="https://wa.me/919311068290?text=Get instant quote for my car"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

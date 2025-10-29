@@ -209,18 +209,7 @@ const FinancialLegalSection = () => (
 							Government agencies are actively seizing end-of-life vehicles across Delhi-NCR without prior notice. Protect your investment before it's too late{" "}
 							<a href="#" className="text-red-600 font-medium underline hover:text-red-700 transition">Learn more.</a>
 						</p>
-						<a 
-							href="#contact" 
-							className="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg shadow transition inline-block"
-							onClick={(e) => {
-								e.preventDefault();
-								document.getElementById('contact')?.scrollIntoView({
-									behavior: 'smooth'
-								});
-							}}
-						>
-							Scrap Now
-						</a>
+						
 					</div>
 					{/* Right: Illustration */}
 					<div className="flex-1 flex justify-center items-center min-w-0 mt-6 md:mt-0 px-4">
