@@ -451,6 +451,225 @@ const ByCD = () => {
         </div>
       </section>
 
+      {/* COD Market Value Calculator Section - Mobile Optimized */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-premium-green/30 via-white/90 to-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_center,_var(--tw-gradient-stops))] from-premium-green/10 via-transparent to-transparent hidden md:block"></div>
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-300/20 rounded-full blur-3xl hidden md:block"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12 sm:mb-16 max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-4 sm:mb-6 tracking-tight px-4">
+              COD Market Value Calculator
+            </h2>
+            <p className="text-lg sm:text-xl text-muted-foreground font-medium px-4">
+              Get an instant estimate of your Certificate of Destruction's market value
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
+            <Card className="shadow-xl rounded-2xl border-0 bg-white/90 backdrop-blur-lg">
+              <CardContent className="p-6 sm:p-8 lg:p-10">
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Value Estimation Factors</h3>
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center text-white font-bold text-sm flex-shrink-0">1</div>
+                    <div>
+                      <h4 className="font-bold text-foreground text-base sm:text-lg">Vehicle Category</h4>
+                      <p className="text-muted-foreground text-sm sm:text-base">Car type, engine size, and fuel type significantly impact COD value</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center text-white font-bold text-sm flex-shrink-0">2</div>
+                    <div>
+                      <h4 className="font-bold text-foreground text-base sm:text-lg">Market Demand</h4>
+                      <p className="text-muted-foreground text-sm sm:text-base">Current demand for specific vehicle certificates in your region</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center text-white font-bold text-sm flex-shrink-0">3</div>
+                    <div>
+                      <h4 className="font-bold text-foreground text-base sm:text-lg">Certificate Validity</h4>
+                      <p className="text-muted-foreground text-sm sm:text-base">Remaining validity period (3 years from issue date)</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center text-white font-bold text-sm flex-shrink-0">4</div>
+                    <div>
+                      <h4 className="font-bold text-foreground text-base sm:text-lg">State Regulations</h4>
+                      <p className="text-muted-foreground text-sm sm:text-base">Tax benefit rates in your state affect COD market value</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-xl rounded-2xl border-0 bg-gradient-to-br from-primary/5 to-emerald-50 backdrop-blur-lg">
+              <CardContent className="p-6 sm:p-8 lg:p-10">
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Quick Value Estimator</h3>
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center p-4 bg-white/80 rounded-xl">
+                      <div className="text-lg sm:text-xl font-bold text-primary">40-60%</div>
+                      <p className="text-sm text-muted-foreground">Of Tax Benefit Value</p>
+                    </div>
+                    <div className="text-center p-4 bg-white/80 rounded-xl">
+                      <div className="text-lg sm:text-xl font-bold text-primary">₹8K-₹45K</div>
+                      <p className="text-sm text-muted-foreground">Typical Range</p>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white/80 p-4 sm:p-6 rounded-xl">
+                    <h4 className="font-bold text-foreground mb-3 text-base sm:text-lg">Example Calculation:</h4>
+                    <div className="space-y-2 text-sm sm:text-base">
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Vehicle: Honda City 1.5L</span>
+                        <span className="font-medium">Tax Benefit: ₹35,000</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Market Rate: 55%</span>
+                        <span className="font-bold text-primary">COD Value: ₹19,250</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <Button
+                    size="lg"
+                    className="w-full px-6 py-3 text-base sm:text-lg bg-gradient-primary hover:bg-gradient-primary/90"
+                    asChild
+                  >
+                    <a
+                      href="https://wa.me/919311068290?text=I want to get exact valuation for my COD certificate"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                      Get Exact Valuation
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* COD Trading Process & FAQ Section - Mobile Optimized */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white via-premium-green/10 to-premium-green/20 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-l from-green-200/10 to-transparent rounded-full blur-2xl hidden md:block"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-r from-emerald-200/10 to-transparent rounded-full blur-3xl hidden md:block"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12 sm:mb-16 max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-4 sm:mb-6 tracking-tight px-4">
+              COD Trading Process & FAQ
+            </h2>
+            <p className="text-lg sm:text-xl text-muted-foreground font-medium px-4">
+              Everything you need to know about selling your Certificate of Destruction
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-8 sm:mb-12">
+            <Card className="shadow-xl rounded-2xl border-0 bg-white/90 backdrop-blur-lg">
+              <CardContent className="p-6 sm:p-8 lg:p-10">
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Step-by-Step Trading Process</h3>
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">1</div>
+                    <div>
+                      <h4 className="font-bold text-foreground text-base sm:text-lg">Initial Contact</h4>
+                      <p className="text-muted-foreground text-sm sm:text-base">Contact us via WhatsApp with your COD details and vehicle information</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">2</div>
+                    <div>
+                      <h4 className="font-bold text-foreground text-base sm:text-lg">Document Verification</h4>
+                      <p className="text-muted-foreground text-sm sm:text-base">Submit COD certificate, ID proof, and vehicle RC for verification</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 rounded-full bg-emerald-700 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">3</div>
+                    <div>
+                      <h4 className="font-bold text-foreground text-base sm:text-lg">Quote & Agreement</h4>
+                      <p className="text-muted-foreground text-sm sm:text-base">Receive final quote and sign transfer agreement</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 rounded-full bg-emerald-800 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">4</div>
+                    <div>
+                      <h4 className="font-bold text-foreground text-base sm:text-lg">Payment & Transfer</h4>
+                      <p className="text-muted-foreground text-sm sm:text-base">Receive payment and complete COD ownership transfer</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-xl rounded-2xl border-0 bg-white/90 backdrop-blur-lg">
+              <CardContent className="p-6 sm:p-8 lg:p-10">
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Frequently Asked Questions</h3>
+                <div className="space-y-4 sm:space-y-6">
+                  <div>
+                    <h4 className="font-bold text-foreground text-base sm:text-lg mb-2">Is COD selling legal?</h4>
+                    <p className="text-muted-foreground text-sm sm:text-base">Yes, COD certificates can be legally transferred to other parties who can use them for tax benefits.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-foreground text-base sm:text-lg mb-2">How long does the process take?</h4>
+                    <p className="text-muted-foreground text-sm sm:text-base">Typically 24-48 hours from document submission to payment completion.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-foreground text-base sm:text-lg mb-2">What if my COD is about to expire?</h4>
+                    <p className="text-muted-foreground text-sm sm:text-base">CODs with less than 6 months validity may have reduced market value but can still be sold.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-foreground text-base sm:text-lg mb-2">Are there any hidden charges?</h4>
+                    <p className="text-muted-foreground text-sm sm:text-base">No hidden charges. Our quote is the final amount you'll receive after all processing.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <Card className="max-w-4xl mx-auto shadow-xl rounded-2xl border-0 bg-gradient-to-r from-primary/10 to-emerald-100/50 backdrop-blur-lg">
+            <CardContent className="p-6 sm:p-8 lg:p-10">
+              <div className="text-center">
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Ready to Sell Your COD?</h3>
+                <p className="text-muted-foreground mb-6 sm:mb-8 text-base sm:text-lg px-4">
+                  Join hundreds of satisfied customers who got immediate cash for their certificates
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                  <Button
+                    size="lg"
+                    className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-gradient-primary hover:bg-gradient-primary/90"
+                    asChild
+                  >
+                    <a
+                      href="https://wa.me/919311068290?text=I want to sell my COD certificate and need a quote"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                      Start Selling Process
+                    </a>
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg border-primary text-primary hover:bg-primary hover:text-white"
+                    asChild
+                  >
+                    <a href="tel:+919311068290">
+                      <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                      Call for Consultation
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Contact Section - Mobile Optimized */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white via-premium-green/20 to-premium-green/30 relative overflow-hidden">
         {/* Decorative elements - Hidden on mobile */}
