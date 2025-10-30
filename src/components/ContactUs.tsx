@@ -99,7 +99,7 @@ const ContactUs = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground text-sm sm:text-base">Email Address</h4>
-                      <p className="text-xs sm:text-sm md:text-base text-muted-foreground break-all">greenwrenchsolutions@gamil.com</p>
+                      <p className="text-xs sm:text-sm md:text-base text-muted-foreground break-all">greenwrenchsolutions@gmail.com</p>
                     </div>
                   </div>
                   
