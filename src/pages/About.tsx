@@ -38,7 +38,7 @@ const About = () => {
       name: "Saurabh Kumar Mishra",
       position: "CEO",
       experience: "Founder – Greenwrench Solutions",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761807133/a7dcd030-a6fd-40f9-a40d-d7274ad5c37d_bjbb3i.jpg",
     },
   ];
 
@@ -268,7 +268,8 @@ const About = () => {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transform scale-110"
+                      style={{ objectPosition: 'center top' }}
                     />
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
