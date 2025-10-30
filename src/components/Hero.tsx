@@ -1226,7 +1226,7 @@ Please provide me with the best quote for my vehicle. Thank you!`;
                           onChange={e => setMake(e.target.value)}
                           required
                         >
-                          <option value="">Select Make</option>
+                          <option value="">Select Maker</option>
                           {currentMakes.map(m => <option key={m} value={m}>{m}</option>)}
                         </select>
                       )}

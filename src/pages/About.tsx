@@ -38,7 +38,7 @@ const About = () => {
       name: "Saurabh Kumar Mishra",
       position: "CEO",
       experience: "Founder – Greenwrench Solutions",
-      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761807133/a7dcd030-a6fd-40f9-a40d-d7274ad5c37d_bjbb3i.jpg",
+      image: "https://res.cloudinary.com/dmhabztbf/image/upload/v1761820724/fe927514-dccb-4424-8c72-3b0d029ba2dc_q9m5ji.jpg",
     },
   ];
 
