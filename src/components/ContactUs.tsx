@@ -31,9 +31,25 @@ const ContactUs = () => {
   });
 
   function onSubmit(data: FormValues) {
-    console.log(data);
-    // Here you would typically send the form data to your server
-    alert("Form submitted successfully! We'll get back to you soon.");
+    // Create email content
+    const subject = encodeURIComponent(`Contact Form: ${data.subject}`);
+    const body = encodeURIComponent(
+      `Name: ${data.name}\n` +
+      `Email: ${data.email}\n` +
+      `Subject: ${data.subject}\n\n` +
+      `Message:\n${data.message}\n\n` +
+      `---\n` +
+      `This message was sent from the GreenWrench Solutions contact form.`
+    );
+    
+    // Create mailto link
+    const mailtoLink = `mailto:greenwrenchsolutions@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show success message and reset form
+    alert("Your email client will open with the message pre-filled. Please send the email to complete your inquiry.");
     form.reset();
   }
 
