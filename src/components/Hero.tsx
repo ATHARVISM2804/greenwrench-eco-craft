@@ -1130,7 +1130,7 @@ Please provide me with the best quote for my vehicle. Thank you!`;
                 onClick={scrollToContactUs}
               >
                 <MessageCircle className="mr-1.5 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                <span className="whitespace-nowrap">Scrap My Car Now</span>
+                <span className="whitespace-nowrap">Scrap My Vehicle Now</span>
               </Button>
               <Button 
                 size="lg" 
@@ -1156,7 +1156,7 @@ Please provide me with the best quote for my vehicle. Thank you!`;
               </div>
               <div className="flex items-center space-x-1.5 sm:space-x-2">
                 <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400" />
-                <span className="text-xs sm:text-sm font-medium drop-shadow-sm">60s Quote</span>
+                <span className="text-xs sm:text-sm font-medium drop-shadow-sm">60-Second Quote</span>
               </div>
             </div>
           </div>

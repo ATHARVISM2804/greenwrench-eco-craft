@@ -28,11 +28,9 @@ const Header = () => {
           <Link to="/" className="flex items-center space-x-4 group">
             <div className="relative">
               <img src={logo} alt="GreenWrench Solutions" className="h-16 w-auto group-hover:scale-105 transition-transform duration-300" />
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-800/20 to-emerald-600/20 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-300"></div>
             </div>
             <div className="relative">
               <img src={logoName} alt="GreenWrench Solutions" className="h-40 w-auto group-hover:scale-105 transition-transform duration-300" />
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-800/20 to-emerald-600/20 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-300"></div>
             </div>
           </Link>
 
