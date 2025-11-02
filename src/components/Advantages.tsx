@@ -58,7 +58,9 @@ const Advantages = () => {
             Why Choose <span className="bg-gradient-premium bg-clip-text text-transparent">GreenWrench?</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Experience the most professional and rewarding car scrapping service with guaranteed best rates and complete transparency
+            Transform your old vehicle into instant cash with India's most trusted eco-friendly car recycling platform - where transparency meets maximum value.
+            <br />
+            <span className="text-primary font-medium">Join thousands of satisfied customers who chose the smarter, greener way to scrap their cars!</span>
           </p>
         </div>
 
