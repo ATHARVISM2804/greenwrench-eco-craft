@@ -1,73 +1,49 @@
-# Welcome to your Lovable project
+# GreenWrench Solutions
 
-## Project info
+GreenWrench Solutions is India's first online platform dedicated to the eco-friendly scrapping and de-registration of End-Of-Life-Vehicles (ELV). Our unique Vehicle-Specific, AI-Enabled Instant Quotation System built on WhatsApp Chat ensures the best rates for your car, while our experienced staff handles all legal documentation to provide a completely hassle-free experience.
 
-**URL**: https://lovable.dev/projects/455e552f-1d79-4b19-9d93-f36e200ce20b
+## 🌟 Mission
+To revolutionize the automotive recycling industry in India by providing eco-friendly, transparent, and customer-centric car scrapping services. We aim to make vehicle disposal hassle-free while contributing to environmental sustainability and circular economy principles.
 
-## How can I edit this code?
+## 🚀 Key Features
+- **AI-Enabled Instant Quotation System:** Get the best rates instantly via WhatsApp.
+- **Eco-Friendly Processes:** 100% commitment to responsible recycling and environmental sustainability.
+- **Complete Legal Compliance:** Hassle-free handling of all government and legal documentation.
+- **Customer First Approach:** Smooth, transparent, and respectful handling of your End-Of-Life vehicles.
+- **Nationwide Network:** Expanding across India to make vehicle scrapping accessible everywhere.
 
-There are several ways of editing your application.
+## 🛠️ Technologies Used
+This project is built using modern web development practices and tools to ensure performance and scalability:
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
 
-**Use Lovable**
+## 📦 Getting Started
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/455e552f-1d79-4b19-9d93-f36e200ce20b) and start prompting.
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
-Changes made via Lovable will be committed automatically to this repo.
+### Installation
 
-**Use your preferred IDE**
+1. **Clone the repository:**
+   ```sh
+   git clone <YOUR_GIT_URL>
+   cd greenwrench-eco-craft
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2. **Install dependencies:**
+   ```sh
+   npm install
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+3. **Start the development server:**
+   ```sh
+   npm run dev
+   ```
+   The application will be available locally with auto-reloading enabled.
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/455e552f-1d79-4b19-9d93-f36e200ce20b) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📞 Contact
+- **Phone:** +91-9311068290
+- **WhatsApp:** [Get an Instant Quote](https://wa.me/919311068290?text=Get%20instant%20quote%20for%20my%20car)

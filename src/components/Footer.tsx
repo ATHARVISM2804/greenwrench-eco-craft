@@ -17,7 +17,7 @@ const Footer = () => {
     { name: "Blog", href: "/blog" },
     { name: "News", href: "/news" },
     { name: "Videos", href: "/videos" },
-    { name: "By CD", href: "/by-cd" },
+    { name: "Buy CD", href: "/by-cd" },
   ];
 
   const services = [
